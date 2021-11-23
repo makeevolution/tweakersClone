@@ -1,5 +1,4 @@
 .vscode/
-/env/
-/env_ROG/
+/env*
 /__pycache__/
-/geckodriver.log
+geckodriver.log

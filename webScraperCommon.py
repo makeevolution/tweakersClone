@@ -9,6 +9,7 @@ from selenium.webdriver.firefox.options import Options
 from flask_sqlalchemy import SQLAlchemy
 import sshtunnel
 from flask import request, Flask
+import pandas as pd
 
 day = str(time.localtime().tm_mday)
 month =  str(time.localtime().tm_mon)
@@ -106,33 +107,38 @@ class webScraperCommon():
 
         db.session.commit()
         
-        def read_from_db(database, dbToAsk):
-            dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
-            app = Flask(__name__)
-            # SSH to pythonanywhere to get access to database
-            tunnel = sshtunnel.SSHTunnelForwarder(
-                ('ssh.pythonanywhere.com'),
-                ssh_username='aldosebastian',
-                ssh_password='25803conan',
-                local_bind_address=("127.0.0.1",1000),
-                remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
-            )
-            # Start SSH tunneling
-            tunnel.start()
-            db = SQLAlchemy(app)
-            app.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
-            
-            # Create class of each db dynamically
-            @classmethod
-            def overridePrint(self):
-                return '{} {} {} {}'.format(self.id, self.date, self.item, self.price)
-            # Use locals since database variable is local for write_to_db only
-            locals()[database] = type(database,(db.Model,),{
-                "id" : db.Column(db.Integer, primary_key=True),
-                "date" : db.Column(db.String(100), unique=True),
-                "item" : db.Column(db.String(100), unique=False),
-                "price" :  db.Column(db.String(100), unique=False),
-                "__repr__": overridePrint
-            })
-            
-            
+    def read_from_db(database):
+        dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
+        app = Flask(__name__)
+        # SSH to pythonanywhere to get access to database
+        tunnel = sshtunnel.SSHTunnelForwarder(
+            ('ssh.pythonanywhere.com'),
+            ssh_username='aldosebastian',
+            ssh_password='25803conan',
+            local_bind_address=("127.0.0.1",1000),
+            remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
+        )
+        # Start SSH tunneling
+        tunnel.start()
+        db = SQLAlchemy(app)
+        app.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
+        
+        # Create class of each db dynamically
+        @classmethod
+        def overridePrint(self):
+            return '{} {} {} {}'.format(self.id, self.date, self.item, self.price)
+        # Use locals since database variable is local for read_from_db only
+        locals()[database] = type(database,(db.Model,),{
+            "id" : db.Column(db.Integer, primary_key=True),
+            "date" : db.Column(db.String(100), unique=True),
+            "item" : db.Column(db.String(100), unique=False),
+            "price" :  db.Column(db.String(100), unique=False),
+            "__repr__": overridePrint,
+        })
+        
+        # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
+        sqlQuery = db.session.query(eval(database)).statement
+        sessionEngine = eval(database).query.session.bind
+
+        return pd.read_sql(sqlQuery, sessionEngine)
+        

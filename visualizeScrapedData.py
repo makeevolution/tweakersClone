@@ -1,3 +1,5 @@
+#https://github.com/ishanmehta17/dash_template/blob/master/src/dash_template.py
+
 import pandas as pd
 import json
 import dash
@@ -49,16 +51,36 @@ df = webScraperCommon.read_from_db("coolblue")
 uniqueItems = df.item.unique()
 output = []
 
-output.append(html.H1(children="Hello Dash", style = {"textAlign": "center", "color": colors["text"]}))
-output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
+output.append(html.H1(children="Coolblue", style = {"textAlign": "center", "color": colors["text"]}))
+#output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
 
 controls = dbc.FormGroup(
     [
-        html.P('Dropdown', style={
+        html.P('Online Store', style = 
+            {'textAlign' : 'center'
+        }),
+        dcc.Dropdown(
+            id='onlineStore',
+            options=[{
+                'label': 'Value One',
+                'value': 'value1'
+            }, {
+                'label': 'Value Two',
+                'value': 'value2'
+            },
+                {
+                    'label': 'Value Three',
+                    'value': 'value3'
+                }
+            ],
+            value=['value1'],  # default value
+            multi=True
+        ),
+        html.P('Item to track', style={
             'textAlign': 'center'
         }),
         dcc.Dropdown(
-            id='dropdown',
+            id='itemToTrack',
             options=[{
                 'label': 'Value One',
                 'value': 'value1'
@@ -153,12 +175,13 @@ sidebar = html.Div(
 for uniqueItem in uniqueItems:
     uniqueItemdf = df[df.item == uniqueItem]
     
-    fig = px.bar(uniqueItemdf, x="date", y="price", barmode="group")
+    fig = px.line(uniqueItemdf, x="date", y="price", barmode="group")
     fig.update_layout(
         plot_bgcolor=colors['background'],
         paper_bgcolor=colors['background'],
         font_color=colors['text']
     )
+    output.append(html.Div(str(uniqueItem)),style = {"textAlign": "center", "color": colors["text"]})
     output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
     output.append(html.Div(html.Br()))
 

@@ -36,7 +36,6 @@ class webScraperCommon():
                 sys.exit(__doc__)
 
         searchTerm = " ".join(searchTerm)
-        
         outputFile = []
         for opt, arg in opts:
             if opt in ["-h","--help"]:
@@ -73,7 +72,7 @@ class webScraperCommon():
                 print(key, value)
         return json.dumps(data)
     
-    def write_to_db(database,itemPriceDict):
+    def write_to_db(database,searchterm,itemPriceDict):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         app = Flask(__name__)
         # SSH to pythonanywhere to get access to database
@@ -92,17 +91,19 @@ class webScraperCommon():
         # Create class of each db dynamically
         @classmethod
         def overridePrint(self):
-            return '{} {} {} {}'.format(self.id, self.date, self.item, self.price)
+            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for write_to_db only
         locals()[database] = type(database,(db.Model,),{
             "id" : db.Column(db.Integer, primary_key=True),
-            "date" : db.Column(db.String(100), unique=True),
+            "searchTerm": db.Column(db.String(100), unique=False),
+            "date" : db.Column(db.String(100), unique=False),
             "item" : db.Column(db.String(100), unique=False),
             "price" :  db.Column(db.String(100), unique=False),
             "__repr__": overridePrint
         })
         for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
-            current = eval(database)(date=dateScraped,item=itemScraped,price=priceScraped)
+            current = eval(database)(date=dateScraped,searchTerm=searchterm,
+                                     item=itemScraped,price=priceScraped)
             db.session.add(current)
 
         db.session.commit()
@@ -126,11 +127,12 @@ class webScraperCommon():
         # Create class of each db dynamically
         @classmethod
         def overridePrint(self):
-            return '{} {} {} {}'.format(self.id, self.date, self.item, self.price)
+            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for read_from_db only
         locals()[database] = type(database,(db.Model,),{
             "id" : db.Column(db.Integer, primary_key=True),
-            "date" : db.Column(db.String(100), unique=True),
+            "searchTerm": db.Column(db.String(100), unique=False),
+            "date" : db.Column(db.String(100), unique=False),
             "item" : db.Column(db.String(100), unique=False),
             "price" :  db.Column(db.String(100), unique=False),
             "__repr__": overridePrint,
@@ -141,4 +143,3 @@ class webScraperCommon():
         sessionEngine = eval(database).query.session.bind
 
         return pd.read_sql(sqlQuery, sessionEngine)
-        

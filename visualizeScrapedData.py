@@ -47,7 +47,6 @@ colors = {
 
 
 df = webScraperCommon.read_from_db("coolblue")
-
 uniqueItems = df.item.unique()
 output = []
 
@@ -175,13 +174,13 @@ sidebar = html.Div(
 for uniqueItem in uniqueItems:
     uniqueItemdf = df[df.item == uniqueItem]
     
-    fig = px.line(uniqueItemdf, x="date", y="price", barmode="group")
+    fig = px.line(uniqueItemdf, x="date", y="price")
     fig.update_layout(
         plot_bgcolor=colors['background'],
         paper_bgcolor=colors['background'],
         font_color=colors['text']
     )
-    output.append(html.Div(str(uniqueItem)),style = {"textAlign": "center", "color": colors["text"]})
+    output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
     output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
     output.append(html.Div(html.Br()))
 

@@ -52,9 +52,16 @@ class webScraperCommon():
 
         return outputFile, searchTerm
 
-    def get_url(page, searchTerm):
+    def get_url(page, searchTerm, website):
         searchTerm=searchTerm.replace(" ","+")
-        url="https://www.bol.com/nl/nl/s/?page={}&searchtext={}&view=list".format(page,searchTerm)
+        if website == "bol":
+            url = "https://www.bol.com/nl/nl/s/?page={}&searchtext={}&view=list".format(page,searchTerm)
+        elif website == "amazon":
+            url = "https://www.amazon.nl/s?k={}&page={}".format(searchTerm,page)
+        elif website == "coolblue":
+            url = "https://www.coolblue.nl/zoeken?query={}&page={}".format(searchTerm,page)
+        else:
+            raise Exception("Website not scrapable yet :(")
         return url
 
     def to_json(outputFile,itemPriceDict):

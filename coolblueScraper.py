@@ -16,16 +16,16 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webScraperCommon import webScraperCommon
-
+import re
 def extract_record(searchTerm,soup,itemPriceDict):
-    divItemPrice = soup.find("ul",{"id":"js_items_content"}).findChildren("div",{"class":"product-item__content"})
-    
-    items = soup.find_all('div',{'class':'product-title--inline'})
-    prices = soup.find_all('meta',{'itemprop':'price'})
-    
-    for item,price in zip(items,prices):
-        fullTitle = item.a.text
-        fullPrice = price["content"]
+    divItemPrice = soup.find_all('div',['product-card__details'])
+
+    for div in divItemPrice:
+        try:
+            fullTitle = [child.get("title") for child in div.findChildren("a") if child.has_attr("title")][0]
+            fullPrice = [child.text for child in div.findChildren("strong") if child.get("class",default = ["False"])[0] == "sales-price__current"][0]
+        except BaseException:
+            continue    
         if searchTerm in fullTitle:
             itemPriceDict.update(dict([(fullTitle,fullPrice)]))
     # items = soup.find_all(lambda x:(x.name=='a') & (x.has_attr("title")))
@@ -48,7 +48,7 @@ def main():
     driver = webdriver.Firefox(executable_path=r"geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
-        driver.get(webScraperCommon.get_url(page, searchTerm))
+        driver.get(webScraperCommon.get_url(page, searchTerm, "coolblue"))
         soup = BeautifulSoup(driver.page_source)
         extract_record(searchTerm,soup,itemPriceDict)
 

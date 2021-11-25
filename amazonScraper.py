@@ -23,7 +23,7 @@ def extract_record(searchTerm,soup,itemPriceDict):
 
     for searchResult in searchResultList:
         searchResultSpans = searchResult.findChildren("span")[1:]
-        searchResultSpans = [*filter(lambda x : x.has_key("class"), searchResultSpans)]
+        searchResultSpans = [*filter(lambda x : x.has_attr("class"), searchResultSpans)]
         for data in searchResultSpans:
             try:
                 fullTitle = data.getText()
@@ -40,16 +40,16 @@ def main():
     outputFile, searchTerm = webScraperCommon.process_inputs()
     print(searchTerm)
     firefox_options = Options()
-    #firefox_options.add_argument("--headless")
+    firefox_options.add_argument("--headless")
     driver = webdriver.Firefox(executable_path=r"geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
-        driver.get(webScraperCommon.get_url(page, searchTerm))
+        driver.get(webScraperCommon.get_url(page, searchTerm, "amazon"))
         soup = BeautifulSoup(driver.page_source)
         extract_record(searchTerm,soup,itemPriceDict)
 
     #result = webScraperCommon.to_json(outputFile, itemPriceDict)
-    result = webScraperCommon.write_to_db("amazon",itemPriceDict)
+    result = webScraperCommon.write_to_db("amazon",searchTerm,itemPriceDict)
 
     driver.close()
     return result

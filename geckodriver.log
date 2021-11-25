@@ -1964,3 +1964,473 @@ DevTools listening on ws://localhost:56529/devtools/browser/7448bb25-b7b7-4f7e-8
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1637766344132	geckodriver	INFO	Listening on 127.0.0.1:63531
+1637766347170	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "63532" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilelli99b"
+*** You are running in headless mode.
+1637766347507	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilelli99b\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63532/devtools/browser/c3d2d554-dcbf-4499-b756-2ce79b89ac91
+1637766349037	Marionette	INFO	Listening on port 63542
+1637766349193	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637766478971	geckodriver	INFO	Listening on 127.0.0.1:64329
+1637766482009	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "64330" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileMOjW8V"
+*** You are running in headless mode.
+1637766482335	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileMOjW8V\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64330/devtools/browser/a280088f-17a7-4762-807d-9a6b2eaf2a30
+1637766483364	Marionette	INFO	Listening on port 64339
+1637766483551	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637766508437	Marionette	INFO	Stopped listening on port 64339
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637775871499	geckodriver	INFO	Listening on 127.0.0.1:58519
+1637775874533	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58520" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileB4UCLf"
+1637775875169	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileB4UCLf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58520/devtools/browser/fcde34a4-eacd-421f-b2ab-0b5943f05ff2
+1637775878785	Marionette	INFO	Listening on port 58525
+1637775879296	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637776208916	Marionette	INFO	Stopped listening on port 58525
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+headless" "--remote-debugging-port" "55648" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileBCAYMQ"
+*** You are running in headless mode.
+1637775913985	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileBCAYMQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55648/devtools/browser/d961640e-85e9-4cb3-abd3-f230705079b8
+1637775915474	Marionette	INFO	Listening on port 55656
+1637775915683	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637775921177	Marionette	INFO	Stopped listening on port 55656
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1059: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\320145763\AppData\Local\Temp\rust_mozprofileBCAYMQ\protections.sqlite
+[Parent 21416, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637775993220	geckodriver	INFO	Listening on 127.0.0.1:61415
+1637775996275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "61416" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilecdhSZR"
+*** You are running in headless mode.
+1637775996628	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilecdhSZR\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61416/devtools/browser/0a6daca1-9977-4b09-b530-6cac2a1b8575
+1637775998128	Marionette	INFO	Listening on port 61425
+1637775998322	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637776005709	Marionette	INFO	Stopped listening on port 61425
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637776021941	geckodriver	INFO	Listening on 127.0.0.1:61573
+1637776025011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "61574" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilenwk517"
+*** You are running in headless mode.
+1637776025366	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilenwk517\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61574/devtools/browser/daf5369c-f6a6-4f97-9fdc-1d257f62853b
+1637776026955	Marionette	INFO	Listening on port 65244
+1637776027043	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637776103787	geckodriver	INFO	Listening on 127.0.0.1:50790
+1637776106840	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "50791" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileM5O8pr"
+*** You are running in headless mode.
+1637776107180	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileM5O8pr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50791/devtools/browser/2d951ae1-66f3-4f31-8874-9701891acf55
+1637776108737	Marionette	INFO	Listening on port 50797
+1637776108868	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+Exiting due to channel error.
+Exiting due to channel error.
+37776202277	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "53914" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofiler19ydV"
+*** You are running in headless mode.
+1637776202612	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofiler19ydV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53914/devtools/browser/9633c4c7-fe5b-4f6e-9234-e7226b023c5f
+1637776204041	Marionette	INFO	Listening on port 50564
+1637776204325	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+Exiting due to channel error.
+Exiting due to channel error.
+37776225190	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "51843" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilexGAYDi"
+*** You are running in headless mode.
+1637776225567	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilexGAYDi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51843/devtools/browser/28dfef81-1a62-4a0e-96a3-2e5e34328724
+1637776227107	Marionette	INFO	Listening on port 51870
+1637776227218	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+Exiting due to channel error.
+Listening on 127.0.0.1:64912
+1637776253607	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "64913" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilesjHN2v"
+*** You are running in headless mode.
+1637776253946	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilesjHN2v\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64913/devtools/browser/c6dec8cd-2d1e-47ae-9b5e-05a2b8c54cef
+1637776255365	Marionette	INFO	Listening on port 64918
+1637776255656	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+1637776917159	geckodriver	INFO	Listening on 127.0.0.1:51409
+1637776920179	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "51410" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofile5ItOvu"
+*** You are running in headless mode.
+1637776921106	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofile5ItOvu\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51410/devtools/browser/06f9e4f6-050f-4c45-b1c3-8658e60cfa44
+1637776922533	Marionette	INFO	Listening on port 51415
+1637776922809	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637776932496	Marionette	INFO	Stopped listening on port 51415
+JavaScript error: , line 0: OperationError: Could not move temporary file(C:\Users\320145763\AppData\Local\Temp\rust_mozprofile5ItOvu\sessionCheckpoints.json.tmp) to destination(C:\Users\320145763\AppData\Local\Temp\rust_mozprofile5ItOvu\sessionCheckpoints.json)
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637776991583	geckodriver	INFO	Listening on 127.0.0.1:52419
+1637776994619	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "52420" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofile87sR3r"
+*** You are running in headless mode.
+1637776994999	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofile87sR3r\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52420/devtools/browser/2c33e818-5d56-4abe-9e21-9c22ce6ef973
+1637776996491	Marionette	INFO	Listening on port 52425
+1637776996666	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637777004328	Marionette	INFO	Stopped listening on port 52425
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637777033911	geckodriver	INFO	Listening on 127.0.0.1:55198
+1637777036964	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "55199" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileHX7Pqy"
+*** You are running in headless mode.
+1637777037556	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileHX7Pqy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55199/devtools/browser/f990633b-e9ac-4d5c-a1e3-a403afec58f3
+1637777039093	Marionette	INFO	Listening on port 55204
+1637777039607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637777054443	Marionette	INFO	Stopped listening on port 55204
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637777116117	geckodriver	INFO	Listening on 127.0.0.1:51757
+1637777119121	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "51758" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofile1ABYtb"
+*** You are running in headless mode.
+1637777119694	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofile1ABYtb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51758/devtools/browser/05f781c4-5e26-40f5-97d4-8b76df321e39
+1637777121429	Marionette	INFO	Listening on port 58898
+1637777121756	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637777129689	Marionette	INFO	Stopped listening on port 58898
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x590008,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637777179641	geckodriver	INFO	Listening on 127.0.0.1:51134
+1637777182690	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "51135" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileG7Rf6g"
+*** You are running in headless mode.
+1637777183064	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileG7Rf6g\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51135/devtools/browser/e5189936-1d81-4847-a511-ef08d7985e20
+1637777184587	Marionette	INFO	Listening on port 61266
+1637777184715	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637777230811	geckodriver	INFO	Listening on 127.0.0.1:57935
+1637777233855	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "57936" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileIbYkfz"
+*** You are running in headless mode.
+1637777234218	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileIbYkfz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57936/devtools/browser/c23a40ce-71dd-4877-bf21-6679b9e439a4
+1637777235326	Marionette	INFO	Listening on port 57941
+1637777235393	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637777419664	geckodriver	INFO	Listening on 127.0.0.1:58663
+1637777422702	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58664" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileO0FB7N"
+1637777423076	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileO0FB7N\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58664/devtools/browser/94c58d79-0a44-4ed2-b1c0-9ab3ca849bca
+1637777426595	Marionette	INFO	Listening on port 58669
+1637777426835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637779791616	geckodriver	INFO	Listening on 127.0.0.1:49157
+1637779794686	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49158" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileAxOADW"
+1637779795054	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+console.error: Policies.jsm: 
+  Download failed - ERROR_NETWORK_FAILURE - https://addons.mozilla.org/firefox/downloads/file/3767129/libkey_nomad-1.12.1-fx.xpi
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileAxOADW\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+DevTools listening on ws://localhost:49158/devtools/browser/23728198-5c63-40fe-9fd2-95dabb270832
+1637779797734	Marionette	INFO	Listening on port 49166
+1637779797824	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637779824549	Marionette	INFO	Stopped listening on port 49166
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+t_mozprofilelJnjgh"
+1637779816862	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilelJnjgh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60350/devtools/browser/0e9fbbc6-a34e-4f10-b738-2b6846bf98d7
+1637779819683	Marionette	INFO	Listening on port 58887
+1637779820018	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1637790166834	Marionette	INFO	Stopped listening on port 58887
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ToSaveLogins is present.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilefWY7Sq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50760/devtools/browser/1fb030db-e5d9-494f-901b-63d90c508c1f
+1637779930128	Marionette	INFO	Listening on port 52547
+1637779930416	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637779944864	Marionette	INFO	Stopped listening on port 52547
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637850054316	geckodriver	INFO	Listening on 127.0.0.1:53309
+1637850057330	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53310" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilejEW0fk"
+1637850057746	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilejEW0fk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53310/devtools/browser/1e068cef-a9a4-4f24-b71c-a7843d3579b9
+1637850060442	Marionette	INFO	Listening on port 53317
+1637850060483	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637850073409	Marionette	INFO	Stopped listening on port 53317
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637850349918	geckodriver	INFO	Listening on 127.0.0.1:50472
+1637850352944	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "50473" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileqs5x2g"
+*** You are running in headless mode.
+1637850353287	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileqs5x2g\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50473/devtools/browser/2c402433-fdcf-4033-8353-fcaaec2d09b4
+1637850354334	Marionette	INFO	Listening on port 50478
+1637850354462	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.nl/s?k=sony+WF-1000XM3&page=1 line 10506 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1637850360202	Marionette	INFO	Stopped listening on port 50478
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637850970926	geckodriver	INFO	Listening on 127.0.0.1:59658
+1637850973957	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "59659" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofilehmh3Qc"
+*** You are running in headless mode.
+1637850974334	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofilehmh3Qc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59659/devtools/browser/d67a9e27-0fca-4c0b-8859-4cca6e647529
+1637850975723	Marionette	INFO	Listening on port 59668
+1637850975984	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.nl/s?k=sony+WF-1000XM3 line 10274 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1637851048745	geckodriver	INFO	Listening on 127.0.0.1:56604
+1637851051763	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "56605" "-no-remote" "-profile" "C:\\Users\\320145~1\\AppData\\Local\\Temp\\rust_mozprofileNT1SPS"
+*** You are running in headless mode.
+1637851052196	Marionette	INFO	Marionette enabled
+console.error: Policies.jsm: 
+  OfferToSaveLoginsDefault ignored because OfferToSaveLogins is present.
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\320145763\\AppData\\Local\\Temp\\rust_mozprofileNT1SPS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56605/devtools/browser/f55759ec-eb26-4f2b-b77a-4f8f64015367
+1637851053607	Marionette	INFO	Listening on port 56612
+1637851053788	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.nl/s?k=sony+WF-1000XM3&page=1 line 10265 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1637851063664	Marionette	INFO	Stopped listening on port 56612
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014D,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

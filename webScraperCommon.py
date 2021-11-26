@@ -6,6 +6,7 @@ import getopt, sys, time, json
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from sqlalchemy import inspect
 from flask_sqlalchemy import SQLAlchemy
 import sshtunnel
 from flask import request, Flask
@@ -18,6 +19,7 @@ hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
 
 class webScraperCommon():
+    
     def process_inputs():
         try:
             argv = sys.argv[1:]
@@ -79,7 +81,7 @@ class webScraperCommon():
                 print(key, value)
         return json.dumps(data)
     
-    def write_to_db(database,searchterm,itemPriceDict):
+    def write_to_db(store,searchterm,itemPriceDict):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         app = Flask(__name__)
         # SSH to pythonanywhere to get access to database
@@ -100,7 +102,7 @@ class webScraperCommon():
         def overridePrint(self):
             return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for write_to_db only
-        locals()[database] = type(database,(db.Model,),{
+        locals()[store] = type(store,(db.Model,),{
             "id" : db.Column(db.Integer, primary_key=True),
             "searchTerm": db.Column(db.String(100), unique=False),
             "date" : db.Column(db.String(100), unique=False),
@@ -109,13 +111,13 @@ class webScraperCommon():
             "__repr__": overridePrint
         })
         for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
-            current = eval(database)(date=dateScraped,searchTerm=searchterm,
+            current = eval(store)(date=dateScraped,searchTerm=searchterm,
                                      item=itemScraped,price=priceScraped)
             db.session.add(current)
 
         db.session.commit()
         
-    def read_from_db(database):
+    def read_from_db(store):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         app = Flask(__name__)
         # SSH to pythonanywhere to get access to database
@@ -136,7 +138,7 @@ class webScraperCommon():
         def overridePrint(self):
             return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for read_from_db only
-        locals()[database] = type(database,(db.Model,),{
+        locals()[store] = type(store,(db.Model,),{
             "id" : db.Column(db.Integer, primary_key=True),
             "searchTerm": db.Column(db.String(100), unique=False),
             "date" : db.Column(db.String(100), unique=False),
@@ -146,12 +148,12 @@ class webScraperCommon():
         })
         
         # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
-        sqlQuery = db.session.query(eval(database)).statement
-        sessionEngine = eval(database).query.session.bind
+        sqlQuery = db.session.query(eval(store)).statement
+        sessionEngine = eval(store).query.session.bind
 
         return pd.read_sql(sqlQuery, sessionEngine)
     
-    def available_db(self):
+    def available_online_stores():
         app = Flask(__name__)
         # SSH to pythonanywhere to get access to database
         tunnel = sshtunnel.SSHTunnelForwarder(
@@ -165,22 +167,11 @@ class webScraperCommon():
         tunnel.start()
         db = SQLAlchemy(app)
         app.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
-        db.session.query()
-        # Create class of each db dynamically
-        @classmethod
-        def overridePrint(self):
-            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
-        # Use locals since database variable is local for read_from_db only
-        locals()[database] = type(database,(db.Model,),{
-            "id" : db.Column(db.Integer, primary_key=True),
-            "searchTerm": db.Column(db.String(100), unique=False),
-            "date" : db.Column(db.String(100), unique=False),
-            "item" : db.Column(db.String(100), unique=False),
-            "price" :  db.Column(db.String(100), unique=False),
-            "__repr__": overridePrint,
-        })
+        
+        availableStores = inspect(db.engine).get_table_names()
 
-        print("oj")
+        return availableStores
+        
         
 if __name__=="__main__":
     test = webScraperCommon()

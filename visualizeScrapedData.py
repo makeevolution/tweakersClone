@@ -53,6 +53,7 @@ output = []
 output.append(html.H1(children="Coolblue", style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
 
+available_stores = webScraperCommon.available_online_stores()
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
@@ -60,20 +61,8 @@ controls = dbc.FormGroup(
         }),
         dcc.Dropdown(
             id='onlineStore',
-            options=[{
-                'label': 'Value One',
-                'value': 'value1'
-            }, {
-                'label': 'Value Two',
-                'value': 'value2'
-            },
-                {
-                    'label': 'Value Three',
-                    'value': 'value3'
-                }
-            ],
-            value=['value1'],  # default value
-            multi=True
+            options=[{'label': str.capitalize(item), 'value': item} for item in available_stores],
+            value=[available_stores[0]],  # default value
         ),
         html.P('Item to track', style={
             'textAlign': 'center'

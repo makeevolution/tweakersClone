@@ -114,8 +114,11 @@ class webScraperCommon():
             current = eval(store)(date=dateScraped,searchTerm=searchterm,
                                      item=itemScraped,price=priceScraped)
             db.session.add(current)
-
-        db.session.commit()
+        try:
+            db.session.commit()
+        except Exception:
+            db.session.rollback()
+            
         
     def read_from_db(store):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
@@ -175,4 +178,4 @@ class webScraperCommon():
         
 if __name__=="__main__":
     test = webScraperCommon()
-    test.available_db()
+    test.available_online_stores()

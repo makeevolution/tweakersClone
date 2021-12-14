@@ -16,7 +16,7 @@ import getopt, sys, time, json
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from webScraperCommon import webScraperCommon
+from webScraperCommon import webScraperCommon, helperFunctions
 import re
 
 def extract_record(searchTerm,soup,itemPriceDict):
@@ -33,20 +33,21 @@ def extract_record(searchTerm,soup,itemPriceDict):
         
 
 def main():
+    functions = helperFunctions()
     itemPriceDict = dict()
-    outputFile, searchTerm = webScraperCommon.process_inputs()
+    outputFile, searchTerm = functions.process_inputs()
     print(searchTerm)
     firefox_options = Options()
     firefox_options.add_argument("--headless")
     driver = webdriver.Firefox(executable_path=r"geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
-        driver.get(webScraperCommon.get_url(page, searchTerm, "bol"))
+        driver.get(functions.get_url(page, searchTerm, "bol"))
         soup = BeautifulSoup(driver.page_source)
         extract_record(searchTerm,soup,itemPriceDict)
 
-    #result = webScraperCommon.to_json(outputFile, itemPriceDict)
-    result = webScraperCommon.write_to_db("bol",searchTerm,itemPriceDict)
+    #result = functions.to_json(outputFile, itemPriceDict)
+    result = functions.write_to_db("bol",searchTerm,itemPriceDict)
 
     driver.close()
     return result

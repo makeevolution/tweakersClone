@@ -3,13 +3,13 @@
 import pandas as pd
 import json
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 import re
-from webScraperCommon import webScraperCommon
+from webScraperCommon import webScraperCommon, helperFunctions
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -44,23 +44,27 @@ colors = {
     'text': '#7FDBFF',
     'graph': '#'
 }
-
-
-df = webScraperCommon.read_from_db("coolblue")
+dbFunctions = webScraperCommon()
+database = dbFunctions.interrogate_db()
+df = dbFunctions.read_from_db(database,"coolblue")
 uniqueItems = df.item.unique()
 output = []
 
-output.append(html.H1(children="Coolblue", style = {"textAlign": "center", "color": colors["text"]}))
+output.append(html.H1(children=[
+                                'DCF Vsaluation \n',
+                                html.Div(id='current-store-as-title', style={'display': 'inline'}),
+                                ".com"],
+                      style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
 
-available_stores = webScraperCommon.available_online_stores()
+available_stores = dbFunctions.available_online_stores(database)
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
             {'textAlign' : 'center'
         }),
         dcc.Dropdown(
-            id='onlineStore',
+            id='chosenStore',
             options=[{'label': str.capitalize(item), 'value': item} for item in available_stores],
             value=[available_stores[0]],  # default value
         ),
@@ -169,6 +173,7 @@ for uniqueItem in uniqueItems:
         paper_bgcolor=colors['background'],
         font_color=colors['text']
     )
+    # Title of item
     output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
     output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
     output.append(html.Div(html.Br()))
@@ -180,6 +185,11 @@ content = html.Div(
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([sidebar, content])
+
+@app.callback(Output("current-store-as-title", "children"),
+              Input("chosenStore", "value"))
+def update_charts(chosenStore):
+    return chosenStore
 
 if __name__ == "__main__":
     app.run_server(debug=True,host="localhost",port=9999)

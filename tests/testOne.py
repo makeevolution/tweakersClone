@@ -14,6 +14,7 @@ fullPrice = [ i for i in range(0,9) ]
 itemPriceTest.update(dict([("fakeitem"+str(i),i) for i in range(0,9)]))
 
 def test_write_to_db_pass():
+    functions = webScraperCommon()
     webScraperCommon.write_to_db("test", "sony xm", itemPriceTest)
 
 def test_write_to_db_fail():

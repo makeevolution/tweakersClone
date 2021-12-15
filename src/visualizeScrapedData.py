@@ -199,11 +199,13 @@ app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="cool
 def update_main_title(chosenStore):
     if chosenStore is None:
         chosenStore = "coolblue"
-    return chosenStore
+    return [chosenStore]
 
 @app.callback(Output("main-content","children"),
               Input("current-store", "data"))
 def update_charts(chosenStore):
+    print(chosenStore)
+    chosenStore = "".join(chosenStore)
     df = dbFunctions.read_from_db(chosenStore)
     uniqueItems = df.item.unique()
     output = []
@@ -216,10 +218,10 @@ def update_charts(chosenStore):
             paper_bgcolor=colors['background'],
             font_color=colors['text']
         )
-    # Title of item
-    output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
-    output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
-    output.append(html.Div(html.Br()))
+        # Title of item
+        output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
+        output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
+        output.append(html.Div(html.Br()))
     return output
 
 if __name__ == "__main__":

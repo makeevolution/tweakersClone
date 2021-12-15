@@ -48,8 +48,10 @@ class webScraperCommon():
             db.session.rollback()
             
     def read_from_db(self,store):
+        store = "".join(store)
         print("reading data from " + store + "...")
         # Create class of each db dynamically
+        self.db.metadata.clear()
         @classmethod
         def overridePrint(self):
             return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)

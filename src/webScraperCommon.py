@@ -19,24 +19,10 @@ hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
 
 class webScraperCommon():
-    def __init__(self):
+    def __init__(self,db):
         # SSH to pythonanywhere to get access to database
-        tunnel = sshtunnel.SSHTunnelForwarder(
-            ('ssh.pythonanywhere.com'),
-            ssh_username='aldosebastian',
-            ssh_password='25803conan',
-            local_bind_address=("127.0.0.1",1000),
-            remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
-        )
-        # Start SSH tunneling
-        print("starting tunnel...")
-        tunnel.start()
-        print("tunnel started")
-        app2 = Flask(__name__)
-        app2.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
-        app2.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-        self.db = SQLAlchemy(app2)
-
+        self.db = db
+    
     def write_to_db(self,db,store,searchterm,itemPriceDict):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         # Create class of each db dynamically

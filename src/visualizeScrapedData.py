@@ -10,6 +10,9 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 import re
 from webScraperCommon import webScraperCommon, helperFunctions
+from flask import Flask
+
+server = Flask(__name__)
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -44,20 +47,18 @@ colors = {
     'text': '#7FDBFF',
     'graph': '#'
 }
-dbFunctions = webScraperCommon()
-database = dbFunctions.interrogate_db()
-df = dbFunctions.read_from_db(database,"coolblue")
-uniqueItems = df.item.unique()
-output = []
 
-output.append(html.H1(children=[
-                                'DCF Vsaluation \n',
-                                html.Div(id='current-store-as-title', style={'display': 'inline'}),
-                                ".com"],
-                      style = {"textAlign": "center", "color": colors["text"]}))
+
+# output = []
+
+# output.append(html.H1(children=[
+#                                 'Currently scraping ',
+#                                 html.Div(id='current-store-as-title', style={'display': 'inline'}),
+#                                 ".com for item"],
+#                       style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
-
-available_stores = dbFunctions.available_online_stores(database)
+dbFunctions = webScraperCommon()
+available_stores = dbFunctions.available_online_stores()
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
@@ -164,32 +165,45 @@ sidebar = html.Div(
     style=SIDEBAR_STYLE,
 )
 
-for uniqueItem in uniqueItems:
-    uniqueItemdf = df[df.item == uniqueItem]
-    
-    fig = px.line(uniqueItemdf, x="date", y="price")
-    fig.update_layout(
-        plot_bgcolor=colors['background'],
-        paper_bgcolor=colors['background'],
-        font_color=colors['text']
+
+
+
+content = html.Div(
+    [
+     html.Div(id="main-content")], style = CONTENT_STYLE
     )
+
+app = dash.Dash(server=False,external_stylesheets=[dbc.themes.BOOTSTRAP])
+app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue")])
+
+@app.callback([Output("current-store","data")],
+               Input("chosenStore", "value"))
+def update_main_title(chosenStore):
+    if chosenStore is None:
+        chosenStore = "coolblue"
+    return chosenStore
+
+@app.callback(Output("main-content","children"),
+              Input("current-store", "data"))
+def update_charts(chosenStore):
+    df = dbFunctions.read_from_db(chosenStore)
+    uniqueItems = df.item.unique()
+    output = []
+    for uniqueItem in uniqueItems:
+        uniqueItemdf = df[df.item == uniqueItem]
+        
+        fig = px.line(uniqueItemdf, x="date", y="price")
+        fig.update_layout(
+            plot_bgcolor=colors['background'],
+            paper_bgcolor=colors['background'],
+            font_color=colors['text']
+        )
     # Title of item
     output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
     output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
     output.append(html.Div(html.Br()))
-
-
-content = html.Div(
-    children = output, style = CONTENT_STYLE
-    )
-
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.layout = html.Div([sidebar, content])
-
-@app.callback(Output("current-store-as-title", "children"),
-              Input("chosenStore", "value"))
-def update_charts(chosenStore):
-    return chosenStore
+    return output
 
 if __name__ == "__main__":
+    app.init_app(server)
     app.run_server(debug=True,host="localhost",port=9999)

@@ -19,8 +19,7 @@ hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
 
 class webScraperCommon():
-    def interrogate_db(self):
-        app = Flask(__name__)
+    def __init__(self):
         # SSH to pythonanywhere to get access to database
         tunnel = sshtunnel.SSHTunnelForwarder(
             ('ssh.pythonanywhere.com'),
@@ -30,10 +29,13 @@ class webScraperCommon():
             remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
         )
         # Start SSH tunneling
+        print("starting tunnel...")
         tunnel.start()
-        db = SQLAlchemy(app)
-        app.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
-        return db
+        print("tunnel started")
+        app2 = Flask(__name__)
+        app2.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
+        app2.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        self.db = SQLAlchemy(app2)
 
     def write_to_db(self,db,store,searchterm,itemPriceDict):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
@@ -59,29 +61,37 @@ class webScraperCommon():
         except Exception:
             db.session.rollback()
             
-    def read_from_db(self,db,store):
+    def read_from_db(self,store):
+        print("reading data from " + store + "...")
         # Create class of each db dynamically
         @classmethod
         def overridePrint(self):
             return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for read_from_db only
-        locals()[store] = type(store,(db.Model,),{
-            "id" : db.Column(db.Integer, primary_key=True),
-            "searchTerm": db.Column(db.String(100), unique=False),
-            "date" : db.Column(db.String(100), unique=False),
-            "item" : db.Column(db.String(100), unique=False),
-            "price" :  db.Column(db.String(100), unique=False),
+        locals()[store] = type(store,(self.db.Model,),{
+            "id" : self.db.Column(self.db.Integer, primary_key=True),
+            "searchTerm": self.db.Column(self.db.String(100), unique=False),
+            "date" : self.db.Column(self.db.String(100), unique=False),
+            "item" : self.db.Column(self.db.String(100), unique=False),
+            "price" :  self.db.Column(self.db.String(100), unique=False),
             "__repr__": overridePrint,
         })
         
         # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
-        sqlQuery = db.session.query(eval(store)).statement
+        print("fail here")
+        session=self.db.session()
+        sqlQuery = session.query(eval(store)).statement
+        print("fail here2")
         sessionEngine = eval(store).query.session.bind
-        return pd.read_sql(sqlQuery, sessionEngine)
+        data = pd.read_sql(sqlQuery, sessionEngine)
+        print("reading complete!")
+        return data
     
-    def available_online_stores(self,db):
-        availableStores = inspect(db.engine).get_table_names()
+    def available_online_stores(self):
+        availableStores = inspect(self.db.engine).get_table_names()
         return availableStores
+    
+    
 
 class helperFunctions():
     def process_inputs(self):
@@ -145,6 +155,4 @@ class helperFunctions():
                 print(key, value)
         return json.dumps(data)
     
-if __name__=="__main__":
-    functions = webScraperCommon()
-    functions.available_online_stores()
+

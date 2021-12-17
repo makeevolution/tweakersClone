@@ -17,6 +17,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
 import re
+import os
 
 def extract_record(searchTerm,soup,itemPriceDict):
     divItemPrice = soup.find_all('div',['product-card__details'])
@@ -24,11 +25,13 @@ def extract_record(searchTerm,soup,itemPriceDict):
     for div in divItemPrice:
         try:
             fullTitle = [child.get("title") for child in div.findChildren("a") if child.has_attr("title")][0]
-            fullPrice = [child.text for child in div.findChildren("strong") if child.get("class",default = ["False"])[0] == "sales-price__current"][0]
+            fullPrice = [child.text for child in div.findChildren("strong") \
+                        if child.get("class",default = ["False"])[0] == "sales-price__current"][0]
+            if searchTerm in fullTitle:
+                itemPriceDict.update(dict([(fullTitle,fullPrice)]))
         except BaseException:
-            continue    
-        if searchTerm in fullTitle:
-            itemPriceDict.update(dict([(fullTitle,fullPrice)]))
+            raise("Exception in extract_record function; website may have changed their structure :(")
+    
     # items = soup.find_all(lambda x:(x.name=='a') & (x.has_attr("title")))
     # items = [i['title'] for i in items if searchTerm in i['title']]
     # prices = soup.find_all('strong',{'class':'sales-price__current'})
@@ -43,14 +46,17 @@ def extract_record(searchTerm,soup,itemPriceDict):
 def main():
     functions = helperFunctions()
     itemPriceDict = dict()
+    storeName = re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0)
+    pwd = os.path.dirname(__file__).replace(os.sep, '/')
+
     outputFile, searchTerm = functions.process_inputs()
     print(searchTerm)
     firefox_options = Options()
     #firefox_options.add_argument("--headless")
-    driver = webdriver.Firefox(executable_path=r"src/geckodriver.exe",options=firefox_options)
+    driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
-        driver.get(functions.get_url(page, searchTerm, "coolblue"))
+        driver.get(functions.get_url(page, searchTerm, storeName))
         soup = BeautifulSoup(driver.page_source)
         extract_record(searchTerm,soup,itemPriceDict)
 
@@ -62,8 +68,13 @@ def main():
     else:
         sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
     dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
-    result = dbFunctions.write_to_db("coolblue",searchTerm,itemPriceDict)
+    result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict)
     driver.close()
 
 if __name__=="__main__":
+    # import sys, os
+    # print(sys.argv[0])
+    # print(__file__)
+    # print(re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0))
+    # print(os.path.dirname(__file__).replace(os.sep, '/'))
     main()

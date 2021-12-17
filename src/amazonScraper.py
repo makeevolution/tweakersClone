@@ -16,8 +16,8 @@ import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from webScraperCommon import webScraperCommon, helperFunctions
-
+from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
+import os
 def extract_record(searchTerm,soup,itemPriceDict):
     searchResultList = soup.find_all('div',{'data-component-type': 's-search-result'})
 
@@ -38,22 +38,30 @@ def extract_record(searchTerm,soup,itemPriceDict):
 def main():
     functions = helperFunctions()
     itemPriceDict = dict()
+    storeName = re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0)
+    pwd = os.path.dirname(__file__).replace(os.sep, '/')
+
     outputFile, searchTerm = functions.process_inputs()
     print(searchTerm)
     firefox_options = Options()
-    firefox_options.add_argument("--headless")
-    driver = webdriver.Firefox(executable_path=r"geckodriver.exe",options=firefox_options)
+    #firefox_options.add_argument("--headless")
+    driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
-        driver.get(functions.get_url(page, searchTerm, "amazon"))
+        driver.get(functions.get_url(page, searchTerm, storeName))
         soup = BeautifulSoup(driver.page_source)
         extract_record(searchTerm,soup,itemPriceDict)
 
+    OnServer = False
     #result = functions.to_json(outputFile, itemPriceDict)
-    result = functions.write_to_db("amazon",searchTerm,itemPriceDict)
-
+    if not OnServer:
+        tunnel = functions.tunnelToDatabaseServer()
+        sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
+    else:
+        sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
+    dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
+    result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict)
     driver.close()
-    return result
 
 if __name__=="__main__":
     main()

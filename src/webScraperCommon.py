@@ -18,7 +18,7 @@ year = str(time.localtime().tm_year)
 hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 else "0" + str(time.localtime().tm_hour)
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
 
-class webScraperCommon():
+class webScraperCommonFlaskSQLAlchemy():
     def __init__(self,db):
         # SSH to pythonanywhere to get access to database
         self.db = db
@@ -79,9 +79,83 @@ class webScraperCommon():
         availableStores = inspect(self.db.engine).get_table_names()
         return availableStores
     
+class webScraperCommonFlaskRawSQLAlchemy():
+    def __init__(self,db):
+        # SSH to pythonanywhere to get access to database
+        self.db = db
     
-
+    def write_to_db(self,db,store,searchterm,itemPriceDict):
+        dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
+        # Create class of each db dynamically
+        @classmethod
+        def overridePrint(self):
+            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
+        # Use locals since database variable is local for write_to_db only
+        locals()[store] = type(store,(db.Model,),{
+            "id" : db.Column(db.Integer, primary_key=True),
+            "searchTerm": db.Column(db.String(100), unique=False),
+            "date" : db.Column(db.String(100), unique=False),
+            "item" : db.Column(db.String(100), unique=False),
+            "price" :  db.Column(db.String(100), unique=False),
+            "__repr__": overridePrint
+        })
+        for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
+            current = eval(store)(date=dateScraped,searchTerm=searchterm,
+                                     item=itemScraped,price=priceScraped)
+            db.session.add(current)
+        try:
+            db.session.commit()
+        except Exception:
+            db.session.rollback()
+            
+    def read_from_db(self,store):
+        store = "".join(store)
+        print("reading data from " + store + "...")
+        # Create class of each db dynamically
+        self.db.metadata.clear()
+        @classmethod
+        def overridePrint(self):
+            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
+        # Use locals since database variable is local for read_from_db only
+        locals()[store] = type(store,(self.db.Model,),{
+            "id" : self.db.Column(self.db.Integer, primary_key=True),
+            "searchTerm": self.db.Column(self.db.String(100), unique=False),
+            "date" : self.db.Column(self.db.String(100), unique=False),
+            "item" : self.db.Column(self.db.String(100), unique=False),
+            "price" :  self.db.Column(self.db.String(100), unique=False),
+            "__repr__": overridePrint,
+        })
+        
+        # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
+        print("fail here")
+        session=self.db.session()
+        sqlQuery = session.query(eval(store)).statement
+        print("fail here2")
+        sessionEngine = eval(store).query.session.bind
+        data = pd.read_sql(sqlQuery, sessionEngine)
+        print("reading complete!")
+        return data
+    
+    def available_online_stores(self):
+        availableStores = inspect(self.db.engine).get_table_names()
+        return availableStores
+    
 class helperFunctions():
+    def __init__(self):
+        pass
+    def tunnelToDatabaseServer(self):
+        tunnel = sshtunnel.SSHTunnelForwarder(
+            ('ssh.pythonanywhere.com'),
+            ssh_username='aldosebastian',
+            ssh_password='25803conan',
+            local_bind_address=("127.0.0.1",1000),
+            remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
+        )
+        # Start SSH tunneling
+        print("starting tunnel...")
+        tunnel.start()
+        print("tunnel started")
+        return tunnel
     def process_inputs(self):
         try:
             argv = sys.argv[1:]

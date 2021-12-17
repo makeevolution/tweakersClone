@@ -9,7 +9,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 import re
-from webScraperCommon import webScraperCommon, helperFunctions
+from webScraperCommon import webScraperCommonFlaskSQLAlchemy, helperFunctions
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sshtunnel
@@ -58,24 +58,14 @@ colors = {
 #                                 ".com for item"],
 #                       style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
-tunnel = sshtunnel.SSHTunnelForwarder(
-            ('ssh.pythonanywhere.com'),
-            ssh_username='aldosebastian',
-            ssh_password='25803conan',
-            local_bind_address=("127.0.0.1",1000),
-            remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
-        )
-# Start SSH tunneling
-print("starting tunnel...")
-tunnel.start()
-print("tunnel started")
+tunnel = helperFunctions().tunnelToDatabaseServer()
 server = Flask(__name__)
 server.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(server)
 
-dbFunctions = webScraperCommon(db)
+dbFunctions = webScraperCommonFlaskSQLAlchemy(db)
 available_stores = dbFunctions.available_online_stores()
 controls = dbc.FormGroup(
     [

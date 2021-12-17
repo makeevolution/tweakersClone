@@ -17,6 +17,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webScraperCommon import webScraperCommon, helperFunctions
 import re
+
 def extract_record(searchTerm,soup,itemPriceDict):
     divItemPrice = soup.find_all('div',['product-card__details'])
 
@@ -54,6 +55,9 @@ def main():
         extract_record(searchTerm,soup,itemPriceDict)
 
     #result = functions.to_json(outputFile, itemPriceDict)
+    tunnel = functions.tunnelToDatabaseServer()
+    
+    session = DBSession()
     result = functions.write_to_db("coolblue",searchTerm,itemPriceDict)
     driver.close()
 

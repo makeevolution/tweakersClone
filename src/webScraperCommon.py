@@ -6,8 +6,10 @@ import getopt, sys, time, json
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from sqlalchemy import inspect
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import inspect, create_engine, Column, String, Integer
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm.scoping import scoped_session
+from sqlalchemy.orm.session import sessionmaker
 import sshtunnel
 from flask import request, Flask
 import pandas as pd
@@ -79,34 +81,44 @@ class webScraperCommonFlaskSQLAlchemy():
         availableStores = inspect(self.db.engine).get_table_names()
         return availableStores
     
-class webScraperCommonFlaskRawSQLAlchemy():
-    def __init__(self,db):
+class webScraperCommonRawSQLAlchemy():
+    def __init__(self,sqlalchemy_database_uri):
         # SSH to pythonanywhere to get access to database
-        self.db = db
-    
-    def write_to_db(self,db,store,searchterm,itemPriceDict):
+        self.sqlalchemy_database_uri = sqlalchemy_database_uri
+        self.Base = declarative_base()
+        self.engine = create_engine(self.sqlalchemy_database_uri)
+        self.Base.metadata.create_all(self.engine)
+        Session = scoped_session(sessionmaker(self.engine))
+        self.session = Session()
+
+    def write_to_db(self,store,searchterm,itemPriceDict):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         # Create class of each db dynamically
         @classmethod
         def overridePrint(self):
             return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
         # Use locals since database variable is local for write_to_db only
-        locals()[store] = type(store,(db.Model,),{
-            "id" : db.Column(db.Integer, primary_key=True),
-            "searchTerm": db.Column(db.String(100), unique=False),
-            "date" : db.Column(db.String(100), unique=False),
-            "item" : db.Column(db.String(100), unique=False),
-            "price" :  db.Column(db.String(100), unique=False),
+        locals()[store] = type(store,(self.Base,),{
+            "__tablename__": store,
+            "id" : Column(Integer, primary_key=True),
+            "searchTerm": Column(String(100), unique=False),
+            "date" : Column(String(100), unique=False),
+            "item" : Column(String(100), unique=False),
+            "price" :  Column(String(100), unique=False),
             "__repr__": overridePrint
         })
         for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
             current = eval(store)(date=dateScraped,searchTerm=searchterm,
                                      item=itemScraped,price=priceScraped)
-            db.session.add(current)
+            self.session.add(current)
         try:
-            db.session.commit()
+            print("write successful")
+            self.session.commit()
         except Exception:
-            db.session.rollback()
+            print("write failed")
+            self.session.rollback()
+        finally:
+            self.session.close()
             
     def read_from_db(self,store):
         store = "".join(store)

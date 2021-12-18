@@ -13,6 +13,7 @@ from sqlalchemy.orm.session import sessionmaker
 import sshtunnel
 from flask import request, Flask
 import pandas as pd
+import re, os
 
 day = str(time.localtime().tm_mday)
 month =  str(time.localtime().tm_mon)
@@ -160,7 +161,38 @@ class webScraperCommonRawSQLAlchemy():
 class helperFunctions():
     def __init__(self):
         pass
-    def tunnelToDatabaseServer(self):
+
+    def scrapeWebsite(self,filename,extract_record):
+        itemPriceDict = dict()
+        itemPriceLink = []
+        print(__file__)
+        storeName = re.search(r"\w+(?=Scraper.py)",filename).group(0)
+        pwd = os.path.dirname(__file__).replace(os.sep, '/')
+
+        outputFile, searchTerm = self._process_inputs()
+        searchTerm = searchTerm.upper()
+        print(searchTerm)
+        firefox_options = Options()
+        firefox_options.add_argument("--headless")
+        driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
+
+        for page in range(1,2):
+            driver.get(self._get_url(page, searchTerm, storeName))
+            soup = BeautifulSoup(driver.page_source)
+            extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
+
+        OnServer = False
+        #result = functions.to_json(outputFile, itemPriceDict)
+        if not OnServer:
+            tunnel = self._tunnelToDatabaseServer()
+            sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
+        else:
+            sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
+        dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
+        result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict,itemPriceLink)
+        driver.close()
+    
+    def _tunnelToDatabaseServer(self):
         tunnel = sshtunnel.SSHTunnelForwarder(
             ('ssh.pythonanywhere.com'),
             ssh_username='aldosebastian',
@@ -173,7 +205,7 @@ class helperFunctions():
         tunnel.start()
         print("tunnel started")
         return tunnel
-    def process_inputs(self):
+    def _process_inputs(self):
         try:
             argv = sys.argv[1:]
         except IndexError:
@@ -207,7 +239,7 @@ class helperFunctions():
 
         return outputFile, searchTerm
 
-    def get_url(self, page, searchTerm, website):
+    def _get_url(self, page, searchTerm, website):
         searchTerm=searchTerm.replace(" ","+")
         if website == "bol":
             url = "https://www.bol.com/nl/nl/s/?page={}&searchtext={}&view=list".format(page,searchTerm)

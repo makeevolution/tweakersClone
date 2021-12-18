@@ -37,34 +37,7 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
 
 def main():
     functions = helperFunctions()
-    itemPriceDict = dict()
-    itemPriceLink = []
-    print(__file__)
-    storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
-    pwd = os.path.dirname(__file__).replace(os.sep, '/')
-
-    outputFile, searchTerm = functions.process_inputs()
-    searchTerm = searchTerm.upper()
-    print(searchTerm)
-    firefox_options = Options()
-    firefox_options.add_argument("--headless")
-    driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
-
-    for page in range(1,2):
-        driver.get(functions.get_url(page, searchTerm, storeName))
-        soup = BeautifulSoup(driver.page_source)
-        extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
-
-    OnServer = False
-    #result = functions.to_json(outputFile, itemPriceDict)
-    if not OnServer:
-        tunnel = functions.tunnelToDatabaseServer()
-        sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
-    else:
-        sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
-    dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
-    result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict,itemPriceLink)
-    driver.close()
+    functions.scrapeWebsite(__file__,extract_record)
 
 if __name__=="__main__":
     main()

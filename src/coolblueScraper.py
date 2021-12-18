@@ -19,7 +19,7 @@ from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
 import re
 import os
 
-def extract_record(searchTerm,soup,itemPriceDict):
+def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
     divItemPrice = soup.find_all('div',['product-card__details'])
 
     for div in divItemPrice:
@@ -27,8 +27,12 @@ def extract_record(searchTerm,soup,itemPriceDict):
             fullTitle = [child.get("title") for child in div.findChildren("a") if child.has_attr("title")][0]
             fullPrice = [child.text for child in div.findChildren("strong") \
                         if child.get("class",default = ["False"])[0] == "sales-price__current"][0]
-            if searchTerm in fullTitle:
+            link = [storeName + ".nl" +child.get("href") 
+                    for child in div.findChildren("a") 
+                    if child.has_attr("href")][0]
+            if re.search(searchTerm, fullTitle, re.IGNORECASE):
                 itemPriceDict.update(dict([(fullTitle,fullPrice)]))
+                itemPriceLink.append((fullTitle,fullPrice,link))
         except BaseException:
             raise("Exception in extract_record function; website may have changed their structure :(")
     
@@ -46,7 +50,9 @@ def extract_record(searchTerm,soup,itemPriceDict):
 def main():
     functions = helperFunctions()
     itemPriceDict = dict()
-    storeName = re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0)
+    itemPriceLink = []
+    print(__file__)
+    storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
     pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
     outputFile, searchTerm = functions.process_inputs()
@@ -58,7 +64,7 @@ def main():
     for page in range(1,2):
         driver.get(functions.get_url(page, searchTerm, storeName))
         soup = BeautifulSoup(driver.page_source)
-        extract_record(searchTerm,soup,itemPriceDict)
+        extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
 
     OnServer = False
     #result = functions.to_json(outputFile, itemPriceDict)

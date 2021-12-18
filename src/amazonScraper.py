@@ -18,7 +18,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
 import os
-def extract_record(searchTerm,soup,itemPriceDict):
+def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
     searchResultList = soup.find_all('div',{'data-component-type': 's-search-result'})
 
     for searchResult in searchResultList:
@@ -38,7 +38,8 @@ def extract_record(searchTerm,soup,itemPriceDict):
 def main():
     functions = helperFunctions()
     itemPriceDict = dict()
-    storeName = re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0)
+    itemPriceLink = []
+    storeName = re.search(r"\w+(?=Scraper\.py)",__file__).group(0)
     pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
     outputFile, searchTerm = functions.process_inputs()
@@ -50,7 +51,7 @@ def main():
     for page in range(1,2):
         driver.get(functions.get_url(page, searchTerm, storeName))
         soup = BeautifulSoup(driver.page_source)
-        extract_record(searchTerm,soup,itemPriceDict)
+        extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
 
     OnServer = False
     #result = functions.to_json(outputFile, itemPriceDict)
@@ -62,6 +63,7 @@ def main():
     dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
     result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict)
     driver.close()
+
 
 if __name__=="__main__":
     main()

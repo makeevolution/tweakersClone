@@ -20,23 +20,26 @@ from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
 import re
 import os
 
-def extract_record(searchTerm,soup,itemPriceDict):
+def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
     divItemPrice = soup.find("ul",{"id":"js_items_content"}).findChildren("div",{"class":"product-item__content"})
     
     items = soup.find_all('div',{'class':'product-title--inline'})
     prices = soup.find_all('meta',{'itemprop':'price'})
-    
-    for item,price in zip(items,prices):
+    links = soup.find_all('a',{'class':'px_list_page_product_click'})
+    for item,price,link in zip(items,prices,links):
         fullTitle = item.a.text
         fullPrice = price["content"]
+        link = storeName + ".nl" + link["href"]
         if re.search(searchTerm, fullTitle, re.IGNORECASE):
             itemPriceDict.update(dict([(fullTitle,fullPrice)]))
+            itemPriceLink.append((fullTitle,fullPrice,link))
         
 
 def main():
     functions = helperFunctions()
     itemPriceDict = dict()
-    storeName = re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0)
+    itemPriceLink = []
+    storeName = re.search(r"\w+(?=Scraper\.py)",__file__).group(0)
     pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
     outputFile, searchTerm = functions.process_inputs()
@@ -48,7 +51,7 @@ def main():
     for page in range(1,2):
         driver.get(functions.get_url(page, searchTerm, storeName))
         soup = BeautifulSoup(driver.page_source)
-        extract_record(searchTerm,soup,itemPriceDict)
+        extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
 
     OnServer = False
     #result = functions.to_json(outputFile, itemPriceDict)

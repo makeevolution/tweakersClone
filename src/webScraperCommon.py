@@ -25,29 +25,29 @@ class webScraperCommonFlaskSQLAlchemy():
         # SSH to pythonanywhere to get access to database
         self.db = db
     
-    def write_to_db(self,db,store,searchterm,itemPriceDict):
-        dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
-        # Create class of each db dynamically
-        @classmethod
-        def overridePrint(self):
-            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
-        # Use locals since database variable is local for write_to_db only
-        locals()[store] = type(store,(db.Model,),{
-            "id" : db.Column(db.Integer, primary_key=True),
-            "searchTerm": db.Column(db.String(100), unique=False),
-            "date" : db.Column(db.String(100), unique=False),
-            "item" : db.Column(db.String(100), unique=False),
-            "price" :  db.Column(db.String(100), unique=False),
-            "__repr__": overridePrint
-        })
-        for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
-            current = eval(store)(date=dateScraped,searchTerm=searchterm,
-                                     item=itemScraped,price=priceScraped)
-            db.session.add(current)
-        try:
-            db.session.commit()
-        except Exception:
-            db.session.rollback()
+    # def write_to_db(self,db,store,searchterm,itemPriceDict):
+    #     dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
+    #     # Create class of each db dynamically
+    #     @classmethod
+    #     def overridePrint(self):
+    #         return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
+    #     # Use locals since database variable is local for write_to_db only
+    #     locals()[store] = type(store,(db.Model,),{
+    #         "id" : db.Column(db.Integer, primary_key=True),
+    #         "searchTerm": db.Column(db.String(100), unique=False),
+    #         "date" : db.Column(db.String(100), unique=False),
+    #         "item" : db.Column(db.String(100), unique=False),
+    #         "price" :  db.Column(db.String(100), unique=False),
+    #         "__repr__": overridePrint
+    #     })
+    #     for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
+    #         current = eval(store)(date=dateScraped,searchTerm=searchterm,
+    #                                  item=itemScraped,price=priceScraped)
+    #         db.session.add(current)
+    #     try:
+    #         db.session.commit()
+    #     except Exception:
+    #         db.session.rollback()
             
     def read_from_db(self,store):
         store = "".join(store)
@@ -64,14 +64,13 @@ class webScraperCommonFlaskSQLAlchemy():
             "date" : self.db.Column(self.db.String(100), unique=False),
             "item" : self.db.Column(self.db.String(100), unique=False),
             "price" :  self.db.Column(self.db.String(100), unique=False),
+            "link" : self.db.Column(self.db.String(255), unique = False),
             "__repr__": overridePrint,
         })
         
         # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
-        print("fail here")
         session=self.db.session()
         sqlQuery = session.query(eval(store)).statement
-        print("fail here2")
         sessionEngine = eval(store).query.session.bind
         data = pd.read_sql(sqlQuery, sessionEngine)
         print("reading complete!")
@@ -140,7 +139,7 @@ class webScraperCommonRawSQLAlchemy():
             "date" : self.db.Column(self.db.String(100), unique=False),
             "item" : self.db.Column(self.db.String(100), unique=False),
             "price" :  self.db.Column(self.db.String(100), unique=False),
-            "link" : Column(String(255), unique = False),
+            "link" : self.db.Column(self.db.String(255), unique = False),
             "__repr__": overridePrint,
         })
         

@@ -1,5 +1,6 @@
 #https://github.com/ishanmehta17/dash_template/blob/master/src/dash_template.py
 
+from enum import unique
 import pandas as pd
 import json
 import dash
@@ -208,8 +209,13 @@ def update_charts(chosenStore):
             paper_bgcolor=colors['background'],
             font_color=colors['text']
         )
+        itemLink = uniqueItemdf.iloc[0]["link"]
+        print((uniqueItemdf.iloc[0]["link"]))
         # Title of item
-        output.append(html.Div(str(uniqueItem),style = {"textAlign": "center", "color": colors["text"]}))
+        output.append(html.A(href="https://" + itemLink, 
+                             children = html.Div(children = str(uniqueItem),
+                                                 style = {"textAlign": "center", 
+                                                          "color": colors["text"]})))
         output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
         output.append(html.Div(html.Br()))
     return output

@@ -91,7 +91,7 @@ class webScraperCommonRawSQLAlchemy():
         Session = scoped_session(sessionmaker(self.engine))
         self.session = Session()
 
-    def write_to_db(self,store,searchterm,itemPriceDict):
+    def write_to_db(self,store,searchterm,itemPriceDict,itemPriceLink):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         # Create class of each db dynamically
         @classmethod
@@ -101,15 +101,20 @@ class webScraperCommonRawSQLAlchemy():
         locals()[store] = type(store,(self.Base,),{
             "__tablename__": store,
             "id" : Column(Integer, primary_key=True),
-            "searchTerm": Column(String(100), unique=False),
+            "searchTerm": Column(String(255), unique=False),
             "date" : Column(String(100), unique=False),
-            "item" : Column(String(100), unique=False),
+            "item" : Column(String(255), unique=False),
             "price" :  Column(String(100), unique=False),
+            "link" : Column(String(255), unique = False),
             "__repr__": overridePrint
         })
-        for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
+        # for itemScraped, priceScraped in zip(itemPriceDict.keys(),itemPriceDict.values()):
+        #     current = eval(store)(date=dateScraped,searchTerm=searchterm,
+        #                              item=itemScraped,price=priceScraped)
+        #     self.session.add(current)
+        for itemScraped, priceScraped, itemLink in itemPriceLink:
             current = eval(store)(date=dateScraped,searchTerm=searchterm,
-                                     item=itemScraped,price=priceScraped)
+                                     item=itemScraped,price=priceScraped,link=itemLink)
             self.session.add(current)
         try:
             print("write successful")
@@ -135,6 +140,7 @@ class webScraperCommonRawSQLAlchemy():
             "date" : self.db.Column(self.db.String(100), unique=False),
             "item" : self.db.Column(self.db.String(100), unique=False),
             "price" :  self.db.Column(self.db.String(100), unique=False),
+            "link" : Column(String(255), unique = False),
             "__repr__": overridePrint,
         })
         

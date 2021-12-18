@@ -56,9 +56,10 @@ def main():
     pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
     outputFile, searchTerm = functions.process_inputs()
+    searchTerm = searchTerm.upper()
     print(searchTerm)
     firefox_options = Options()
-    #firefox_options.add_argument("--headless")
+    firefox_options.add_argument("--headless")
     driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
 
     for page in range(1,2):
@@ -74,7 +75,7 @@ def main():
     else:
         sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
     dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
-    result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict)
+    result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict,itemPriceLink)
     driver.close()
 
 if __name__=="__main__":

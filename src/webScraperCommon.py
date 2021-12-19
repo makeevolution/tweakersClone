@@ -179,6 +179,7 @@ class helperFunctions():
         firefox_options = Options()
         firefox_options.add_argument("--headless")
         if OnServer:
+            os.system("DISPLAY=:1 firefox")
             driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver",options=firefox_options)
         else:
             driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)

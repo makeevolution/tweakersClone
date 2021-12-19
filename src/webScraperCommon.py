@@ -185,7 +185,7 @@ class helperFunctions():
             OnServer = True
         else:
             OnServer = False
-        #result = functions.to_json(outputFile, itemPriceDict)
+
         if not OnServer:
             tunnel = self.tunnelToDatabaseServer()
             sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)

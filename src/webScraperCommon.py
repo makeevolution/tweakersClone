@@ -163,6 +163,10 @@ class helperFunctions():
         pass
 
     def scrapeWebsite(self,filename,extract_record):
+        if "onServer" in os.environ:
+            OnServer = True
+        else:
+            OnServer = False
         itemPriceDict = dict()
         itemPriceLink = []
         print(__file__)
@@ -174,17 +178,15 @@ class helperFunctions():
         print(searchTerm)
         firefox_options = Options()
         firefox_options.add_argument("--headless")
-        driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
+        if OnServer:
+            driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver",options=firefox_options)
+        else:
+            driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver.exe",options=firefox_options)
 
         for page in range(1,2):
             driver.get(self._get_url(page, searchTerm, storeName))
             soup = BeautifulSoup(driver.page_source)
             extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
-
-        if "onServer" in os.environ:
-            OnServer = True
-        else:
-            OnServer = False
 
         if not OnServer:
             tunnel = self.tunnelToDatabaseServer()

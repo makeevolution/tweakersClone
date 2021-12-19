@@ -181,18 +181,22 @@ class helperFunctions():
             soup = BeautifulSoup(driver.page_source)
             extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
 
-        OnServer = False
+        if "onServer" in os.environ:
+            OnServer = True
+        else:
+            OnServer = False
         #result = functions.to_json(outputFile, itemPriceDict)
         if not OnServer:
-            tunnel = self._tunnelToDatabaseServer()
+            tunnel = self.tunnelToDatabaseServer()
             sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
         else:
+            print("Reading from database directly...")
             sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com/aldosebastian$dateItemPrice'
         dbFunctions = webScraperCommonRawSQLAlchemy(sqlalchemy_database_uri)
         result = dbFunctions.write_to_db(storeName,searchTerm,itemPriceDict,itemPriceLink)
         driver.close()
     
-    def _tunnelToDatabaseServer(self):
+    def tunnelToDatabaseServer(self):
         tunnel = sshtunnel.SSHTunnelForwarder(
             ('ssh.pythonanywhere.com'),
             ssh_username='aldosebastian',
@@ -201,10 +205,12 @@ class helperFunctions():
             remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
         )
         # Start SSH tunneling
-        print("starting tunnel...")
+        print("Reading from database using SSH tunneling")
+        print("Starting tunnel...")
         tunnel.start()
-        print("tunnel started")
+        print("Tunnel started")
         return tunnel
+
     def _process_inputs(self):
         try:
             argv = sys.argv[1:]

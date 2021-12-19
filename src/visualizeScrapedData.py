@@ -68,6 +68,8 @@ db = SQLAlchemy(server)
 
 dbFunctions = webScraperCommonFlaskSQLAlchemy(db)
 available_stores = dbFunctions.available_online_stores()
+default_store = available_stores[0]
+print(default_store)
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
@@ -76,27 +78,14 @@ controls = dbc.FormGroup(
         dcc.Dropdown(
             id='chosenStore',
             options=[{'label': str.capitalize(item), 'value': item} for item in available_stores],
-            value=[available_stores[0]],  # default value
+            value=default_store,  # default value
         ),
-        html.P('Item to track', style={
+        html.P('Filter item', style={
             'textAlign': 'center'
         }),
         dcc.Dropdown(
-            id='itemToTrack',
-            options=[{
-                'label': 'Value One',
-                'value': 'value1'
-            }, {
-                'label': 'Value Two',
-                'value': 'value2'
-            },
-                {
-                    'label': 'Value Three',
-                    'value': 'value3'
-                }
-            ],
-            value=['value1'],  # default value
-            multi=True
+            id='items-available',
+            value=['Select item'] # default value
         ),
         html.Br(),
         html.P('Range Slider', style={
@@ -183,21 +172,37 @@ content = html.Div(
     )
 
 app = dash.Dash(server=False,external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue")])
+app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
+                                         dcc.Store(id="current-store-df")])
 
-@app.callback([Output("current-store","data")],
+@app.callback(Output("current-store","data"),
                Input("chosenStore", "value"))
 def update_main_title(chosenStore):
     if chosenStore is None:
         chosenStore = "coolblue"
     return [chosenStore]
 
-@app.callback(Output("main-content","children"),
-              Input("current-store", "data"))
-def update_charts(chosenStore):
+@app.callback(Output("current-store-df","data"),
+               Input("current-store", "data"))
+def _read_from_db(chosenStore):
     print(chosenStore)
     chosenStore = "".join(chosenStore)
     df = dbFunctions.read_from_db(chosenStore)
+    return df.to_json(orient="split")
+
+@app.callback(Output("items-available","options"),
+               Input("current-store-df", "data"))
+def available_items_in_store(df):
+    df = pd.read_json(df,orient="split")
+    df.fillna("", inplace=True)
+    searchTerms = df.searchTerm.unique()
+    return [{'label': str.capitalize(searchTerm), 'value': searchTerm} for searchTerm in searchTerms]
+
+@app.callback(Output("main-content","children"),
+               Input("current-store-df", "data"))
+def update_charts(df):
+    df = pd.read_json(df,orient="split")
+    df.fillna("", inplace=True)
     uniqueItems = df.item.unique()
     output = []
     for uniqueItem in uniqueItems:
@@ -210,9 +215,10 @@ def update_charts(chosenStore):
             font_color=colors['text']
         )
         itemLink = uniqueItemdf.iloc[0]["link"]
-        print((uniqueItemdf.iloc[0]["link"]))
+        print(uniqueItemdf.head(3))
         # Title of item
-        output.append(html.A(href="https://" + itemLink, 
+
+        output.append(html.A(href="https://" + str(itemLink), 
                              children = html.Div(children = str(uniqueItem),
                                                  style = {"textAlign": "center", 
                                                           "color": colors["text"]})))

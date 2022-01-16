@@ -163,7 +163,7 @@ class helperFunctions():
         pass
 
     def scrapeWebsite(self,filename,extract_record):
-        if "onServer" in os.environ:
+        if "OnServer" in os.environ:
             OnServer = True
         else:
             OnServer = False
@@ -179,7 +179,7 @@ class helperFunctions():
         firefox_options = Options()
         firefox_options.add_argument("--headless")
         if OnServer:
-            os.system("DISPLAY=:1 firefox")
+            #os.system("DISPLAY=:1 firefox")
             print("assign driver")
             driver = webdriver.Firefox(executable_path=pwd + r"/geckodriver",options=firefox_options)
             print("assign driver complete")
@@ -191,7 +191,8 @@ class helperFunctions():
             soup = BeautifulSoup(driver.page_source)
             extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName)
 
-        if not OnServer:
+        if OnServer:
+            print("Reading from pythonanywhere database...")
             tunnel = self.tunnelToDatabaseServer()
             sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
         else:
@@ -206,7 +207,7 @@ class helperFunctions():
             ('ssh.pythonanywhere.com'),
             ssh_username='aldosebastian',
             ssh_password='25803conan',
-            local_bind_address=("127.0.0.1",1000),
+            local_bind_address=("127.0.0.1",3306),
             remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
         )
         # Start SSH tunneling

@@ -10,7 +10,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 import re
-from webScraperCommon import webScraperCommonFlaskSQLAlchemy, helperFunctions
+from webScraperCommon import interrogateStoreFlask, helperFunctions
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sshtunnel
@@ -66,7 +66,7 @@ server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(server)
 
-dbFunctions = webScraperCommonFlaskSQLAlchemy(db)
+dbFunctions = interrogateStoreFlask(db)
 available_stores = dbFunctions.available_online_stores()
 default_store = available_stores[0]
 print(default_store)

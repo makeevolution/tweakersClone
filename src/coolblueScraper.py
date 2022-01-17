@@ -15,7 +15,7 @@ EXAMPLE:
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
+from webScraperCommon import Scrape
 import re
 import os
 
@@ -48,8 +48,7 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
 
 
 def main():
-    functions = helperFunctions()
-    functions.scrapeWebsite(__file__,extract_record)
+    functions = Scrape(__file__,extract_record)
 
 if __name__=="__main__":
     # import sys, os

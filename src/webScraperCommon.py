@@ -173,7 +173,6 @@ class Scrape():
         timeoutEachAttempt = 20
         for attempt in range(maxDriverActivationAttempts):
             try:
-                #with timeout(timeoutEachAttempt,exception=RuntimeError):
                 print(f"Attempt {attempt + 1} of activating geckodriver")
                 self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
                 print("geckodriver successfully activated")
@@ -182,7 +181,8 @@ class Scrape():
                 subprocess.run(['pkill', '-f', 'firefox'])
             if attempt == maxDriverActivationAttempts - 1:
                 raise DriverException
-        
+    
+
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
         try:

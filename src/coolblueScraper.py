@@ -15,11 +15,11 @@ EXAMPLE:
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from webScraperCommon import Scrape
+from webScraperCommon import Scrape, DBOperationsRaw
 import re
 import os
 
-def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
+def extract_record(searchTerm,soup,itemPriceLink,storeName):
     divItemPrice = soup.find_all('div',['product-card__details'])
 
     for div in divItemPrice:
@@ -31,9 +31,8 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
                     for child in div.findChildren("a") 
                     if child.has_attr("href")][0]
             if re.search(searchTerm, fullTitle, re.IGNORECASE):
-                itemPriceDict.update(dict([(fullTitle,fullPrice)]))
                 itemPriceLink.append((fullTitle,fullPrice,link))
-        except BaseException:
+        except Exception:
             raise("Exception in extract_record function; website may have changed their structure :(")
     
     # items = soup.find_all(lambda x:(x.name=='a') & (x.has_attr("title")))
@@ -49,7 +48,8 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
 
 def main():
     functions = Scrape(__file__,extract_record)
-
+    functions.scrapeStore()
+    
 if __name__=="__main__":
     # import sys, os
     # print(sys.argv[0])

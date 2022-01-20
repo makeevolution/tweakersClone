@@ -58,7 +58,7 @@ class DBoperations(ABC):
     def read_from_db(self,store):
         pass
     @abstractmethod
-    def write_to_db(self,store,searchterm,itemPriceDict,itemLink):
+    def write_to_db(self,store,searchterm,itemPriceLink):
         pass
 
 class DBOperationsFlask(DBoperations):
@@ -113,7 +113,7 @@ class DBOperationsRaw(DBoperations):
     def read_from_db():
         pass
 
-    def write_to_db(self,store,searchterm,itemPriceDict,itemLink):
+    def write_to_db(self,store,searchterm,itemPriceLink):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
         # Create class of each db dynamically
         @classmethod
@@ -130,7 +130,7 @@ class DBOperationsRaw(DBoperations):
             "link" : Column(String(255), unique = False),
             "__repr__": overridePrint
         })
-        for itemScraped, priceScraped, itemLink in itemLink:
+        for itemScraped, priceScraped, itemLink in itemPriceLink:
             current = eval(store)(date=dateScraped,searchTerm=searchterm,
                                      item=itemScraped,price=priceScraped,link=itemLink)
             self.session.add(current)
@@ -145,18 +145,21 @@ class DBOperationsRaw(DBoperations):
     
 class Scrape():
     def __init__(self,filename,extract_record):
-        if "OnServer" in os.environ:
-            self.OnServer = True
-            geckodriverExe = r"/geckodriver"
-        else:
-            self.OnServer = False
-            geckodriverExe = r"/geckodriver.exe"
-        self.itemPriceDict = dict()
-        self.itemLink = []
+        self.OnServer = True if "OnServer" in os.environ else False
+        self.geckodriverExe = r"/geckodriver" if platform.system() == 'Linux' else r"/geckodriver.exe"
+        self.itemPriceLink = []
+        self.extract_record = extract_record
+
         try:
             self.storeName = re.search(r"\w+(?=Scraper.py)",filename).group(0)
         except AttributeError:
             raise InvalidFilenameException
+
+        try:
+            getattr(sys.modules[__name__], self.storeName + "URL")
+        except AttributeError:
+            raise StoreNotSupportedException
+
         self.pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
         self.outputFile, self.searchTerm = self._process_args()
@@ -167,31 +170,33 @@ class Scrape():
         self.firefox_options.add_argument("--headless")
 
         maxDriverActivationAttempts = 5
-        timeoutEachAttempt = 10
+        timeoutEachAttempt = 20
         for attempt in range(maxDriverActivationAttempts):
             try:
                 with timeout(timeoutEachAttempt,exception=RuntimeError):
-                    print(f"Attempt {attempt} of activating geckodriver")
-                    self.driver = webdriver.Firefox(executable_path=self.pwd + geckodriverExe,options=self.firefox_options)
+                    print(f"Attempt {attempt + 1} of activating geckodriver")
+                    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+                    print("geckodriver successfully activated")
                     break
             except RuntimeError:
                 subprocess.run(['pkill', '-f', 'firefox'])
             if attempt == maxDriverActivationAttempts - 1:
                 raise DriverException
         
-    # Scrapes and updates self.itemPricedict and self.itemLink
-
+    # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
         try:
-            getattr(sys.modules[__name__],bol + "URL")
-        except AttributeError:
-            raise Exception("store not yet supported")
-        for page in range(1,2):
-            self.driver.get(self._get_url(page, self.searchTerm, self.storeName))
-            self.soup = BeautifulSoup(self.driver.page_source)
+            print("Scraping...")
+            for page in range(1,2):
+                self.driver.get(self._get_url(self.searchTerm,page))
+                self.soup = BeautifulSoup(self.driver.page_source)
+                self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
+            print(f"Scraping done, result: {self.itemPriceLink}")
+        except Exception as exc:
+            print(f"Error during scraping store, exception raised: {exc.message}")
+        finally:
             self.driver.close()
-            extract_record(self.searchTerm,self.soup,self.itemPriceDict,self.itemLink,self.storeName)
-        return self.itemPriceDict, self.itemLink
+            subprocess.run(['pkill', '-f', 'firefox'])
 
     def _process_args(self):
         try:
@@ -227,30 +232,23 @@ class Scrape():
 
         return outputFile, searchTerm
 
-    def _get_url(self, page, searchTerm, website):
-        searchTerm=searchTerm.replace(" ","+")
-        if website == "bol":
-            url = "https://www.bol.com/nl/nl/s/?page={}&searchtext={}&view=list".format(page,searchTerm)
-        elif website == "amazon":
-            url = "https://www.amazon.nl/s?k={}&page={}".format(searchTerm,page)
-        elif website == "coolblue":
-            url = "https://www.coolblue.nl/zoeken?query={}&page={}".format(searchTerm,page)
-        else:
-            raise Exception("Store not scrapable yet :(")
+    def _get_url(self, page):
+        self.searchTerm = self.searchTerm.replace(" ","+")
+        url = getattr(sys.modules[__name__], self.storeName + "URL")().URL_by_page_and_item(page)
         return url
         
 class storeURL(ABC):
     @abstractmethod
-    def URL_by_page_and_item(self,page,searchTerm):
+    def URL_by_page_and_item(self,searchTerm,page):
         pass
 class bolURL(storeURL):
-    def URL_by_page_and_item():
+    def URL_by_page_and_item(self,searchTerm,page):
         return "https://www.bol.com/nl/nl/s/?page={}&searchtext={}&view=list".format(page,searchTerm)
 class coolblueURL(storeURL):
-    def URL_by_page_and_item():
+    def URL_by_page_and_item(self,searchTerm,page):
         return "https://www.coolblue.nl/zoeken?query={}&page={}".format(searchTerm,page)
 class amazonURL(storeURL):
-    def URL_by_page_and_item():
+    def URL_by_page_and_item(self,searchTerm,page):
         return "https://www.amazon.nl/s?k={}&page={}".format(searchTerm,page)
 
 if __name__=="__main__":

@@ -173,11 +173,11 @@ class Scrape():
         timeoutEachAttempt = 20
         for attempt in range(maxDriverActivationAttempts):
             try:
-                with timeout(timeoutEachAttempt,exception=RuntimeError):
-                    print(f"Attempt {attempt + 1} of activating geckodriver")
-                    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
-                    print("geckodriver successfully activated")
-                    break
+                #with timeout(timeoutEachAttempt,exception=RuntimeError):
+                print(f"Attempt {attempt + 1} of activating geckodriver")
+                self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+                print("geckodriver successfully activated")
+                break
             except RuntimeError:
                 subprocess.run(['pkill', '-f', 'firefox'])
             if attempt == maxDriverActivationAttempts - 1:
@@ -188,12 +188,12 @@ class Scrape():
         try:
             print("Scraping...")
             for page in range(1,2):
-                self.driver.get(self._get_url(self.searchTerm,page))
+                self.driver.get(self._get_url(page))
                 self.soup = BeautifulSoup(self.driver.page_source)
                 self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
             print(f"Scraping done, result: {self.itemPriceLink}")
         except Exception as exc:
-            print(f"Error during scraping store, exception raised: {exc.message}")
+            print(f"Error during scraping store")
         finally:
             self.driver.close()
             subprocess.run(['pkill', '-f', 'firefox'])
@@ -233,8 +233,8 @@ class Scrape():
         return outputFile, searchTerm
 
     def _get_url(self, page):
-        self.searchTerm = self.searchTerm.replace(" ","+")
-        url = getattr(sys.modules[__name__], self.storeName + "URL")().URL_by_page_and_item(page)
+        searchTermForURL=self.searchTerm.replace(" ","+")
+        url = getattr(sys.modules[__name__], self.storeName + "URL")().URL_by_page_and_item(searchTermForURL,page)
         return url
         
 class storeURL(ABC):

@@ -18,3 +18,9 @@ class UnsupportedOSException(Exception):
 class StoreNotSupportedException(Exception):
     def __init__(self, msg=f'Online store not scrapable yet :(', *args, **kwargs):
         super().__init__(msg, *args, **kwargs)
+class ErrorDuringScrapingException(Exception):
+    def __init__(self,msg=f'Some error happened during scraping', *args, **kwargs):
+        super().__init__(msg, *args, **kwargs)
+class EmptyResultException(Exception):
+    def __init__(self,storeName=" ", msg=f'Scraping result is empty, please check manually if the item desired exists in store ', **kwargs):
+        super().__init__(msg + storeName, **kwargs)

@@ -13,9 +13,12 @@ EXAMPLE:
 '''
 
 from bs4 import BeautifulSoup
+from numpy import empty
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webScraperCommon import Scrape, DBOperationsRaw
+from inputProcessor import getSearchTermFromInput
+from customExceptions import *
 import re
 import os
 
@@ -47,8 +50,19 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
 
 
 def main():
-    functions = Scrape(__file__,extract_record)
-    functions.scrapeStore()
+    try:
+        storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
+    except AttributeError:
+        raise InvalidFilenameException
+    searchTerm = getSearchTermFromInput()
+    scrapeFunction = Scrape(storeName,searchTerm,extract_record)
+    scrapingResult = scrapeFunction.scrapeStore()
+    try:
+        assert scrapingResult != []
+    except AssertionError:
+        raise EmptyResultException(storeName)
+    DBfunction = DBOperationsRaw(username="aldosebastian",password="25803conan",dialect="mysql",schema="dateItemPrice")
+    DBfunction.write_to_db(storeName,searchTerm,scrapingResult)
     
 if __name__=="__main__":
     # import sys, os

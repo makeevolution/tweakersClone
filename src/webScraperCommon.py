@@ -27,27 +27,33 @@ hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
 
 class SSHTunnelOperations:
+    def __init__(self,username,password,dialect,schema):
+        self.username = username
+        self.password = password
+        self.dialect = dialect
+        self.schema = schema
+
     def getURI(self):
-        if not self.OnServer:
-            print("Reading from remote database...")
-            sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'\
-                                        .format(self._tunnelToDatabaseServer().local_bind_port)
-        else:
-            print("We are on the database server, reading directly")
-            sqlalchemy_database_uri = 'mysql://aldosebastian:25803conan@aldosebastian.mysql.pythonanywhere-services.com\
-                                        /aldosebastian$dateItemPrice'
+        # if not self.OnServer:
+        print(f"Obtaining URI to be able to write and read from database...")
+        sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@127.0.0.1:\
+                                    {self._tunnelToDatabaseServer().local_bind_port}/{self.username}${self.schema}'
+        # else:
+        #     print("We are on the database server, reading directly")
+        #     sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@{self.username}.{self.dialect}.pythonanywhere-services.com\
+        #                                 /{self.username}${self.schema}'
         return sqlalchemy_database_uri
 
     def _tunnelToDatabaseServer(self):
         tunnel = sshtunnel.SSHTunnelForwarder(
             ('ssh.pythonanywhere.com'),
-            ssh_username='aldosebastian',
-            ssh_password='25803conan',
+            ssh_username=self.username,
+            ssh_password=self.password,
             local_bind_address=("127.0.0.1",3306),
             remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
         )
         # Start SSH tunneling
-        print("Connecting to database server using SSH tunneling")
+        print("Connecting to ssh.pythonanywhere.com database using SSH tunneling")
         print("Starting tunnel...")
         tunnel.start()
         print("Tunnel started")
@@ -102,8 +108,8 @@ class interrogateStoreFlask(DBOperationsFlask):
         return availableStores
     
 class DBOperationsRaw(DBoperations):
-    def __init__(self,sqlalchemy_database_uri):
-        self.sqlalchemy_database_uri = SSHTunnelOperations.getURI()
+    def __init__(self,username,password,dialect,schema):
+        self.sqlalchemy_database_uri = SSHTunnelOperations(username,password,dialect,schema).getURI()
         self.Base = declarative_base()
         self.engine = create_engine(self.sqlalchemy_database_uri)
         self.Base.metadata.create_all(self.engine)
@@ -144,16 +150,14 @@ class DBOperationsRaw(DBoperations):
             self.session.close()
     
 class Scrape():
-    def __init__(self,filename,extract_record):
+    def __init__(self,storeName,searchTerm,extract_record):
+        self.extract_record = extract_record
+        self.storeName = storeName
+        self.searchTerm = searchTerm
+
         self.OnServer = True if "OnServer" in os.environ else False
         self.geckodriverExe = r"/geckodriver" if platform.system() == 'Linux' else r"/geckodriver.exe"
         self.itemPriceLink = []
-        self.extract_record = extract_record
-
-        try:
-            self.storeName = re.search(r"\w+(?=Scraper.py)",filename).group(0)
-        except AttributeError:
-            raise InvalidFilenameException
 
         try:
             getattr(sys.modules[__name__], self.storeName + "URL")
@@ -162,7 +166,6 @@ class Scrape():
 
         self.pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
-        self.outputFile, self.searchTerm = self._process_args()
         self.searchTerm = self.searchTerm.upper()
         print(f'Scraping {self.storeName} for {self.searchTerm}')
 
@@ -181,7 +184,7 @@ class Scrape():
                 subprocess.run(['pkill', '-f', 'firefox'])
             if attempt == maxDriverActivationAttempts - 1:
                 raise DriverException
-    
+
 
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
@@ -191,46 +194,12 @@ class Scrape():
                 self.driver.get(self._get_url(page))
                 self.soup = BeautifulSoup(self.driver.page_source)
                 self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
-            print(f"Scraping done, result: {self.itemPriceLink}")
-        except Exception as exc:
-            print(f"Error during scraping store")
+            return self.itemPriceLink
+        except Exception:
+            raise ErrorDuringScrapingException
         finally:
             self.driver.close()
             subprocess.run(['pkill', '-f', 'firefox'])
-
-    def _process_args(self):
-        try:
-            argv = sys.argv[1:]
-        except IndexError:
-            sys.exit("Use -h for more help")
-
-        try:
-            opts, searchTerm = getopt.getopt(argv, "ho:", ["help", "output-file="])
-        except getopt.GetoptError as err:
-            print(err)
-            sys.exit(2)
-        
-        if not searchTerm:
-            if "-h" not in str(opts) or "-help" not in str(opts):
-                print("Error: At least one search term must be included!")
-                sys.exit(__doc__)
-
-        searchTerm = " ".join(searchTerm)
-        outputFile = []
-        for opt, arg in opts:
-            if opt in ["-h","--help"]:
-                sys.exit(__doc__)
-            elif opt in ["-o","--output-file"]:
-                if ".json" in arg:
-                    outputFile = arg.strip()
-                else:
-                    print("Error: Write to specified file type is not possible!")
-                    sys.exit(__doc__)
-            else:
-                print("Error: option {} not available".format(opt))
-                sys.exit(__doc__)
-
-        return outputFile, searchTerm
 
     def _get_url(self, page):
         searchTermForURL=self.searchTerm.replace(" ","+")

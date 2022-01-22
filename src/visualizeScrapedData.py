@@ -1,8 +1,6 @@
 #https://github.com/ishanmehta17/dash_template/blob/master/src/dash_template.py
 
-from enum import unique
 import pandas as pd
-import json
 import dash
 from dash import dcc
 from dash import html
@@ -10,11 +8,9 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 import re
-from webScraperCommon import interrogateStoreFlask, helperFunctions
+from webScraperCommon import SSHTunnelOperations, interrogateStoreFlask
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import sshtunnel
-
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -59,9 +55,9 @@ colors = {
 #                                 ".com for item"],
 #                       style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
-tunnel = helperFunctions().tunnelToDatabaseServer()
+dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
 server = Flask(__name__)
-server.config['SQLALCHEMY_DATABASE_URI']='mysql://aldosebastian:25803conan@127.0.0.1:{}/aldosebastian$dateItemPrice'.format(tunnel.local_bind_port)
+server.config['SQLALCHEMY_DATABASE_URI']=dbURI
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(server)
@@ -163,9 +159,6 @@ sidebar = html.Div(
     style=SIDEBAR_STYLE,
 )
 
-
-
-
 content = html.Div(
     [
      html.Div(id="main-content")], style = CONTENT_STYLE
@@ -228,4 +221,4 @@ def update_charts(df):
 
 if __name__ == "__main__":
     app.init_app(server)
-    app.run_server(debug=True,host="localhost",port=9999)
+    app.run_server(debug=True,host="localhost",port=9999,use_reloader=False)

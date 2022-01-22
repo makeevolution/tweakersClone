@@ -12,15 +12,10 @@ EXAMPLE:
 
 '''
 
-from bs4 import BeautifulSoup
-from numpy import empty
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
 from webScraperCommon import Scrape, DBOperationsRaw
 from inputProcessor import getSearchTermFromInput
 from customExceptions import *
 import re
-import os
 
 def extract_record(searchTerm,soup,itemPriceLink,storeName):
     divItemPrice = soup.find_all('div',['product-card__details'])
@@ -37,17 +32,6 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
                 itemPriceLink.append((fullTitle,fullPrice,link))
         except Exception:
             raise("Exception in extract_record function; website may have changed their structure :(")
-    
-    # items = soup.find_all(lambda x:(x.name=='a') & (x.has_attr("title")))
-    # items = [i['title'] for i in items if searchTerm in i['title']]
-    # prices = soup.find_all('strong',{'class':'sales-price__current'})
-    
-    # for item,price in zip(items,prices):
-    #     fullTitle = item
-    #     fullPrice = price.text
-    #     if searchTerm in fullTitle:
-    #         itemPriceDict.update(dict([(fullTitle,fullPrice)]))
-
 
 def main():
     try:
@@ -55,6 +39,9 @@ def main():
     except AttributeError:
         raise InvalidFilenameException
     searchTerm = getSearchTermFromInput()
+
+    print(f"Scraping {storeName} for {searchTerm}")
+    
     scrapeFunction = Scrape(storeName,searchTerm,extract_record)
     scrapingResult = scrapeFunction.scrapeStore()
     try:
@@ -65,9 +52,4 @@ def main():
     DBfunction.write_to_db(storeName,searchTerm,scrapingResult)
     
 if __name__=="__main__":
-    # import sys, os
-    # print(sys.argv[0])
-    # print(__file__)
-    # print(re.search(r"(?<=\\)\w+(?=Scraper\.py)",__file__).group(0))
-    # print(os.path.dirname(__file__).replace(os.sep, '/'))
     main()

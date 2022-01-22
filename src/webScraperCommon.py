@@ -100,6 +100,7 @@ class DBOperationsFlask(DBoperations):
         return data
 
     def write_to_db():
+        # Don't forget to make this otherwise we break Interface Segregation principle
         pass
 
 class interrogateStoreFlask(DBOperationsFlask):
@@ -117,6 +118,7 @@ class DBOperationsRaw(DBoperations):
         self.session = Session()
     
     def read_from_db():
+        # Don't forget to make this otherwise we break Interface Segregation principle
         pass
 
     def write_to_db(self,store,searchterm,itemPriceLink):
@@ -167,7 +169,6 @@ class Scrape():
         self.pwd = os.path.dirname(__file__).replace(os.sep, '/')
 
         self.searchTerm = self.searchTerm.upper()
-        print(f'Scraping {self.storeName} for {self.searchTerm}')
 
         self.firefox_options = Options()
         self.firefox_options.add_argument("--headless")
@@ -184,7 +185,6 @@ class Scrape():
                 subprocess.run(['pkill', '-f', 'firefox'])
             if attempt == maxDriverActivationAttempts - 1:
                 raise DriverException
-
 
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):

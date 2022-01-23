@@ -1,5 +1,6 @@
 #https://github.com/ishanmehta17/dash_template/blob/master/src/dash_template.py
 
+from email.policy import default
 import pandas as pd
 import dash
 from dash import dcc
@@ -65,7 +66,7 @@ db = SQLAlchemy(server)
 dbFunctions = interrogateStoreFlask(db)
 available_stores = dbFunctions.available_online_stores()
 default_store = available_stores[0]
-print(default_store)
+print(f"The default store is {default_store}")
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
@@ -163,22 +164,22 @@ content = html.Div(
     [
      html.Div(id="main-content")], style = CONTENT_STYLE
     )
-
-app = dash.Dash(server=False,external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(server=server,external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
                                          dcc.Store(id="current-store-df")])
 
 @app.callback(Output("current-store","data"),
                Input("chosenStore", "value"))
 def update_main_title(chosenStore):
+    print("running update_main_title()")
     if chosenStore is None:
-        chosenStore = "coolblue"
+        chosenStore = default_store
     return [chosenStore]
 
 @app.callback(Output("current-store-df","data"),
                Input("current-store", "data"))
 def _read_from_db(chosenStore):
-    print(chosenStore)
+    print("running _read_from_db()")
     chosenStore = "".join(chosenStore)
     df = dbFunctions.read_from_db(chosenStore)
     return df.to_json(orient="split")
@@ -186,6 +187,7 @@ def _read_from_db(chosenStore):
 @app.callback(Output("items-available","options"),
                Input("current-store-df", "data"))
 def available_items_in_store(df):
+    print("running available_items_in_store()")
     df = pd.read_json(df,orient="split")
     df.fillna("", inplace=True)
     searchTerms = df.searchTerm.unique()
@@ -194,10 +196,12 @@ def available_items_in_store(df):
 @app.callback(Output("main-content","children"),
                Input("current-store-df", "data"))
 def update_charts(df):
+    print("running update_charts()")
     df = pd.read_json(df,orient="split")
     df.fillna("", inplace=True)
     uniqueItems = df.item.unique()
     output = []
+    
     for uniqueItem in uniqueItems:
         uniqueItemdf = df[df.item == uniqueItem]
         
@@ -208,7 +212,6 @@ def update_charts(df):
             font_color=colors['text']
         )
         itemLink = uniqueItemdf.iloc[0]["link"]
-        print(uniqueItemdf.head(3))
         # Title of item
 
         output.append(html.A(href="https://" + str(itemLink), 
@@ -221,4 +224,4 @@ def update_charts(df):
 
 if __name__ == "__main__":
     app.init_app(server)
-    app.run_server(debug=True,host="localhost",port=9999,use_reloader=False)
+    app.run_server(debug=True,host="0.0.0.0",port=5000,use_reloader=False)

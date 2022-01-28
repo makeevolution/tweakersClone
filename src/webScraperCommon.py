@@ -49,7 +49,7 @@ class SSHTunnelOperations:
             ('ssh.pythonanywhere.com'),
             ssh_username=self.username,
             ssh_password=self.password,
-            local_bind_address=("127.0.0.1",3306),
+            local_bind_address=("127.0.0.1",),
             remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
         )
         # Start SSH tunneling

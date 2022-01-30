@@ -2,7 +2,8 @@
 Class with common functions for web scraper
 '''
 
-import getopt, sys, time, json
+import getopt, sys, time, json, traceback
+from logging import exception
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -15,7 +16,9 @@ from flask import request, Flask
 import pandas as pd
 import re, os
 from abc import ABC, abstractmethod
-import platform, importlib
+import platform
+
+from urllib3 import Timeout
 from customExceptions import *
 from interruptingcow import timeout
 import subprocess
@@ -25,6 +28,8 @@ month =  str(time.localtime().tm_mon)
 year = str(time.localtime().tm_year)
 hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 else "0" + str(time.localtime().tm_hour)
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
+TIMEOUT = 8
+MAXATTEMPT = 3
 
 class SSHTunnelOperations:
     def __init__(self,username,password,dialect,schema):
@@ -55,8 +60,21 @@ class SSHTunnelOperations:
         # Start SSH tunneling
         print("Connecting to ssh.pythonanywhere.com database using SSH tunneling")
         print("Starting tunnel...")
-        tunnel.start()
-        print("Tunnel started")
+        for i in range(MAXATTEMPT):
+            try:
+                with timeout(TIMEOUT,exception=RuntimeError):
+                    #time.sleep(14)
+                    tunnel.start()
+                    break
+            except (RuntimeError, 
+                    sshtunnel.BaseSSHTunnelForwarderError,
+                    sshtunnel.HandlerSSHTunnelForwarderError) as e:
+                i = i + 1
+                scraperLogger(level = "ERROR", msg = f"SSH tunneling attempt {i} FAILED \n" \
+                                                     + traceback.format_exc())
+                exceptionMsg = traceback.format_exc()
+        if i == MAXATTEMPT:
+            raise TunnelingTimeoutException(msg = exceptionMsg)
         return tunnel
 
 class DBoperations(ABC):
@@ -173,19 +191,22 @@ class Scrape():
         self.firefox_options = Options()
         self.firefox_options.add_argument("--headless")
 
-        maxDriverActivationAttempts = 5
-        timeoutEachAttempt = 20
-        for attempt in range(maxDriverActivationAttempts):
+        for attempt in range(MAXATTEMPT):
             try:
-                print(f"Attempt {attempt + 1} of activating geckodriver")
-                self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
-                print("geckodriver successfully activated")
-                break
+                with timeout(TIMEOUT,exception=RuntimeError):
+                    scraperLogger(msg = f"Attempt {attempt + 1} of activating geckodriver")
+                    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+                    scraperLogger(msg = "geckodriver successfully activated")
+                    break
             except RuntimeError:
                 subprocess.run(['pkill', '-f', 'firefox'])
-            if attempt == maxDriverActivationAttempts - 1:
-                raise DriverException
-
+                attempt = attempt + 1
+                scraperLogger(level = "ERROR", msg = f"Geckodriver activation attempt {attempt + 1} FAILED \n" \
+                                                     + traceback.format_exc())
+                exceptionMsg = traceback.format_exc()
+            if attempt == TIMEOUT - 1:
+                raise DriverException(msg = exceptionMsg)
+     
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
         try:
@@ -196,7 +217,7 @@ class Scrape():
                 self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
             return self.itemPriceLink
         except Exception:
-            raise ErrorDuringScrapingException
+            raise ErrorDuringScrapingException(msg = traceback.format_exc())
         finally:
             self.driver.close()
             subprocess.run(['pkill', '-f', 'firefox'])

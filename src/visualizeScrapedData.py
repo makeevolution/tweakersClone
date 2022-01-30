@@ -9,9 +9,11 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 import re
+from scraperLoggers import scraperLogger
 from webScraperCommon import SSHTunnelOperations, interrogateStoreFlask
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import traceback
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -56,7 +58,11 @@ colors = {
 #                                 ".com for item"],
 #                       style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
-dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
+try:
+    dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
+except Exception:
+    scraperLogger(level = "ERROR", msg = "dbURI not attainable, : \n" + traceback.format_exc())
+    raise
 server = Flask(__name__)
 server.config['SQLALCHEMY_DATABASE_URI']=dbURI
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

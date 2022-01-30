@@ -1,8 +1,7 @@
 # Custom exceptions class for webscraper
 # Usage example:
-# raise InvalidFilenameException -> will raise exception with the default message in msg
-# raise InvalidFilenameException("test") -> will raise exception with message "test"
-import platform
+
+import platform, traceback
 from scraperLoggers import scraperLogger
 
 class InvalidFilenameException(Exception):
@@ -13,7 +12,7 @@ class InvalidFilenameException(Exception):
 class DriverException(Exception):
     def __init__(self, msg='geckodriver failed to run after multiple attempts', *args, **kwargs):
         super().__init__(msg, *args, **kwargs)
-        scraperLogger(level='ERROR',msg=msg)
+        scraperLogger(level='ERROR',msg=f'Max attempts to turn on geckodriver reached, traceback: \n' + msg)
 
 class DBException(Exception):
     pass
@@ -29,11 +28,21 @@ class StoreNotSupportedException(Exception):
         scraperLogger(level='ERROR',msg=msg)
 
 class ErrorDuringScrapingException(Exception):
-    def __init__(self,msg=f'Some error happened during scraping', *args, **kwargs):
+    def __init__(self,msg=f'', *args, **kwargs):
         super().__init__(msg, *args, **kwargs)
-        scraperLogger(level='ERROR',msg=msg)
+        scraperLogger(level='ERROR', msg = 'Some error happened during scraping: ' + msg)
 
 class EmptyResultException(Exception):
-    def __init__(self,storeName=" ", msg=f'Scraping result is empty, please check manually if the item desired exists in store ', **kwargs):
+    def __init__(self,storeName='', msg=f'Scraping result is empty, please check manually if the item desired exists in store ', **kwargs):
         super().__init__(msg + storeName, **kwargs)
         scraperLogger(level='ERROR',msg=msg)
+
+class TunnelingTimeoutException(Exception):
+    def __init__(self, msg=f'Timeout in tunneling, traceback:', **kwargs):
+        super().__init__(msg, **kwargs)
+        scraperLogger(level='ERROR',msg=f'Max attempts to tunnel reached, traceback: \n' + msg)
+
+class UnavailableCredentialsException(Exception):
+    def __init__(self, msg=f'', **kwargs):
+        super().__init__(msg, **kwargs)
+        scraperLogger(level='ERROR',msg=f'Credentials of database not available, traceback: \n' + msg)

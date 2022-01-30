@@ -15,7 +15,7 @@ EXAMPLE:
 from webScraperCommon import Scrape, DBOperationsRaw
 from inputProcessor import getSearchTermFromInput
 from customExceptions import *
-import re
+import re, os
 
 def extract_record(searchTerm,soup,itemPriceLink,storeName):
     divItemPrice = soup.find_all('div',['product-card__details'])
@@ -39,16 +39,22 @@ def main():
     except AttributeError:
         raise InvalidFilenameException
     searchTerm = getSearchTermFromInput()
-
+    
     print(f"Scraping {storeName} for {searchTerm}")
     
+    try:
+        username = os.environ["tweakersCloneUsername"]
+        password = os.environ["tweakersClonePassword"]
+    except KeyError as e:
+        raise UnavailableCredentialsException(msg = traceback.format_exc())
+
     scrapeFunction = Scrape(storeName,searchTerm,extract_record)
     scrapingResult = scrapeFunction.scrapeStore()
     try:
         assert scrapingResult != []
     except AssertionError:
         raise EmptyResultException(storeName)
-    DBfunction = DBOperationsRaw(username="aldosebastian",password="25803conan",dialect="mysql",schema="dateItemPrice")
+    DBfunction = DBOperationsRaw(username,password,dialect="mysql",schema="dateItemPrice")
     DBfunction.write_to_db(storeName,searchTerm,scrapingResult)
     
 if __name__=="__main__":

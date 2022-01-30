@@ -1,1 +1,74 @@
 2022-01-28 15:23:04,400 - ERROR - Some error happened during scraping
+2022-01-30 09:49:20,807 - ERROR - Timeout in tunneling
+2022-01-30 10:10:47,173 - ERROR - Timeout in tunneling
+2022-01-30 10:23:34,108 - ERROR - Timeout in tunneling
+2022-01-30 15:25:34,750 - ERROR - Timeout in tunneling
+2022-01-30 15:33:00,598 - ERROR - Timeout in tunneling
+2022-01-30 15:34:30,520 - ERROR - Timeout in tunneling
+2022-01-30 15:36:44,823 - ERROR - Timeout in tunneling
+2022-01-30 15:39:43,444 - ERROR - Timeout in tunneling
+2022-01-30 15:44:15,965 - ERROR - NoneType: None
+
+2022-01-30 15:45:33,981 - ERROR - <function format_exc at 0x7f823d369700>
+2022-01-30 15:46:16,224 - ERROR - Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-01-30 15:49:42,825 - ERROR - Timeout in tunneling, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-01-30 15:54:03,249 - ERROR - Timeout in tunneling, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-01-30 15:55:41,227 - ERROR - Timeout in tunneling, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-01-30 16:44:53,121 - ERROR - Timeout in tunneling, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-01-30 16:44:53,122 - ERROR - dbURI not attainable, error: Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 62, in <module>
+    dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 43, in getURI
+    {self._tunnelToDatabaseServer().local_bind_port}/{self.username}${self.schema}'
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 75, in _tunnelToDatabaseServer
+    raise tunnelingTimeoutException(msg = exceptionMsg)
+customExceptions.tunnelingTimeoutException: Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+
+2022-01-30 17:50:19,243 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/coolblueScraper.py", line 47, in main
+    password = os.environ["tweakersClonePasswor"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersClonePasswor'
+

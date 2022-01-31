@@ -68,7 +68,7 @@ class SSHTunnelOperations:
                     break
             except (RuntimeError, 
                     sshtunnel.BaseSSHTunnelForwarderError,
-                    sshtunnel.HandlerSSHTunnelForwarderError) as e:
+                    sshtunnel.HandlerSSHTunnelForwarderError):
                 i = i + 1
                 scraperLogger(level = "ERROR", msg = f"SSH tunneling attempt {i} FAILED \n" \
                                                      + traceback.format_exc())

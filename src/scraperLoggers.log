@@ -72,3 +72,47 @@ Traceback (most recent call last):
     raise KeyError(key) from None
 KeyError: 'tweakersClonePasswor'
 
+2022-01-31 04:03:03,772 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/coolblueScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-01-31 07:21:59,106 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/coolblueScraper.py", line 47, in main
+    password = os.environ["tweakersClonePasswod"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersClonePasswod'
+
+2022-01-31 07:30:27,603 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 07:30:55,393 - ERROR - dbURI not attainable, : 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 66, in _tunnelToDatabaseServer
+    time.sleep(14)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 62, in <module>
+    dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 45, in getURI
+    {self._tunnelToDatabaseServer().local_bind_port}/{self.username}${self.schema}'
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 73, in _tunnelToDatabaseServer
+    scraperLogger(level = "ERROR", msg = f"SSH tunneling attempt {i} FAILED \n" \
+TypeError: can only concatenate str (not "NoneType") to str
+
+2022-01-31 09:22:57,593 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 09:24:03,637 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 09:24:10,665 - INFO - geckodriver successfully activated
+2022-01-31 09:24:15,105 - ERROR - Some error happened during scraping: Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 217, in scrapeStore
+    self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
+TypeError: extract_record() missing 1 required positional argument: 'storeName'
+

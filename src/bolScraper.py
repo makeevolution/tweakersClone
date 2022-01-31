@@ -12,13 +12,10 @@ EXAMPLE:
 
 '''
 
-import getopt, sys, time, json
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from webScraperCommon import webScraperCommonRawSQLAlchemy, helperFunctions
-import re
-import os
+from webScraperCommon import Scrape, DBOperationsRaw
+from inputProcessor import getSearchTermFromInput
+from customExceptions import *
+import re, os
 
 def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
     divItemPrice = soup.find("ul",{"id":"js_items_content"}).findChildren("div",{"class":"product-item__content"})
@@ -32,12 +29,31 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
         link = storeName + ".nl" + link["href"]
         if re.search(searchTerm, fullTitle, re.IGNORECASE):
             itemPriceDict.update(dict([(fullTitle,fullPrice)]))
-            itemPriceLink.append((fullTitle,fullPrice,link))
-        
+            itemPriceLink.append((fullTitle,fullPrice,link))    
 
 def main():
-    functions = helperFunctions()
-    functions.scrapeWebsite(__file__,extract_record)
+    try:
+        storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
+    except AttributeError:
+        raise InvalidFilenameException
+    searchTerm = getSearchTermFromInput()
+    
+    print(f"Scraping {storeName} for {searchTerm}")
+    
+    try:
+        username = os.environ["tweakersCloneUsername"]
+        password = os.environ["tweakersClonePassword"]
+    except KeyError as e:
+        raise UnavailableCredentialsException(msg = traceback.format_exc())
+
+    scrapeFunction = Scrape(storeName,searchTerm,extract_record)
+    scrapingResult = scrapeFunction.scrapeStore()
+    try:
+        assert scrapingResult != []
+    except AssertionError:
+        raise EmptyResultException(storeName)
+    DBfunction = DBOperationsRaw(username,password,dialect="mysql",schema="dateItemPrice")
+    DBfunction.write_to_db(storeName,searchTerm,scrapingResult)
 
 if __name__=="__main__":
     main()

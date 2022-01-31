@@ -63,9 +63,14 @@ class SSHTunnelOperations:
         for i in range(MAXATTEMPT):
             try:
                 with timeout(TIMEOUT,exception=RuntimeError):
-                    #time.sleep(14)
-                    tunnel.start()
-                    break
+                    time.sleep(14)
+                tunnel.start()
+                break
+            except AttributeError:
+                # timeout module doesn't work since here we're on Windows
+                print("no re-attempts if this attempt fails...")
+                tunnel.start()
+                break
             except (RuntimeError, 
                     sshtunnel.BaseSSHTunnelForwarderError,
                     sshtunnel.HandlerSSHTunnelForwarderError):
@@ -189,7 +194,7 @@ class Scrape():
         self.searchTerm = self.searchTerm.upper()
 
         self.firefox_options = Options()
-        self.firefox_options.add_argument("--headless")
+        #self.firefox_options.add_argument("--headless")
 
         for attempt in range(MAXATTEMPT):
             try:
@@ -198,6 +203,13 @@ class Scrape():
                     self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
                     scraperLogger(msg = "geckodriver successfully activated")
                     break
+            except AttributeError:
+                # timeout module doesn't work since here we're on Windows
+                scraperLogger(msg = f"Attempt {attempt + 1} of activating geckodriver")
+                print("no re-attempts if this attempt fails...")
+                self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+                scraperLogger(msg = "geckodriver successfully activated")
+                break
             except RuntimeError:
                 subprocess.run(['pkill', '-f', 'firefox'])
                 attempt = attempt + 1
@@ -220,7 +232,7 @@ class Scrape():
             raise ErrorDuringScrapingException(msg = traceback.format_exc())
         finally:
             self.driver.close()
-            subprocess.run(['pkill', '-f', 'firefox'])
+            subprocess.run(['pkill', '-f', 'firefox']) if platform.system() == "Linux" else None
 
     def _get_url(self, page):
         searchTermForURL=self.searchTerm.replace(" ","+")

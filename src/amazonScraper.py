@@ -28,7 +28,8 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
                 fullTitle = data.getText()
                 # For each term in searchTerm, check if it exists in data.getText(). If they do, then we are good
                 if len([*filter(lambda x: re.search(x, fullTitle, re.IGNORECASE),searchTerm.split(" "))]) == len(searchTerm.split(" ")):
-                    fullPrice = [*filter(lambda x: (x.get("class",default = ["False"])[0] == 'a-price-whole'), searchResultSpans)][0]
+                    fullPrice = [*filter(lambda x: (x.get("class",default = ["False"])[0] == 'a-price-whole'), searchResultSpans)][0].getText()
+                    link = storeName + ".nl" + data.previous_element.attrs["href"]
                     itemPriceLink.append((fullTitle,fullPrice,link))
             except BaseException:
                 continue

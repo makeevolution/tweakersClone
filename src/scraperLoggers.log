@@ -116,3 +116,60 @@ TypeError: can only concatenate str (not "NoneType") to str
     self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
 TypeError: extract_record() missing 1 required positional argument: 'storeName'
 
+2022-01-31 10:34:00,369 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "src/amazonScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\320145763\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-01-31 10:35:09,672 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "src/amazonScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\320145763\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-01-31 10:35:49,890 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "src/amazonScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\320145763\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-01-31 10:41:15,401 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "src/amazonScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\320145763\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-01-31 10:47:21,317 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 10:47:26,492 - INFO - geckodriver successfully activated
+2022-01-31 10:47:43,811 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 10:47:49,010 - INFO - geckodriver successfully activated
+2022-01-31 11:28:23,110 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:28:28,299 - INFO - geckodriver successfully activated
+2022-01-31 11:30:03,815 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:30:08,999 - INFO - geckodriver successfully activated
+2022-01-31 11:30:48,329 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:30:54,002 - INFO - geckodriver successfully activated
+2022-01-31 11:45:21,127 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:45:26,328 - INFO - geckodriver successfully activated
+2022-01-31 11:49:27,057 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:49:32,752 - INFO - geckodriver successfully activated
+2022-01-31 11:50:17,627 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:50:23,356 - INFO - geckodriver successfully activated
+2022-01-31 11:59:46,206 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 11:59:51,387 - INFO - geckodriver successfully activated
+2022-01-31 11:59:57,275 - ERROR - Some error happened during scraping: Traceback (most recent call last):
+  File "C:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\webScraperCommon.py", line 229, in scrapeStore
+    self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
+TypeError: extract_record() missing 1 required positional argument: 'storeName'
+
+2022-01-31 12:02:10,761 - INFO - Attempt 1 of activating geckodriver
+2022-01-31 12:02:16,440 - INFO - geckodriver successfully activated

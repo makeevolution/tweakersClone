@@ -17,8 +17,7 @@ from inputProcessor import getSearchTermFromInput
 from customExceptions import *
 import re, os
 
-def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
-    divItemPrice = soup.find("ul",{"id":"js_items_content"}).findChildren("div",{"class":"product-item__content"})
+def extract_record(searchTerm,soup,itemPriceLink,storeName):
     
     items = soup.find_all('div',{'class':'product-title--inline'})
     prices = soup.find_all('meta',{'itemprop':'price'})
@@ -26,9 +25,8 @@ def extract_record(searchTerm,soup,itemPriceDict,itemPriceLink,storeName):
     for item,price,link in zip(items,prices,links):
         fullTitle = item.a.text
         fullPrice = price["content"]
-        link = storeName + ".nl" + link["href"]
+        link = storeName + ".com" + link["href"]
         if re.search(searchTerm, fullTitle, re.IGNORECASE):
-            itemPriceDict.update(dict([(fullTitle,fullPrice)]))
             itemPriceLink.append((fullTitle,fullPrice,link))    
 
 def main():

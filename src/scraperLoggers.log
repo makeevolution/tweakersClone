@@ -173,3 +173,294 @@ TypeError: extract_record() missing 1 required positional argument: 'storeName'
 
 2022-01-31 12:02:10,761 - INFO - Attempt 1 of activating geckodriver
 2022-01-31 12:02:16,440 - INFO - geckodriver successfully activated
+2022-02-01 04:03:04,324 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/coolblueScraper.py", line 46, in main
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-01 14:16:59,354 - INFO - Attempt 1 of activating geckodriver
+2022-02-01 14:21:43,695 - INFO - Attempt 1 of activating geckodriver
+2022-02-01 14:21:45,303 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:21:45,306 - INFO - Attempt 2 of activating geckodriver
+2022-02-01 14:21:46,803 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:21:46,808 - INFO - Attempt 3 of activating geckodriver
+2022-02-01 14:21:48,200 - ERROR - Geckodriver activation attempt 4 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:21:48,208 - ERROR - Some error happened during scraping: Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 233, in scrapeStore
+    self.driver.get(self._get_url(page))
+AttributeError: 'Scrape' object has no attribute 'driver'
+
+2022-02-01 14:22:47,768 - INFO - Attempt 1 of activating geckodriver
+2022-02-01 14:22:49,631 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:22:49,639 - INFO - Attempt 2 of activating geckodriver
+2022-02-01 14:22:51,138 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:22:51,141 - INFO - Attempt 3 of activating geckodriver
+2022-02-01 14:22:52,643 - ERROR - Geckodriver activation attempt 4 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 209, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:22:52,648 - ERROR - Some error happened during scraping: Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 233, in scrapeStore
+    self.driver.get(self._get_url(page))
+AttributeError: 'Scrape' object has no attribute 'driver'
+
+2022-02-01 14:27:58,087 - ERROR - SSH tunneling attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 67, in _tunnelToDatabaseServer
+    tunnel.start()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1329, in start
+    self._create_tunnels()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1214, in _create_tunnels
+    self._connect_to_gateway()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1404, in _connect_to_gateway
+    self._transport.connect(hostkey=self.ssh_host_key,
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/paramiko/transport.py", line 656, in start_client
+    event.wait(0.1)
+  File "/usr/lib/python3.9/threading.py", line 574, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib/python3.9/threading.py", line 321, in wait
+    self._acquire_restore(saved_state)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-01 14:29:43,366 - INFO - Attempt 1 of activating geckodriver
+2022-02-01 14:29:44,891 - ERROR - Geckodriver activation attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:29:44,894 - INFO - Attempt 2 of activating geckodriver
+2022-02-01 14:29:46,271 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:29:46,277 - INFO - Attempt 3 of activating geckodriver
+2022-02-01 14:29:47,649 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:29:47,657 - ERROR - Max attempts to turn on geckodriver reached, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:33:26,363 - INFO - Attempt 1 of activating geckodriver
+2022-02-01 14:33:27,603 - ERROR - Geckodriver activation attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:33:27,605 - INFO - Attempt 2 of activating geckodriver
+2022-02-01 14:33:28,743 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:33:28,745 - INFO - Attempt 3 of activating geckodriver
+2022-02-01 14:33:29,880 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+
+2022-02-01 14:33:29,882 - ERROR - Max attempts to turn on geckodriver reached, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 208, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 311, in execute
+    self.error_handler.check_response(response)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1
+
+

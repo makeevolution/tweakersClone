@@ -46,3 +46,9 @@ class UnavailableCredentialsException(Exception):
     def __init__(self, msg=f'', **kwargs):
         super().__init__(msg, **kwargs)
         scraperLogger(level='ERROR',msg=f'Credentials of database not available, traceback: \n' + msg)
+
+class NoStoreFileException(Exception):
+    def __init__(self, msg=f'', **kwargs):
+        super().__init__(msg, **kwargs)
+        scraperLogger(level='ERROR',msg=f'No store file (i.e. storenameScraper.py) available! \
+                        Please check if you have at least one')

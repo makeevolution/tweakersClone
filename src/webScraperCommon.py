@@ -5,7 +5,7 @@ Class with common functions for web scraper
 import getopt, sys, time, json, traceback
 from logging import exception
 from bs4 import BeautifulSoup
-from selenium import webdriver
+from selenium import webdriver,common
 from selenium.webdriver.firefox.options import Options
 from sqlalchemy import inspect, create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
@@ -63,8 +63,9 @@ class SSHTunnelOperations:
         for i in range(MAXATTEMPT):
             try:
                 with timeout(TIMEOUT,exception=RuntimeError):
-                    time.sleep(14)
-                tunnel.start()
+                    #time.sleep(14)
+                    tunnel.start()
+                    print("Tunnel started")
                 break
             except AttributeError:
                 # timeout module doesn't work since here we're on Windows
@@ -74,12 +75,11 @@ class SSHTunnelOperations:
             except (RuntimeError, 
                     sshtunnel.BaseSSHTunnelForwarderError,
                     sshtunnel.HandlerSSHTunnelForwarderError):
-                i = i + 1
                 scraperLogger(level = "ERROR", msg = f"SSH tunneling attempt {i} FAILED \n" \
                                                      + traceback.format_exc())
                 exceptionMsg = traceback.format_exc()
-        if i == MAXATTEMPT:
-            raise TunnelingTimeoutException(msg = exceptionMsg)
+            if i == MAXATTEMPT:
+                raise TunnelingTimeoutException(msg = exceptionMsg)
         return tunnel
 
 class DBoperations(ABC):
@@ -100,24 +100,12 @@ class DBOperationsFlask(DBoperations):
         print("reading data from " + store + "...")
         # Create class of each db dynamically
         self.db.metadata.clear()
-        @classmethod
-        def overridePrint(self):
-            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
-        # Use locals since database variable is local for read_from_db only
-        locals()[store] = type(store,(self.db.Model,),{
-            "id" : self.db.Column(self.db.Integer, primary_key=True),
-            "searchTerm": self.db.Column(self.db.String(100), unique=False),
-            "date" : self.db.Column(self.db.String(100), unique=False),
-            "item" : self.db.Column(self.db.String(100), unique=False),
-            "price" :  self.db.Column(self.db.String(100), unique=False),
-            "link" : self.db.Column(self.db.String(255), unique = False),
-            "__repr__": overridePrint,
-        })
+        storeTableAsObject=table_struct_to_object(store,self.Base)
         
         # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
         session=self.db.session()
-        sqlQuery = session.query(eval(store)).statement
-        sessionEngine = eval(store).query.session.bind
+        sqlQuery = session.query(eval(storeTableAsObject)).statement
+        sessionEngine = eval(storeTableAsObject).query.session.bind
         data = pd.read_sql(sqlQuery, sessionEngine)
         print("reading complete!")
         return data
@@ -146,23 +134,11 @@ class DBOperationsRaw(DBoperations):
 
     def write_to_db(self,store,searchterm,itemPriceLink):
         dateScraped = day + "/" + month + "/" + year + " " + hour + ":" + minute
-        # Create class of each db dynamically
-        @classmethod
-        def overridePrint(self):
-            return '{} {} {} {} {}'.format(self.id, self.searchTerm, self.date, self.item, self.price)
-        # Use locals since database variable is local for write_to_db only
-        locals()[store] = type(store,(self.Base,),{
-            "__tablename__": store,
-            "id" : Column(Integer, primary_key=True),
-            "searchTerm": Column(String(255), unique=False),
-            "date" : Column(String(100), unique=False),
-            "item" : Column(String(255), unique=False),
-            "price" :  Column(String(100), unique=False),
-            "link" : Column(String(255), unique = False),
-            "__repr__": overridePrint
-        })
+        
+        storeTableAsObject=table_struct_to_object(store,self.Base)
+        
         for itemScraped, priceScraped, itemLink in itemPriceLink:
-            current = eval(store)(date=dateScraped,searchTerm=searchterm,
+            current = eval(storeTableAsObject)(date=dateScraped,searchTerm=searchterm,
                                      item=itemScraped,price=priceScraped,link=itemLink)
             self.session.add(current)
         try:
@@ -174,6 +150,35 @@ class DBOperationsRaw(DBoperations):
         finally:
             self.session.close()
     
+class interrogateStoreRaw(DBOperationsRaw):
+    def available_online_stores(self):
+        # use the Session() object in __init__ to check what
+        # stores are available in the schema
+
+        # Use this to check if the store requested exists in the db
+        pass
+    def searched_items_in_store(self,storeName):
+        storeTableAsObject=table_struct_to_object(storeName,self.Base)
+        searchTerms = self.session.query(storeTableAsObject.searchTerm).distinct()
+        searchTerms = list([*searchTerms][0])
+        # Remove empty search terms
+        searchTerms = [*filter(None,searchTerms)]
+        # Return only unique search terms
+        searchTerms = set([term.lower() for term in searchTerms])
+        return searchTerms
+def table_struct_to_object(store,declarative_base):
+    # Use locals since database variable is local for write_to_db only
+    locals()[store] = type(store,(declarative_base,),{
+        "__tablename__": store,
+        "id" : Column(Integer, primary_key=True),
+        "searchTerm": Column(String(255), unique=False),
+        "date" : Column(String(100), unique=False),
+        "item" : Column(String(255), unique=False),
+        "price" :  Column(String(100), unique=False),
+        "link" : Column(String(255), unique = False)
+    })
+    return locals()[store]
+
 class Scrape():
     def __init__(self,storeName,searchTerm,extract_record):
         self.extract_record = extract_record
@@ -210,13 +215,12 @@ class Scrape():
                 self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
                 scraperLogger(msg = "geckodriver successfully activated")
                 break
-            except RuntimeError:
+            except (common.exceptions.WebDriverException, RuntimeError):
                 subprocess.run(['pkill', '-f', 'firefox'])
-                attempt = attempt + 1
                 scraperLogger(level = "ERROR", msg = f"Geckodriver activation attempt {attempt + 1} FAILED \n" \
                                                      + traceback.format_exc())
                 exceptionMsg = traceback.format_exc()
-            if attempt == TIMEOUT - 1:
+            if attempt == MAXATTEMPT - 1:
                 raise DriverException(msg = exceptionMsg)
      
     # Scrapes store and updates self.itemPriceLink

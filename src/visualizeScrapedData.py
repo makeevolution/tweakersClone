@@ -13,7 +13,8 @@ from scraperLoggers import scraperLogger
 from webScraperCommon import SSHTunnelOperations, interrogateStoreFlask
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import traceback
+import traceback, os
+from customExceptions import *
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -58,18 +59,30 @@ colors = {
 #                                 ".com for item"],
 #                       style = {"textAlign": "center", "color": colors["text"]}))
 #output.append(html.Div(children='test', style = {"textAlign": "center", "color": colors["text"]}))
+
 try:
-    dbURI = SSHTunnelOperations("aldosebastian","25803conan","mysql","dateItemPrice").getURI()
+    username = os.environ["tweakersCloneUsername"]
+    password = os.environ["tweakersClonePassword"]
+except KeyError as e:
+    raise UnavailableCredentialsException(msg = traceback.format_exc())
+
+sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice")
+
+try:
+    sshFunctions.start_tunnel()
+    URIForDB = sshFunctions.getURI()
 except Exception:
-    scraperLogger(level = "ERROR", msg = "dbURI not attainable, : \n" + traceback.format_exc())
+    scraperLogger(level = "ERROR", msg = "URI for DB not attainable, : \n" + traceback.format_exc())
     raise
+
 server = Flask(__name__)
-server.config['SQLALCHEMY_DATABASE_URI']=dbURI
+server.config['SQLALCHEMY_DATABASE_URI']=URIForDB
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(server)
 
 dbFunctions = interrogateStoreFlask(db)
+dbFunctions.start_session()
 available_stores = dbFunctions.available_online_stores()
 default_store = available_stores[0]
 print(f"The default store is {default_store}")

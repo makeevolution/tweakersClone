@@ -12,8 +12,7 @@ EXAMPLE:
 
 '''
 
-from webScraperCommon import Scrape, DBOperationsRaw
-from inputProcessor import getSearchTermFromInput
+
 from customExceptions import *
 import re, os
 
@@ -30,6 +29,8 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
             itemPriceLink.append((fullTitle,fullPrice,link))    
 
 def main():
+    from webScraperCommon import Scrape, DBOperationsRaw
+    from inputProcessor import getSearchTermFromInput
     try:
         storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
     except AttributeError:

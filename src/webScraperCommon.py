@@ -97,6 +97,9 @@ class DBoperations(ABC):
     def write_to_db(self,store,*args,**kwargs):
         pass  
     @abstractmethod
+    def rollback_db_session(self):
+        pass  
+    @abstractmethod
     def close_db_session(self):
         pass
 
@@ -106,6 +109,7 @@ class DBOperationsFlask(DBoperations):
         self.db = db
     
     def start_db_session(self):
+        print("Starting db session...")
         self.session=self.db.session()
             
     def read_from_db(self,store):
@@ -129,7 +133,11 @@ class DBOperationsFlask(DBoperations):
         # Don't forget to make this otherwise we break Interface Segregation principle
         pass
     
+    def rollback_db_session(self):
+        self.session.rollback()
+  
     def close_db_session(self):
+        print("closing db session")
         self.session.close()
 
 class interrogateStoreFlask(DBOperationsFlask):
@@ -145,6 +153,7 @@ class DBOperationsRaw(DBoperations):
         self.session = scoped_session(sessionmaker(self.engine))
 
     def start_db_session(self):
+        print("Starting db session")
         self.session()
     
     def read_from_db(self):
@@ -169,7 +178,11 @@ class DBOperationsRaw(DBoperations):
                                                      + traceback.format_exc())            
             self.session.rollback()
     
+    def rollback_db_session(self):
+        self.session.rollback()
+
     def close_db_session(self):
+        print("Closing db session")
         self.session.close()
 
 class interrogateStoreRaw(DBOperationsRaw):

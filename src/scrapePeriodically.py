@@ -23,6 +23,7 @@ def main():
     URIForDB = sshFunctions.getURI()
     
     dbFunctions = interrogateStoreRaw(URIForDB)
+    dbFunctions.start_db_session()
     #make try excepts here too
     for store in all_stores:
         storeModule = importlib.import_module(store+"Scraper", package="")

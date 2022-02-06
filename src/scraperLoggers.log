@@ -781,3 +781,454 @@ KeyError: 'tweakersCloneUsername'
 2022-02-02 15:11:06,217 - INFO - geckodriver successfully activated
 2022-02-02 15:11:12,711 - INFO - Attempt 1 of activating geckodriver
 2022-02-02 15:11:18,712 - INFO - geckodriver successfully activated
+2022-02-03 03:10:30,521 - INFO - Attempt 1 of activating geckodriver
+2022-02-03 03:10:35,958 - INFO - geckodriver successfully activated
+2022-02-03 03:10:43,528 - INFO - Attempt 1 of activating geckodriver
+2022-02-03 03:10:48,450 - INFO - geckodriver successfully activated
+2022-02-03 03:10:54,743 - INFO - Attempt 1 of activating geckodriver
+2022-02-03 03:11:00,793 - INFO - geckodriver successfully activated
+2022-02-03 03:11:09,511 - INFO - Attempt 1 of activating geckodriver
+2022-02-03 03:11:15,498 - INFO - geckodriver successfully activated
+2022-02-03 03:11:22,414 - INFO - Attempt 1 of activating geckodriver
+2022-02-03 03:11:27,523 - INFO - geckodriver successfully activated
+2022-02-03 09:33:07,353 - INFO - No message
+2022-02-03 09:33:44,929 - INFO - No message
+2022-02-03 09:36:41,419 - INFO - No message
+2022-02-03 09:38:14,293 - INFO - No message
+2022-02-03 09:47:43,647 - INFO - No message
+2022-02-03 09:48:33,172 - INFO - No message
+2022-02-06 03:04:12,852 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 03:04:21,034 - ERROR - Geckodriver activation attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 03:04:21,038 - INFO - Attempt 2 of activating geckodriver
+2022-02-06 03:04:29,199 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 03:04:29,203 - INFO - Attempt 3 of activating geckodriver
+2022-02-06 03:04:37,323 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 03:04:37,329 - ERROR - Max attempts to turn on geckodriver reached, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 10:44:37,850 - ERROR - SSH tunneling attempt 0 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in start_tunnel
+    tunnel.start()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1331, in start
+    self._raise(BaseSSHTunnelForwarderError,
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1174, in _raise
+    raise exception(reason)
+sshtunnel.BaseSSHTunnelForwarderError: Could not establish session to SSH gateway
+
+2022-02-06 10:44:45,858 - ERROR - SSH tunneling attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1404, in _connect_to_gateway
+    self._transport.connect(hostkey=self.ssh_host_key,
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/paramiko/transport.py", line 1333, in connect
+    self.auth_publickey(username, pkey)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/paramiko/transport.py", line 1580, in auth_publickey
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/paramiko/auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 64, in start_tunnel
+    tunnel.start()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1329, in start
+    self._create_tunnels()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1214, in _create_tunnels
+    self._connect_to_gateway()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1411, in _connect_to_gateway
+    self._stop_transport()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sshtunnel.py", line 1463, in _stop_transport
+    _srv.shutdown()
+  File "/usr/lib/python3.9/socketserver.py", line 252, in shutdown
+    self.__is_shut_down.wait()
+  File "/usr/lib/python3.9/threading.py", line 574, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib/python3.9/threading.py", line 312, in wait
+    waiter.acquire()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 15:30:59,592 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 15:31:07,741 - ERROR - Geckodriver activation attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 15:31:07,744 - INFO - Attempt 2 of activating geckodriver
+2022-02-06 15:31:15,886 - ERROR - Geckodriver activation attempt 2 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 15:31:15,891 - INFO - Attempt 3 of activating geckodriver
+2022-02-06 15:31:24,027 - ERROR - Geckodriver activation attempt 3 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 15:31:24,033 - ERROR - Max attempts to turn on geckodriver reached, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 258, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-02-06 15:48:47,686 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 15:48:53,428 - INFO - geckodriver successfully activated
+2022-02-06 15:49:04,007 - ERROR - Writing to DB failed! 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.DataError: (1406, "Data too long for column 'item' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 174, in write_to_db
+    self.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 244, in save_obj
+    _emit_insert_statements(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1221, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.DataError: (MySQLdb._exceptions.DataError) (1406, "Data too long for column 'item' at row 1")
+[SQL: INSERT INTO amazon (`searchTerm`, date, item, price, link) VALUES (%s, %s, %s, %s, %s)]
+[parameters: ('sony wf-1000xm3', '6/2/2022 15:48', 'Sony WF-1000XM3 True Wireless Noise Cancelling Oordopjes, Bluetooth, inclusief laadstation, zwart, 1 paar', '139,00', 'amazon.nl/Sony-WF-1000XM3-Cancelling-Oordopjes-laadstation/dp/B07T2FGG2Z/ref=sr_1_5?keywords=SONY+WF-1000XM3&qid=1644162533&sr=8-5')]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+
+2022-02-06 15:49:04,021 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 15:49:09,802 - INFO - geckodriver successfully activated
+2022-02-06 15:49:15,410 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 15:49:20,821 - INFO - geckodriver successfully activated
+2022-02-06 16:25:53,786 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:25:59,754 - INFO - geckodriver successfully activated
+2022-02-06 16:26:06,138 - ERROR - Writing to DB failed! 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.DataError: (1406, "Data too long for column 'link' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 173, in write_to_db
+    self.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 244, in save_obj
+    _emit_insert_statements(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1221, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.DataError: (MySQLdb._exceptions.DataError) (1406, "Data too long for column 'link' at row 1")
+[SQL: INSERT INTO amazon (`searchTerm`, date, item, price, link) VALUES (%s, %s, %s, %s, %s)]
+[parameters: ('Sony WH-1000XM3', '6/2/2022 16:25', 'NAOGUNH MDR-10R audio kabel Vervangkabel voor compatibel met Sony MDR-10R / MDR-100ABN / MDR-XB950B1 / MDR-1000X / MDR-1ADAC / wh-1000xm3 vervangende audiokabel voor draadloze hoofdtelefoon (150 cm)', '9,59', 'amazon.nl/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A01700083II4IPVEJA7D&url=%2FNAOGUNH-Vervangkabel-MDR-XB950B1-ver ... (47 characters truncated) ... 3Dsr_1_1_sspa%3Fkeywords%3DSONY%2BWH-1000XM3%26qid%3D1644164759%26sr%3D8-1-spons%26psc%3D1&qualifier=1644164759&id=4467574793315706&widgetName=sp_atf')]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+
+2022-02-06 16:26:06,149 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:26:11,436 - INFO - geckodriver successfully activated
+2022-02-06 16:26:17,205 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:26:22,951 - INFO - geckodriver successfully activated
+2022-02-06 16:34:55,613 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:35:00,897 - INFO - geckodriver successfully activated
+2022-02-06 16:35:07,730 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:35:13,878 - INFO - geckodriver successfully activated
+2022-02-06 16:35:19,609 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:35:25,713 - INFO - geckodriver successfully activated

@@ -30,6 +30,8 @@ def main():
         extractor_function = storeModule.extract_record
 
         searchedItems = dbFunctions.searched_items_in_store(store)
+        if not searchedItems:
+            searchedItems = ["Sony WH-1000XM3"]
         for searchedItem in searchedItems:
             print(f"Scraping {searchedItem} for store {store}")
             scrapeFunction = Scrape(store,searchedItem,extractor_function)

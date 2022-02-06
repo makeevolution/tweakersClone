@@ -28,7 +28,7 @@ month =  str(time.localtime().tm_mon)
 year = str(time.localtime().tm_year)
 hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 else "0" + str(time.localtime().tm_hour)
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
-TIMEOUT = 8
+TIMEOUT = 20
 MAXATTEMPT = 3
 
 class SSHTunnelOperations:
@@ -42,30 +42,29 @@ class SSHTunnelOperations:
     def getURI(self):
         print(f"Obtaining URI to be able to write and read from database...")
         sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@127.0.0.1:\
-                                    {self.tunnel.local_bind_port}/{self.username}${self.schema}'
+                                    {self.tunnel.local_bind_port}/{self.schema}'
         print("URI obtained")
         return sqlalchemy_database_uri
 
     def start_tunnel(self):
         tunnel = sshtunnel.SSHTunnelForwarder(
-            ('ssh.pythonanywhere.com'),
-            ssh_username=self.username,
+            ('164.90.193.145'),
+            ssh_username='aldo',
             ssh_password=self.password,
             local_bind_address=("127.0.0.1",),
-            remote_bind_address=('aldosebastian.mysql.pythonanywhere-services.com', 3306)
+            remote_bind_address=('127.0.0.1', 3306)
         )
         # Start SSH tunneling
-        print("Connecting to ssh.pythonanywhere.com database using SSH tunneling")
+        print("Connecting to database using SSH tunneling")
         print("Starting tunnel...")
         for i in range(MAXATTEMPT):
             try:
                 with timeout(TIMEOUT,exception=RuntimeError):
-                    #time.sleep(14)
                     tunnel.start()
                     print("Tunnel started")
                 break
             except AttributeError:
-                # timeout module doesn't work since here we're on Windows
+                # timeout doesn't work since here we're on Windows
                 print("no re-attempts if this attempt fails...")
                 tunnel.start()
                 break
@@ -156,7 +155,7 @@ class DBOperationsRaw(DBoperations):
         print("Starting db session")
         self.session()
     
-    def read_from_db(self):
+    def read_from_db(self,store,query):
         # Don't forget to make this otherwise we break Interface Segregation principle
         pass
 
@@ -172,12 +171,14 @@ class DBOperationsRaw(DBoperations):
         try:
             print("writing to db...")
             self.session.commit()
+            return True
             print("write successful")
         except exc.SQLAlchemyError:
             scraperLogger(level = "ERROR", msg = f"Writing to DB failed! \n" \
                                                      + traceback.format_exc())            
             self.session.rollback()
-    
+            return False
+            
     def rollback_db_session(self):
         self.session.rollback()
 
@@ -194,7 +195,16 @@ class interrogateStoreRaw(DBOperationsRaw):
         pass
     def searched_items_in_store(self,storeName):
         storeTableAsObject=table_struct_to_object(storeName,self.Base)
-        searchTerms = self.session.query(storeTableAsObject.searchTerm).distinct()
+        # Improvement: Make a function that takes in a query object,
+        # which will execute it inside and retries if it fails
+        # due to losing mysql connection and requiring rollback
+        try:
+            searchTerms = self.session.query(storeTableAsObject.searchTerm).distinct()
+        except exc:
+            scraperLogger(level = "ERROR", msg = f"Getting searched items in store failed! \n" \
+                                                     + traceback.format_exc())
+        finally:    
+            self.session.rollback()
         searchTerms = [searchTerm[0] for searchTerm in searchTerms]
         # Remove empty search terms
         searchTerms = [*filter(None,searchTerms)]
@@ -211,9 +221,9 @@ def table_struct_to_object(store,declarative_base):
         "__table_args__": {'extend_existing': True},
         "id" : Column(Integer, primary_key=True),
         "searchTerm": Column(String(255), unique=False),
-        "date" : Column(String(100), unique=False),
+        "date" : Column(String(255), unique=False),
         "item" : Column(String(255), unique=False),
-        "price" :  Column(String(100), unique=False),
+        "price" :  Column(String(255), unique=False),
         "link" : Column(String(255), unique = False)
     })
     return locals()[store]

@@ -2,13 +2,13 @@ import pytest
 import sshtunnel
 import sqlalchemy
 import logging
+import os
+import sys
 
-import os, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-logger = logging.getLogger(__name__)
 sys.path.append(os.path.join(ROOT, 'src'))
-from src.webScraperCommon import SSHTunnelOperations, DBOperationsRaw
-from src.customExceptions import *
+from webScraperCommon import SSHTunnelOperations, DBOperationsRaw
+from customExceptions import *
 
 @pytest.fixture(scope="session")
 def tunnel_to_db():
@@ -33,7 +33,8 @@ def db_session_factory(tunnel_to_db):
 # This fixture gives a fresh db session for every test case
 @pytest.fixture(scope="function")
 def db_session(db_session_factory):
-    dbFunctions = db_session_factory.start_db_session()
-    yield dbFunctions
-    dbFunctions.rollback_db_session()
-    dbFunctions.close_db_session()
+    db_session_factory.start_db_session()
+    yield db_session_factory
+    db_session_factory.rollback_db_session()
+    db_session_factory.close_db_session()
+

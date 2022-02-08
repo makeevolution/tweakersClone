@@ -117,7 +117,7 @@ class DBOperationsFlask(DBoperations):
         try:
             # Create class of each db dynamically
             self.db.metadata.clear()
-            storeTableAsObject=table_struct_to_object(store,self.Base)
+            storeTableAsObject=table_struct_to_object(store,self.db.Model)
             # More on sqlalchemy query API here: https://docs.sqlalchemy.org/en/13/orm/query.html
             sqlQuery = self.session.query(storeTableAsObject).statement
             sessionEngine = storeTableAsObject.query.session.bind

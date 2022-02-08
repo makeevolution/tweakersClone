@@ -1232,3 +1232,33 @@ sqlalchemy.exc.DataError: (MySQLdb._exceptions.DataError) (1406, "Data too long 
 2022-02-06 16:35:13,878 - INFO - geckodriver successfully activated
 2022-02-06 16:35:19,609 - INFO - Attempt 1 of activating geckodriver
 2022-02-06 16:35:25,713 - INFO - geckodriver successfully activated
+2022-02-06 16:50:04,223 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:50:10,255 - INFO - geckodriver successfully activated
+2022-02-06 16:50:21,613 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:50:26,706 - INFO - geckodriver successfully activated
+2022-02-06 16:50:32,953 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:50:38,194 - INFO - geckodriver successfully activated
+2022-02-06 16:55:03,623 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:55:10,053 - INFO - geckodriver successfully activated
+2022-02-06 16:55:16,213 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:55:21,537 - INFO - geckodriver successfully activated
+2022-02-06 16:55:30,539 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 16:55:36,754 - INFO - geckodriver successfully activated
+2022-02-06 17:00:04,595 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 17:00:10,878 - INFO - geckodriver successfully activated
+2022-02-06 17:00:16,533 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 17:00:22,042 - INFO - geckodriver successfully activated
+2022-02-06 17:00:32,423 - INFO - Attempt 1 of activating geckodriver
+2022-02-06 17:00:37,877 - INFO - geckodriver successfully activated
+2022-02-07 04:04:13,629 - INFO - Attempt 1 of activating geckodriver
+2022-02-07 04:04:20,170 - INFO - geckodriver successfully activated
+2022-02-07 04:04:31,340 - INFO - Attempt 1 of activating geckodriver
+2022-02-07 04:04:37,169 - INFO - geckodriver successfully activated
+2022-02-07 04:04:42,148 - INFO - Attempt 1 of activating geckodriver
+2022-02-07 04:04:47,717 - INFO - geckodriver successfully activated
+2022-02-08 04:03:04,584 - INFO - Attempt 1 of activating geckodriver
+2022-02-08 04:03:09,806 - INFO - geckodriver successfully activated
+2022-02-08 04:03:17,906 - INFO - Attempt 1 of activating geckodriver
+2022-02-08 04:03:22,588 - INFO - geckodriver successfully activated
+2022-02-08 04:03:31,823 - INFO - Attempt 1 of activating geckodriver
+2022-02-08 04:03:36,545 - INFO - geckodriver successfully activated

@@ -82,7 +82,7 @@ server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(server)
 
 dbFunctions = interrogateStoreFlask(db)
-dbFunctions.start_session()
+dbFunctions.start_db_session()
 available_stores = dbFunctions.available_online_stores()
 default_store = available_stores[0]
 print(f"The default store is {default_store}")

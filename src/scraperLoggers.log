@@ -1262,3 +1262,102 @@ sqlalchemy.exc.DataError: (MySQLdb._exceptions.DataError) (1406, "Data too long 
 2022-02-08 04:03:22,588 - INFO - geckodriver successfully activated
 2022-02-08 04:03:31,823 - INFO - Attempt 1 of activating geckodriver
 2022-02-08 04:03:36,545 - INFO - geckodriver successfully activated
+2022-02-17 14:40:45,650 - ERROR - Reading from DB failed! 
+Traceback (most recent call last):
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3243, in _wrap_pool_connect
+    return fn()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 481, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 478, in checkout
+    dbapi_connection = rec.get_connection()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 607, in get_connection
+    self.__connect()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\MySQLdb\__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\MySQLdb\connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2013, "Lost connection to server at 'handshake: reading initial communication packet', system error: 0")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\webScraperCommon.py", line 124, in read_from_db
+    data = pd.read_sql(sqlQuery, sessionEngine)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\pandas\io\sql.py", line 628, in read_sql
+    return pandas_sql.read_query(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\pandas\io\sql.py", line 1579, in read_query
+    result = self.execute(*args)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\pandas\io\sql.py", line 1424, in execute
+    return self.connectable.execution_options().execute(*args, **kwargs)
+  File "<string>", line 2, in execute
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\deprecations.py", line 401, in warned
+    return fn(*args, **kwargs)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3138, in execute
+    connection = self.connect(close_with_result=True)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3197, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3276, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3246, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 2100, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\base.py", line 3243, in _wrap_pool_connect
+    return fn()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 481, in checkout
+    rec._checkin_failed(err, _fairy_was_created=False)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 478, in checkout
+    dbapi_connection = rec.get_connection()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 607, in get_connection
+    self.__connect()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\pool\base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\MySQLdb\__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\MySQLdb\connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2013, "Lost connection to server at 'handshake: reading initial communication packet', system error: 0")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+

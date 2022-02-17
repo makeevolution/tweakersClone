@@ -15,6 +15,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import traceback, os
 from customExceptions import *
+import datetime
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -183,7 +184,7 @@ content = html.Div(
     [
      html.Div(id="main-content")], style = CONTENT_STYLE
     )
-app = dash.Dash(server=server,external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
                                          dcc.Store(id="current-store-df")])
 
@@ -201,6 +202,7 @@ def _read_from_db(chosenStore):
     print("running _read_from_db()")
     chosenStore = "".join(chosenStore)
     df = dbFunctions.read_from_db(chosenStore)
+    #df.date = df.date.apply(lambda i:i.replace("/","-"))
     return df.to_json(orient="split")
 
 @app.callback(Output("items-available","options"),
@@ -216,15 +218,16 @@ def available_items_in_store(df):
                Input("current-store-df", "data"))
 def update_charts(df):
     print("running update_charts()")
-    df = pd.read_json(df,orient="split")
+    df = pd.read_json(df,orient="split",convert_dates=False,keep_default_dates=True)
     df.fillna("", inplace=True)
     uniqueItems = df.item.unique()
     output = []
-    
+
     for uniqueItem in uniqueItems:
         uniqueItemdf = df[df.item == uniqueItem]
+        uniqueItemdf = uniqueItemdf.drop_duplicates(subset = 'date', keep = 'last')
         
-        fig = px.line(uniqueItemdf, x="date", y="price")
+        fig = px.scatter(uniqueItemdf, x="date", y="price",color_discrete_sequence = ['red'])
         fig.update_layout(
             plot_bgcolor=colors['background'],
             paper_bgcolor=colors['background'],
@@ -239,6 +242,7 @@ def update_charts(df):
                                                           "color": colors["text"]})))
         output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
         output.append(html.Div(html.Br()))
+    print("update charts complete")
     return output
 
 if __name__ == "__main__":

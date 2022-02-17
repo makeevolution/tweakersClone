@@ -22,6 +22,7 @@ from urllib3 import Timeout
 from customExceptions import *
 from interruptingcow import timeout
 import subprocess
+import datetime
 
 day = str(time.localtime().tm_mday)
 month =  str(time.localtime().tm_mon)
@@ -122,6 +123,10 @@ class DBOperationsFlask(DBoperations):
             sqlQuery = self.session.query(storeTableAsObject).statement
             sessionEngine = storeTableAsObject.query.session.bind
             data = pd.read_sql(sqlQuery, sessionEngine)
+            if hasattr(data,'date'):
+                # Remove timestamp
+                data["date"] = data["date"].map(lambda i:str(datetime.datetime.strptime(i,'%d/%m/%Y %H:%M').date()))
+                # For each item, remove duplicate dates (i.e. we only one price per day for each item)
             print("reading complete!")
         except exc.SQLAlchemyError:
             scraperLogger(level = "ERROR", msg = f"Reading from DB failed! \n" \

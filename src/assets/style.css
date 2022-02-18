@@ -1,0 +1,6 @@
+.Select-control {
+    background-color: rgb(119, 119, 119) !important;
+  }
+.VirtualizedSelectOption {
+    background-color: rgb(119, 119, 119);
+}

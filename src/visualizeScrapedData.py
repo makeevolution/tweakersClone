@@ -25,19 +25,20 @@ SIDEBAR_STYLE = {
     'bottom': 0,
     'width': '20%',
     'padding': '20px 10px',
-    'background-color': '#f8f9fa'
+    'background-color': '#aaaaaa'
 }
 
 # the style arguments for the main content page.
 CONTENT_STYLE = {
     'margin-left': '25%',
     'margin-right': '5%',
-    'padding': '20px 10p'
+    'padding': '20px 10p',
+    'background-color': '#63636c'
 }
 
 TEXT_STYLE = {
     'textAlign': 'center',
-    'color': '#191970'
+    'color': '#000000'
 }
 
 CARD_TEXT_STYLE = {
@@ -47,7 +48,7 @@ CARD_TEXT_STYLE = {
 
 colors = {
     'background': '#111111',
-    'text': '#7FDBFF',
+    'text': '#ffffff',
     'graph': '#'
 }
 
@@ -181,12 +182,11 @@ sidebar = html.Div(
 )
 
 content = html.Div(
-    [
-     html.Div(id="main-content")], style = CONTENT_STYLE
+    [html.Div(id="main-content")], style = CONTENT_STYLE
     )
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
-                                         dcc.Store(id="current-store-df")])
+                                         dcc.Store(id="current-store-df")],style={"background-color":'#63636c'})
 
 @app.callback(Output("current-store","data"),
                Input("chosenStore", "value"))
@@ -221,30 +221,36 @@ def update_charts(df):
     df = pd.read_json(df,orient="split",convert_dates=False,keep_default_dates=True)
     df.fillna("", inplace=True)
     uniqueItems = df.item.unique()
-    output = []
+    output = [html.Br()]
 
     for uniqueItem in uniqueItems:
         uniqueItemdf = df[df.item == uniqueItem]
         uniqueItemdf = uniqueItemdf.drop_duplicates(subset = 'date', keep = 'last')
         
-        fig = px.scatter(uniqueItemdf, x="date", y="price",color_discrete_sequence = ['red'])
+        fig = px.scatter(uniqueItemdf, x="date", y="price", color_discrete_sequence = ['red'])
         fig.update_layout(
-            plot_bgcolor=colors['background'],
-            paper_bgcolor=colors['background'],
-            font_color=colors['text']
+            plot_bgcolor='#63636c',
+            paper_bgcolor='#63636c',
+            font_family="Courier New",
+            font_color="white",
+            title_font_family="Times New Roman",
+            title_font_color="red",
+            legend_title_font_color="green"
         )
+        
         itemLink = uniqueItemdf.iloc[0]["link"]
         # Title of item
 
         output.append(html.A(href="https://" + str(itemLink), 
                              children = html.Div(children = str(uniqueItem),
                                                  style = {"textAlign": "center", 
-                                                          "color": colors["text"]})))
+                                                          "color": colors["text"],
+                                                          "font-family": "Courier New, serif"})))
         output.append(dcc.Graph(id = str(uniqueItem), figure = fig))
-        output.append(html.Div(html.Br()))
+        output.append(html.Hr(style={"border":"1px dashed black"}))
     print("update charts complete")
     return output
 
 if __name__ == "__main__":
     app.init_app(server)
-    app.run_server(debug=True,host="0.0.0.0",port=5000,use_reloader=False)
+    app.run_server(debug=True,host="0.0.0.0",port=5000,use_reloader=True)

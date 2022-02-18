@@ -1361,3 +1361,19 @@ Traceback (most recent call last):
 sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2013, "Lost connection to server at 'handshake: reading initial communication packet', system error: 0")
 (Background on this error at: https://sqlalche.me/e/14/e3q8)
 
+2022-02-18 16:58:12,303 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "C:\Users\aldo-\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\visualizeScrapedData.py", line 65, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\aldo-\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-18 16:58:22,950 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "C:\Users\aldo-\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\visualizeScrapedData.py", line 65, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "C:\Users\aldo-\AppData\Local\Programs\Python\Python39\lib\os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+

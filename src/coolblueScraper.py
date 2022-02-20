@@ -32,31 +32,41 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
             raise("Exception in extract_record function; website may have changed their structure :(")
 
 def main():
-    from webScraperCommon import Scrape, DBOperationsRaw
+    from webScraperCommon import Scrape, SSHTunnelOperations, interrogateStoreRaw
     from inputProcessor import getSearchTermFromInput
+    import importlib
 
     try:
         storeName = re.search(r"\w+(?=Scraper.py)",__file__).group(0)
     except AttributeError:
         raise InvalidFilenameException
     searchTerm = getSearchTermFromInput()
-    
-    print(f"Scraping {storeName} for {searchTerm}")
-    
     try:
         username = os.environ["tweakersCloneUsername"]
         password = os.environ["tweakersClonePassword"]
     except KeyError as e:
         raise UnavailableCredentialsException(msg = traceback.format_exc())
+    
+    sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice")
+    
+    sshFunctions.start_tunnel()
+    URIForDB = sshFunctions.getURI()
+    
+    dbFunctions = interrogateStoreRaw(URIForDB)
+    dbFunctions.start_db_session()
 
-    scrapeFunction = Scrape(storeName,searchTerm,extract_record)
+    storeModule = importlib.import_module(storeName+"Scraper", package="")
+    extractor_function = storeModule.extract_record
+
+    print(f"Scraping {searchTerm} for store {storeName}")
+    scrapeFunction = Scrape(storeName,searchTerm,extractor_function)
     scrapingResult = scrapeFunction.scrapeStore()
-    try:
-        assert scrapingResult != []
-    except AssertionError:
-        raise EmptyResultException(storeName)
-    DBfunction = DBOperationsRaw(username,password,dialect="mysql",schema="dateItemPrice")
-    DBfunction.write_to_db(storeName,searchTerm,scrapingResult)
+    print(f"Writing data of item {searchTerm} to {storeName}")
+    dbFunctions.write_to_db(storeName,searchTerm,scrapingResult)
+    print(f"Done writing")
+
+    dbFunctions.close_db_session()
+    sshFunctions.close_tunnel()
     
 if __name__=="__main__":
     main()

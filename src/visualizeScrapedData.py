@@ -85,9 +85,15 @@ db = SQLAlchemy(server)
 
 dbFunctions = interrogateStoreFlask(db)
 dbFunctions.start_db_session()
+
 available_stores = dbFunctions.available_online_stores()
-default_store = available_stores[0]
-print(f"The default store is {default_store}")
+default_store = available_stores[2]
+
+searched_items = dbFunctions.searched_terms_in_store(default_store)
+default_search_term = searched_items[0]
+
+print(f"The default store is {default_store}, and default search term is {default_search_term}")
+
 controls = dbc.FormGroup(
     [
         html.P('Online Store', style = 
@@ -102,8 +108,9 @@ controls = dbc.FormGroup(
             'textAlign': 'center'
         }),
         dcc.Dropdown(
-            id='items-available',
-            value=['Select item'] # default value
+            id='searched-terms',
+            options=[{'label': str.capitalize(item), 'value': item} for item in searched_items],
+            value=default_search_term, # default value
         ),
         html.Br(),
         html.P('Range Slider', style={
@@ -188,6 +195,9 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
                                          dcc.Store(id="current-store-df")],style={"background-color":'#63636c'})
 
+# NEED TO MAKE CALLBACK AFTER SELECTING ITEM IN STORE TO FILTER OUT
+# SHOWN DATA!
+
 @app.callback(Output("current-store","data"),
                Input("chosenStore", "value"))
 def update_main_title(chosenStore):
@@ -205,20 +215,18 @@ def _read_from_db(chosenStore):
     #df.date = df.date.apply(lambda i:i.replace("/","-"))
     return df.to_json(orient="split")
 
-@app.callback(Output("items-available","options"),
+@app.callback(Output("searched-terms","options"),
                Input("current-store-df", "data"))
-def available_items_in_store(df):
-    print("running available_items_in_store()")
-    df = pd.read_json(df,orient="split")
-    df.fillna("", inplace=True)
-    searchTerms = df.searchTerm.unique()
-    return [{'label': str.capitalize(searchTerm), 'value': searchTerm} for searchTerm in searchTerms]
+def searched_terms_in_store(df):
+    return dbFunctions.searched_terms_in_store(default_store)
 
 @app.callback(Output("main-content","children"),
+               Input("searched-terms","value"),
                Input("current-store-df", "data"))
-def update_charts(df):
+def update_charts(currentSearchTerm,df):
     print("running update_charts()")
     df = pd.read_json(df,orient="split",convert_dates=False,keep_default_dates=True)
+    df = df[df.searchTerm == currentSearchTerm.lower()]
     df.fillna("", inplace=True)
     uniqueItems = df.item.unique()
     output = [html.Br()]
@@ -253,4 +261,4 @@ def update_charts(df):
 
 if __name__ == "__main__":
     app.init_app(server)
-    app.run_server(debug=True,host="0.0.0.0",port=5000,use_reloader=True)
+    app.run_server(debug=True,host="0.0.0.0",port=5000,use_reloader=False)

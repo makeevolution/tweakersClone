@@ -148,6 +148,12 @@ class interrogateStoreFlask(DBOperationsFlask):
     def available_online_stores(self):
         availableStores = inspect(self.db.engine).get_table_names()
         return availableStores
+    def searched_terms_in_store(self,store):
+        storeAsObj = table_struct_to_object(store,self.db.declarative_base())
+        # Return only unique search terms!
+        searchedTerms = set(self.db.session.query(storeAsObj.searchTerm).all())
+        return [searchedTerm[0] for searchedTerm in searchedTerms]
+
     
 class DBOperationsRaw(DBoperations):
     def __init__(self,sqlalchemy_database_uri):

@@ -150,9 +150,11 @@ class interrogateStoreFlask(DBOperationsFlask):
         return availableStores
     def searched_terms_in_store(self,store):
         storeAsObj = table_struct_to_object(store,self.db.declarative_base())
-        # Return only unique search terms!
-        searchedTerms = set(self.db.session.query(storeAsObj.searchTerm).all())
-        return [searchedTerm[0] for searchedTerm in searchedTerms]
+        # Get all search terms, and make them all lowercase
+        searchedTerms = [term[0].lower() for term in self.db.session.query(storeAsObj.searchTerm).all()]
+        # Return only unique search terms, case-insensitive
+        searchedTerms = set(searchedTerms)
+        return [searchedTerm for searchedTerm in searchedTerms]
 
     
 class DBOperationsRaw(DBoperations):

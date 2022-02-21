@@ -5,3 +5,20 @@
 .VirtualizedSelectOption {
     background-color: rgb(119, 119, 119);
 }
+
+/* CSS for loading message */
+*[data-dash-is-loading="true"]{
+  visibility: hidden;
+}
+*[data-dash-is-loading="true"]::before{
+  content: "Loading...";
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}

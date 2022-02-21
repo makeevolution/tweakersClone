@@ -15,7 +15,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import traceback, os
 from customExceptions import *
-import datetime
+import time
 
 # the style arguments for the sidebar.
 SIDEBAR_STYLE = {
@@ -113,69 +113,7 @@ controls = dbc.FormGroup(
             value=default_search_term, # default value
         ),
         html.Br(),
-        html.P('Range Slider', style={
-            'textAlign': 'center'
-        }),
-        dcc.RangeSlider(
-            id='range_slider',
-            min=0,
-            max=20,
-            step=0.5,
-            value=[5, 15]
-        ),
-        html.P('Check Box', style={
-            'textAlign': 'center'
-        }),
-        dbc.Card([dbc.Checklist(
-            id='check_list',
-            options=[{
-                'label': 'Value One',
-                'value': 'value1'
-            },
-                {
-                    'label': 'Value Two',
-                    'value': 'value2'
-                },
-                {
-                    'label': 'Value Three',
-                    'value': 'value3'
-                }
-            ],
-            value=['value1', 'value2'],
-            inline=True
-        )]),
-        html.Br(),
-        html.P('Radio Items', style={
-            'textAlign': 'center'
-        }),
-        dbc.Card([dbc.RadioItems(
-            id='radio_items',
-            options=[{
-                'label': 'Value One',
-                'value': 'value1'
-            },
-                {
-                    'label': 'Value Two',
-                    'value': 'value2'
-                },
-                {
-                    'label': 'Value Three',
-                    'value': 'value3'
-                }
-            ],
-            value='value1',
-            style={
-                'margin': 'auto'
-            }
-        )]),
-        html.Br(),
-        dbc.Button(
-            id='submit_button',
-            n_clicks=0,
-            children='Submit',
-            color='primary',
-            block=True
-        ),
+        html.Div(children=(html.P("test")))
     ]
 )
 
@@ -192,11 +130,19 @@ content = html.Div(
     [html.Div(id="main-content")], style = CONTENT_STYLE
     )
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.layout = html.Div([sidebar, content, dcc.Store(id="current-store",data="coolblue"),
-                                         dcc.Store(id="current-store-df")],style={"background-color":'#63636c'})
-
-# NEED TO MAKE CALLBACK AFTER SELECTING ITEM IN STORE TO FILTER OUT
-# SHOWN DATA!
+app.layout = html.Div([
+                        sidebar, content, dcc.Store(id="current-store",data="coolblue"),
+                                          dcc.Store(id="current-store-df"),
+                                          dcc.Loading(
+                                                id="loading-1",
+                                                type="default",
+                                                children=html.Div(id="loading-output-1"),
+                                                fullscreen=True,
+                                                style={'backgroundColor': 'transparent'}
+                                          ),
+                                         ],
+                                         style={"background-color":'#63636c'},
+                                         )
 
 @app.callback(Output("current-store","data"),
                Input("chosenStore", "value"))
@@ -204,21 +150,20 @@ def update_main_title(chosenStore):
     print("running update_main_title()")
     if chosenStore is None:
         chosenStore = default_store
-    return [chosenStore]
+    return chosenStore
 
 @app.callback(Output("current-store-df","data"),
                Input("current-store", "data"))
 def _read_from_db(chosenStore):
     print("running _read_from_db()")
-    chosenStore = "".join(chosenStore)
     df = dbFunctions.read_from_db(chosenStore)
-    #df.date = df.date.apply(lambda i:i.replace("/","-"))
     return df.to_json(orient="split")
 
 @app.callback(Output("searched-terms","options"),
-               Input("current-store-df", "data"))
-def searched_terms_in_store(df):
-    return dbFunctions.searched_terms_in_store(default_store)
+               Input("current-store", "data"))
+def searched_terms_in_store(chosenStore):
+    searched_terms = dbFunctions.searched_terms_in_store(chosenStore)
+    return [{'label': str.capitalize(term), 'value': term} for term in searched_terms]
 
 @app.callback(Output("main-content","children"),
                Input("searched-terms","value"),

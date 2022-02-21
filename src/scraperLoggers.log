@@ -1437,3 +1437,30 @@ Traceback (most recent call last):
     raise exception(reason)
 sshtunnel.BaseSSHTunnelForwarderError: Could not establish session to SSH gateway
 
+2022-02-21 16:16:37,465 - ERROR - URI for DB not attainable, : 
+Traceback (most recent call last):
+  File "C:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\webScraperCommon.py", line 63, in start_tunnel
+    with timeout(TIMEOUT,exception=RuntimeError):
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\interruptingcow\__init__.py", line 148, in __enter__
+    return super(Timeout, self).__enter__()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\interruptingcow\compat.py", line 14, in __enter__
+    return self.gen.__next__()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\interruptingcow\__init__.py", line 97, in timeout
+    set_sighandler()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\interruptingcow\__init__.py", line 77, in set_sighandler
+    current = signal.getsignal(signal.SIGALRM)
+AttributeError: module 'signal' has no attribute 'SIGALRM'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\visualizeScrapedData.py", line 74, in <module>
+    sshFunctions.start_tunnel()
+  File "C:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\webScraperCommon.py", line 70, in start_tunnel
+    tunnel.start()
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sshtunnel.py", line 1331, in start
+    self._raise(BaseSSHTunnelForwarderError,
+  File "c:\Users\320145763\OneDrive\job and portfolio\portfolio and programming\onlineWebscraper\src\env\lib\site-packages\sshtunnel.py", line 1174, in _raise
+    raise exception(reason)
+sshtunnel.BaseSSHTunnelForwarderError: Could not establish session to SSH gateway
+

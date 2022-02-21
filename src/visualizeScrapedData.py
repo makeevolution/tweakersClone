@@ -36,16 +36,6 @@ CONTENT_STYLE = {
     'background-color': '#63636c'
 }
 
-TEXT_STYLE = {
-    'textAlign': 'center',
-    'color': '#000000'
-}
-
-CARD_TEXT_STYLE = {
-    'textAlign': 'center',
-    'color': '#0074D9'
-}
-
 colors = {
     'background': '#111111',
     'text': '#ffffff',
@@ -96,16 +86,21 @@ print(f"The default store is {default_store}, and default search term is {defaul
 
 controls = dbc.FormGroup(
     [
-        html.P('Online Store', style = 
-            {'textAlign' : 'center'
+        html.P('Choose online store', style = 
+            {'textAlign' : 'center',
+            'fontFamily': "Courier New",
+            'fontSize': 16
         }),
         dcc.Dropdown(
             id='chosenStore',
             options=[{'label': str.capitalize(item), 'value': item} for item in available_stores],
             value=default_store,  # default value
         ),
-        html.P('Filter item', style={
-            'textAlign': 'center'
+        html.Br(),
+        html.P('Choose a search term currently being tracked', style={
+            'textAlign': 'center',
+            'fontFamily': "Courier New",
+            'fontSize': 16
         }),
         dcc.Dropdown(
             id='searched-terms',
@@ -113,13 +108,17 @@ controls = dbc.FormGroup(
             value=default_search_term, # default value
         ),
         html.Br(),
-        html.Div(children=(html.P("test")))
+        html.Div(children=(html.P("Hi! Choose the online store and the desired search term. \
+                                   The dashboard shows daily price history of the most relevant\
+                                   items that correspond to the search term. Click on the title\
+                                   to go to the item listing on the chosen store.",
+                                   style={"textAlign":"center"})))
     ]
 )
 
 sidebar = html.Div(
     [
-        html.H2('Parameters', style=TEXT_STYLE),
+        html.H2('TrackIt', style={'fontFamily': "Courier New"}),
         html.Hr(),
         controls
     ],

@@ -108,17 +108,19 @@ controls = dbc.FormGroup(
             value=default_search_term, # default value
         ),
         html.Br(),
-        html.Div(children=(html.P("Hi! Choose the online store and the desired search term. \
-                                   The dashboard shows daily price history of the most relevant\
-                                   items that correspond to the search term. Click on the title\
+        html.Div(children=(html.P("Hi! The dashboard shows daily price history of the most relevant\
+                                   items that correspond to the chosen search term. \n\n\
+                                   Choose the online store and the desired search term.\n\n Click on the title\
                                    to go to the item listing on the chosen store.",
-                                   style={"textAlign":"center"})))
+                                   style={"textAlign":"center",
+                                          "fontFamily": "Courier New"})))
     ]
 )
 
 sidebar = html.Div(
     [
-        html.H2('TrackIt', style={'fontFamily': "Courier New"}),
+        html.H2('TrackIt', style={'fontFamily': "Courier New",
+                                  "textAlign": "center"}),
         html.Hr(),
         controls
     ],

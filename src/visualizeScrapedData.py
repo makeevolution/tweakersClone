@@ -109,8 +109,8 @@ controls = dbc.FormGroup(
         ),
         html.Br(),
         html.Div(children=(html.P("Hi! The dashboard shows daily price history of the most relevant\
-                                   items that correspond to the chosen search term. \n\n\
-                                   Choose the online store and the desired search term.\n\n Click on the title\
+                                   items that correspond to the chosen search term.\
+                                   Choose the online store and the desired search term. Click on the title\
                                    to go to the item listing on the chosen store.",
                                    style={"textAlign":"center",
                                           "fontFamily": "Courier New"})))
@@ -130,7 +130,7 @@ sidebar = html.Div(
 content = html.Div(
     [html.Div(id="main-content")], style = CONTENT_STYLE
     )
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(server=server,external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([
                         sidebar, content, dcc.Store(id="current-store",data="coolblue"),
                                           dcc.Store(id="current-store-df"),

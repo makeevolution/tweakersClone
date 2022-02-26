@@ -1232,3 +1232,23 @@ sqlalchemy.exc.DataError: (MySQLdb._exceptions.DataError) (1406, "Data too long 
 2022-02-06 16:35:13,878 - INFO - geckodriver successfully activated
 2022-02-06 16:35:19,609 - INFO - Attempt 1 of activating geckodriver
 2022-02-06 16:35:25,713 - INFO - geckodriver successfully activated
+2022-02-26 10:29:49,931 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:29:55,549 - INFO - geckodriver successfully activated
+2022-02-26 10:30:02,748 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:30:10,176 - INFO - geckodriver successfully activated
+2022-02-26 10:30:18,209 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:30:24,312 - INFO - geckodriver successfully activated
+2022-02-26 10:30:29,426 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:30:35,228 - INFO - geckodriver successfully activated
+2022-02-26 10:30:39,777 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:30:45,245 - INFO - geckodriver successfully activated
+2022-02-26 10:30:47,160 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:30:52,316 - INFO - geckodriver successfully activated
+2022-02-26 10:35:21,929 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:35:27,840 - INFO - geckodriver successfully activated
+2022-02-26 10:35:29,609 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:35:34,881 - INFO - geckodriver successfully activated
+2022-02-26 10:36:23,690 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:36:29,411 - INFO - geckodriver successfully activated
+2022-02-26 10:36:31,605 - INFO - Attempt 1 of activating geckodriver
+2022-02-26 10:36:36,922 - INFO - geckodriver successfully activated

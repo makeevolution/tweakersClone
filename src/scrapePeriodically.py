@@ -25,7 +25,7 @@ def main():
     dbFunctions = interrogateStoreRaw(URIForDB)
     dbFunctions.start_db_session()
     #make try excepts here too
-    for store in all_stores:
+    for store in ["coolblue"]:
         storeModule = importlib.import_module(store+"Scraper", package="")
         extractor_function = storeModule.extract_record
 

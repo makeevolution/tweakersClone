@@ -32,6 +32,11 @@ class ErrorDuringScrapingException(Exception):
         super().__init__(msg, *args, **kwargs)
         scraperLogger(level='ERROR', msg = 'Some error happened during scraping: ' + msg)
         sys.exit(1)
+class WeMayBeBlockedException(Exception):
+    def __init__(self,msg=f'', *args, **kwargs):
+        super().__init__(msg, *args, **kwargs)
+        scraperLogger(level='ERROR', msg = 'Some error happened during scraping: ' + msg)
+        sys.exit(1)
 class EmptyResultException(Exception):
     def __init__(self,storeName='', msg=f'Scraping result is empty, please check manually if the item desired exists in store ', **kwargs):
         super().__init__(msg + storeName, **kwargs)

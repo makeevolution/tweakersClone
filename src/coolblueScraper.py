@@ -17,7 +17,8 @@ import re, os
 
 def extract_record(searchTerm,soup,itemPriceLink,storeName):
     divItemPrice = soup.find_all('div',['product-card__details'])
-    print(divItemPrice)
+    if divItemPrice == []:
+        scraperLogger(msg=f"Soup can't find div for {storeName} with search term {searchTerm}") 
     for div in divItemPrice:
         try:
             fullTitle = [child.get("title") for child in div.findChildren("a") if child.has_attr("title")][0]
@@ -26,11 +27,7 @@ def extract_record(searchTerm,soup,itemPriceLink,storeName):
             link = [storeName + ".nl" +child.get("href") 
                     for child in div.findChildren("a") 
                     if child.has_attr("href")][0]
-            print(fullTitle)
-            print(fullPrice)
-            print(re.search(searchTerm,fullTitle,re.IGNORECASE))
             if re.search(searchTerm, fullTitle, re.IGNORECASE):
-                print("appending")
                 itemPriceLink.append((fullTitle,fullPrice,link))
         except Exception:
             raise("Exception in extract_record function; website may have changed their structure :(")

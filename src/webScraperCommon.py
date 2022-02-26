@@ -17,6 +17,7 @@ import pandas as pd
 import re, os
 from abc import ABC, abstractmethod
 import platform
+import requests
 
 from urllib3 import Timeout
 from customExceptions import *
@@ -274,12 +275,15 @@ class Scrape():
      
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
+        request_code = requests.get(self._get_url(page=1)).status_code
+        if request_code != "200":
+            raise WeMayBeBlockedException(msg = "Get request to store failed, we may be blocked by the store. \
+                                                Turn on VPN to fix this.")
         try:
             print("Scraping...")
-            for page in range(1,2):
-                self.driver.get(self._get_url(page))
-                self.soup = BeautifulSoup(self.driver.page_source)
-                self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
+            self.driver.get(self._get_url(page=1))
+            self.soup = BeautifulSoup(self.driver.page_source)
+            self.extract_record(self.searchTerm,self.soup,self.itemPriceLink,self.storeName)
             return self.itemPriceLink
         except Exception:
             raise ErrorDuringScrapingException(msg = traceback.format_exc())

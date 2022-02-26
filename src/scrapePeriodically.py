@@ -33,12 +33,12 @@ def main():
         if not searchedItems:
             searchedItems = ["Sony WH-1000XM3"]
         for searchedItem in searchedItems:
-            print(f"Scraping {searchedItem} for store {store}")
+            scraperLogger(f"Scraping {searchedItem} for store {store}")
             scrapeFunction = Scrape(store,searchedItem,extractor_function)
             scrapingResult = scrapeFunction.scrapeStore()
-            print(f"Writing data of item {searchedItem} to {store}")
+            scraperLogger(f"Writing data of item {searchedItem} to {store}")
             dbFunctions.write_to_db(store,searchedItem,scrapingResult)
-            print(f"Done writing")
+            scraperLogger(f"Done writing")
     
     dbFunctions.close_db_session()
     sshFunctions.close_tunnel()
@@ -47,5 +47,5 @@ if __name__=="__main__":
     try:
         main()
     except Exception:
-        print(traceback.format_exc())
+        scraperLogger(traceback.format_exc())
         sys.exit(1)

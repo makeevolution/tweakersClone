@@ -1464,3 +1464,3015 @@ Traceback (most recent call last):
     raise exception(reason)
 sshtunnel.BaseSSHTunnelForwarderError: Could not establish session to SSH gateway
 
+2022-02-26 17:47:48,064 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:48,064 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:48,065 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:51,991 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:52,000 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:52,051 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:56,015 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:56,017 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:47:56,094 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:00,309 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:00,567 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:00,662 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:04,967 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:05,159 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:05,222 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:08,906 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:09,101 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:09,153 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:13,156 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:13,312 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:13,388 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:17,189 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:17,354 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:17,411 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:21,160 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:21,346 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:21,434 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:25,319 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:25,432 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:25,486 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:29,380 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:29,514 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:29,526 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:33,456 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:33,511 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:33,596 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:37,233 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:37,314 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:37,367 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:40,861 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:40,946 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:41,029 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:44,631 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:44,688 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:44,795 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:48,427 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:48,553 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:48,621 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:52,500 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:52,633 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:48:52,737 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:10,649 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:10,651 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:10,680 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:14,638 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:14,739 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:14,808 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:18,531 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:18,677 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:18,771 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:22,747 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:22,895 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:22,950 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:26,800 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:26,953 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:27,104 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:30,705 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:30,877 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:30,960 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:34,573 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:34,798 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:34,880 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:38,612 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:38,772 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:38,814 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:42,801 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:42,928 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:42,976 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:46,907 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:47,035 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:47,086 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:50,882 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:50,960 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:51,134 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:55,243 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:55,314 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:55,525 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:59,599 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:59,642 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:52:59,876 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:04,514 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:04,564 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:04,806 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:09,080 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:09,126 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:09,330 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:13,440 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:13,458 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:13,685 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:17,885 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:17,941 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:18,162 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:22,519 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:22,568 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:22,820 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:27,253 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:27,363 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:27,496 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:31,850 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:31,987 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:32,097 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:35,821 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:35,934 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:36,003 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:39,496 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:39,591 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:39,705 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:43,225 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:43,336 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:43,443 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:47,165 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:47,278 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:47,382 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:50,947 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:51,050 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:51,144 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:55,149 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:55,237 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:55,370 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:59,546 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:59,649 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:53:59,716 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:04,248 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:04,394 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:04,518 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:08,582 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:08,704 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:08,801 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:13,071 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:13,146 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:13,256 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:17,350 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:17,394 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:17,505 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:21,282 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:21,341 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:21,456 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:25,388 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:25,425 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:25,551 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:29,469 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:29,519 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:29,621 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:33,360 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:33,424 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:33,505 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:37,199 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:37,263 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:37,353 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:40,882 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:40,952 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:41,072 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:44,585 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:44,690 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:44,810 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:48,409 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:48,469 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:48,575 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:52,267 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:52,427 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:52,487 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:56,035 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:56,118 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:54:56,186 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:00,330 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:00,476 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:00,601 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:05,679 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:05,786 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:05,862 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:10,134 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:10,294 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:10,356 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:14,302 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:14,441 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:14,474 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:18,390 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:18,533 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:18,561 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:22,953 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:23,059 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:23,090 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:27,329 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:27,385 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:27,514 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:31,392 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:31,486 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:31,549 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:35,739 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:35,828 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:35,959 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:39,820 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:39,876 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:40,034 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:43,756 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:43,838 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:44,043 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:47,857 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:47,911 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:48,138 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:51,971 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:52,035 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:52,266 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:55,869 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:55,929 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:56,155 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:59,907 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:55:59,945 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:00,234 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:04,749 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:04,764 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:05,071 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:09,024 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:09,054 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:09,293 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:13,203 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:13,288 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:13,441 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:17,814 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:17,884 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:18,035 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:21,783 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:21,868 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:22,049 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:25,969 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:26,046 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:26,225 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:29,897 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:30,043 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:30,168 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:33,856 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:33,995 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:34,068 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:37,668 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:37,758 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:37,877 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:41,465 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:41,522 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:41,655 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:45,289 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:45,403 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:45,456 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:49,218 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:49,281 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:49,392 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:53,286 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:53,354 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:53,534 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:57,652 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:57,687 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:56:57,872 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:02,041 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:02,107 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:02,354 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:06,326 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:06,354 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:06,627 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:10,583 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:10,745 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:11,189 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:15,029 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:15,081 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:15,300 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:19,253 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:19,336 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:19,517 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:23,589 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:23,652 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:23,830 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:27,706 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:27,768 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:27,923 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:31,655 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:31,745 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:31,903 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:35,469 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:35,577 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:35,697 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:39,234 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:39,339 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:39,421 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:42,996 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:43,085 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:43,181 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:46,785 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:46,861 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:46,966 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:50,541 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:50,619 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:50,736 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:54,867 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:54,960 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:55,100 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:58,655 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:58,727 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:57:58,878 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:02,768 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:02,819 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:02,988 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:06,887 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:06,936 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:07,117 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:10,673 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:10,770 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:10,894 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:14,520 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:14,577 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:14,707 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:18,250 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:18,352 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:18,429 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:22,215 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:22,333 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:22,423 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:26,545 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:26,643 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:26,768 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:30,664 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:30,776 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:30,831 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:34,285 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:34,389 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:34,469 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:37,920 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:38,030 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:38,114 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:41,633 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:41,712 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:41,809 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:45,412 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:45,515 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:45,613 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:49,174 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:49,260 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:49,380 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:52,927 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:53,000 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-26 17:58:53,108 - ERROR - Credentials of database not available, traceback: 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/visualizeScrapedData.py", line 56, in <module>
+    username = os.environ["tweakersCloneUsername"]
+  File "/usr/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'tweakersCloneUsername'
+
+2022-02-27 04:03:03,938 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:03:09,910 - INFO - geckodriver successfully activated
+2022-02-27 04:03:15,716 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:03:20,453 - INFO - geckodriver successfully activated
+2022-02-27 04:03:31,554 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:03:36,275 - INFO - geckodriver successfully activated
+2022-02-27 04:03:43,781 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:03:48,121 - INFO - geckodriver successfully activated
+2022-02-27 04:03:55,489 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:03:59,952 - INFO - geckodriver successfully activated
+2022-02-27 04:04:01,442 - INFO - Attempt 1 of activating geckodriver
+2022-02-27 04:04:06,097 - INFO - geckodriver successfully activated
+2022-02-28 04:07:48,810 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:07:53,900 - INFO - geckodriver successfully activated
+2022-02-28 04:07:59,473 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:08:04,564 - INFO - geckodriver successfully activated
+2022-02-28 04:08:10,297 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:08:14,858 - INFO - geckodriver successfully activated
+2022-02-28 04:08:20,023 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:08:24,889 - INFO - geckodriver successfully activated
+2022-02-28 04:08:31,930 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:08:36,671 - INFO - geckodriver successfully activated
+2022-02-28 04:08:40,105 - INFO - Attempt 1 of activating geckodriver
+2022-02-28 04:08:44,794 - INFO - geckodriver successfully activated
+2022-03-01 04:03:04,754 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:03:10,984 - INFO - geckodriver successfully activated
+2022-03-01 04:03:17,524 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:03:23,110 - INFO - geckodriver successfully activated
+2022-03-01 04:03:29,689 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:03:35,016 - INFO - geckodriver successfully activated
+2022-03-01 04:03:40,286 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:03:45,660 - INFO - geckodriver successfully activated
+2022-03-01 04:03:51,490 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:03:57,402 - INFO - geckodriver successfully activated
+2022-03-01 04:04:01,073 - INFO - Attempt 1 of activating geckodriver
+2022-03-01 04:04:07,096 - INFO - geckodriver successfully activated
+2022-03-02 04:03:04,060 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:03:09,644 - INFO - geckodriver successfully activated
+2022-03-02 04:03:15,941 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:03:20,861 - INFO - geckodriver successfully activated
+2022-03-02 04:03:28,708 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:03:34,074 - INFO - geckodriver successfully activated
+2022-03-02 04:03:39,283 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:03:44,436 - INFO - geckodriver successfully activated
+2022-03-02 04:03:50,386 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:03:55,725 - INFO - geckodriver successfully activated
+2022-03-02 04:03:59,282 - INFO - Attempt 1 of activating geckodriver
+2022-03-02 04:04:05,381 - INFO - geckodriver successfully activated
+2022-03-03 04:13:28,890 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:13:34,354 - INFO - geckodriver successfully activated
+2022-03-03 04:13:39,845 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:13:44,823 - INFO - geckodriver successfully activated
+2022-03-03 04:13:51,006 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:13:56,143 - INFO - geckodriver successfully activated
+2022-03-03 04:14:02,505 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:14:08,221 - INFO - geckodriver successfully activated
+2022-03-03 04:14:13,967 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:14:19,345 - INFO - geckodriver successfully activated
+2022-03-03 04:14:23,248 - INFO - Attempt 1 of activating geckodriver
+2022-03-03 04:14:28,468 - INFO - geckodriver successfully activated
+2022-03-04 04:05:52,878 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:05:58,252 - INFO - geckodriver successfully activated
+2022-03-04 04:06:04,736 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:06:10,394 - INFO - geckodriver successfully activated
+2022-03-04 04:06:18,978 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:06:24,137 - INFO - geckodriver successfully activated
+2022-03-04 04:06:29,957 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:06:35,530 - INFO - geckodriver successfully activated
+2022-03-04 04:06:41,614 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:06:46,462 - INFO - geckodriver successfully activated
+2022-03-04 04:06:49,862 - INFO - Attempt 1 of activating geckodriver
+2022-03-04 04:06:54,526 - INFO - geckodriver successfully activated
+2022-03-05 04:03:04,895 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:03:10,508 - INFO - geckodriver successfully activated
+2022-03-05 04:03:18,295 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:03:23,954 - INFO - geckodriver successfully activated
+2022-03-05 04:03:30,390 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:03:35,338 - INFO - geckodriver successfully activated
+2022-03-05 04:03:40,992 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:03:45,736 - INFO - geckodriver successfully activated
+2022-03-05 04:03:54,580 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:03:59,580 - INFO - geckodriver successfully activated
+2022-03-05 04:04:03,166 - INFO - Attempt 1 of activating geckodriver
+2022-03-05 04:04:08,655 - INFO - geckodriver successfully activated
+2022-03-06 04:03:09,348 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:03:15,802 - INFO - geckodriver successfully activated
+2022-03-06 04:03:23,452 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:03:28,697 - INFO - geckodriver successfully activated
+2022-03-06 04:03:35,226 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:03:40,597 - INFO - geckodriver successfully activated
+2022-03-06 04:03:45,644 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:03:50,745 - INFO - geckodriver successfully activated
+2022-03-06 04:03:56,538 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:04:02,231 - INFO - geckodriver successfully activated
+2022-03-06 04:04:04,075 - INFO - Attempt 1 of activating geckodriver
+2022-03-06 04:04:10,006 - INFO - geckodriver successfully activated
+2022-03-07 04:07:48,965 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:07:54,352 - INFO - geckodriver successfully activated
+2022-03-07 04:07:59,295 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:08:04,266 - INFO - geckodriver successfully activated
+2022-03-07 04:08:13,908 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:08:18,559 - INFO - geckodriver successfully activated
+2022-03-07 04:08:23,420 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:08:28,143 - INFO - geckodriver successfully activated
+2022-03-07 04:08:36,728 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:08:41,334 - INFO - geckodriver successfully activated
+2022-03-07 04:08:42,689 - INFO - Attempt 1 of activating geckodriver
+2022-03-07 04:08:47,263 - INFO - geckodriver successfully activated
+2022-03-08 04:03:04,914 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:03:10,695 - INFO - geckodriver successfully activated
+2022-03-08 04:03:22,272 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:03:27,807 - INFO - geckodriver successfully activated
+2022-03-08 04:03:38,014 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:03:42,827 - INFO - geckodriver successfully activated
+2022-03-08 04:03:48,218 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:03:52,866 - INFO - geckodriver successfully activated
+2022-03-08 04:03:59,614 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:04:05,175 - INFO - geckodriver successfully activated
+2022-03-08 04:04:06,763 - INFO - Attempt 1 of activating geckodriver
+2022-03-08 04:04:11,826 - INFO - geckodriver successfully activated
+2022-03-09 04:06:05,565 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:06:11,390 - INFO - geckodriver successfully activated
+2022-03-09 04:06:18,900 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:06:24,481 - INFO - geckodriver successfully activated
+2022-03-09 04:06:32,621 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:06:37,598 - INFO - geckodriver successfully activated
+2022-03-09 04:06:42,970 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:06:48,228 - INFO - geckodriver successfully activated
+2022-03-09 04:06:54,165 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:06:58,950 - INFO - geckodriver successfully activated
+2022-03-09 04:07:02,506 - INFO - Attempt 1 of activating geckodriver
+2022-03-09 04:07:07,774 - INFO - geckodriver successfully activated
+2022-03-10 04:06:09,503 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:06:15,112 - INFO - geckodriver successfully activated
+2022-03-10 04:06:20,942 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:06:26,416 - INFO - geckodriver successfully activated
+2022-03-10 04:06:32,097 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:06:36,941 - INFO - geckodriver successfully activated
+2022-03-10 04:06:41,662 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:06:46,311 - INFO - geckodriver successfully activated
+2022-03-10 04:06:50,096 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:06:55,028 - INFO - geckodriver successfully activated
+2022-03-10 04:06:56,400 - INFO - Attempt 1 of activating geckodriver
+2022-03-10 04:07:01,476 - INFO - geckodriver successfully activated
+2022-03-11 04:06:38,214 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:06:43,706 - INFO - geckodriver successfully activated
+2022-03-11 04:06:48,948 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:06:53,502 - INFO - geckodriver successfully activated
+2022-03-11 04:06:58,226 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:07:03,731 - INFO - geckodriver successfully activated
+2022-03-11 04:07:08,880 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:07:14,123 - INFO - geckodriver successfully activated
+2022-03-11 04:07:18,158 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:07:23,026 - INFO - geckodriver successfully activated
+2022-03-11 04:07:24,540 - INFO - Attempt 1 of activating geckodriver
+2022-03-11 04:07:29,639 - INFO - geckodriver successfully activated
+2022-03-12 04:03:04,533 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:10,032 - INFO - geckodriver successfully activated
+2022-03-12 04:03:15,328 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:20,260 - INFO - geckodriver successfully activated
+2022-03-12 04:03:25,627 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:30,570 - INFO - geckodriver successfully activated
+2022-03-12 04:03:34,476 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:39,131 - INFO - geckodriver successfully activated
+2022-03-12 04:03:42,992 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:47,633 - INFO - geckodriver successfully activated
+2022-03-12 04:03:49,116 - INFO - Attempt 1 of activating geckodriver
+2022-03-12 04:03:53,769 - INFO - geckodriver successfully activated
+2022-03-13 04:06:04,241 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:10,231 - INFO - geckodriver successfully activated
+2022-03-13 04:06:17,073 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:22,661 - INFO - geckodriver successfully activated
+2022-03-13 04:06:29,261 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:34,352 - INFO - geckodriver successfully activated
+2022-03-13 04:06:38,585 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:43,533 - INFO - geckodriver successfully activated
+2022-03-13 04:06:47,470 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:52,221 - INFO - geckodriver successfully activated
+2022-03-13 04:06:53,705 - INFO - Attempt 1 of activating geckodriver
+2022-03-13 04:06:58,174 - INFO - geckodriver successfully activated
+2022-03-14 04:04:26,145 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:04:31,742 - INFO - geckodriver successfully activated
+2022-03-14 04:04:37,214 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:04:41,953 - INFO - geckodriver successfully activated
+2022-03-14 04:04:47,107 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:04:51,969 - INFO - geckodriver successfully activated
+2022-03-14 04:04:55,799 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:05:00,671 - INFO - geckodriver successfully activated
+2022-03-14 04:05:06,007 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:05:11,448 - INFO - geckodriver successfully activated
+2022-03-14 04:05:13,009 - INFO - Attempt 1 of activating geckodriver
+2022-03-14 04:05:18,294 - INFO - geckodriver successfully activated
+2022-03-15 04:03:29,844 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:03:35,595 - INFO - geckodriver successfully activated
+2022-03-15 04:03:40,832 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:03:45,514 - INFO - geckodriver successfully activated
+2022-03-15 04:03:50,857 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:03:55,498 - INFO - geckodriver successfully activated
+2022-03-15 04:03:59,610 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:04:05,006 - INFO - geckodriver successfully activated
+2022-03-15 04:04:09,078 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:04:14,194 - INFO - geckodriver successfully activated
+2022-03-15 04:04:15,634 - INFO - Attempt 1 of activating geckodriver
+2022-03-15 04:04:20,649 - INFO - geckodriver successfully activated
+2022-03-16 04:03:03,725 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:08,949 - INFO - geckodriver successfully activated
+2022-03-16 04:03:14,501 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:19,389 - INFO - geckodriver successfully activated
+2022-03-16 04:03:24,704 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:29,944 - INFO - geckodriver successfully activated
+2022-03-16 04:03:34,144 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:38,901 - INFO - geckodriver successfully activated
+2022-03-16 04:03:43,259 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:48,208 - INFO - geckodriver successfully activated
+2022-03-16 04:03:49,686 - INFO - Attempt 1 of activating geckodriver
+2022-03-16 04:03:54,502 - INFO - geckodriver successfully activated
+2022-03-17 04:07:06,636 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:12,390 - INFO - geckodriver successfully activated
+2022-03-17 04:07:17,744 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:22,773 - INFO - geckodriver successfully activated
+2022-03-17 04:07:28,914 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:34,057 - INFO - geckodriver successfully activated
+2022-03-17 04:07:38,328 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:43,005 - INFO - geckodriver successfully activated
+2022-03-17 04:07:47,153 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:52,224 - INFO - geckodriver successfully activated
+2022-03-17 04:07:53,915 - INFO - Attempt 1 of activating geckodriver
+2022-03-17 04:07:58,835 - INFO - geckodriver successfully activated

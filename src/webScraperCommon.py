@@ -29,25 +29,31 @@ month =  str(time.localtime().tm_mon)
 year = str(time.localtime().tm_year)
 hour = str(time.localtime().tm_hour) if len(str(time.localtime().tm_hour)) >= 2 else "0" + str(time.localtime().tm_hour)
 minute = str(time.localtime().tm_min) if len(str(time.localtime().tm_min)) >= 2 else "0" + str(time.localtime().tm_min)
-TIMEOUT = 20
+TIMEOUT = 200
 MAXATTEMPT = 3
 
 class SSHTunnelOperations:
-    def __init__(self,username,password,dialect,schema):
+    def __init__(self,username,password,dialect,schema,remoteTunnel=True):
         self.username = username
         self.password = password
         self.dialect = dialect
         self.schema = schema
         self.tunnel = None
+        self.remoteTunnel= remoteTunnel
 
     def getURI(self):
-        print(f"Obtaining URI to be able to write and read from database...")
-        sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@127.0.0.1:\
+        scraperLogger(msg=f"Obtaining URI to be able to write and read from database...")
+        if self.remoteTunnel:
+            sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@127.0.0.1:\
                                     {self.tunnel.local_bind_port}/{self.schema}'
-        print("URI obtained")
+        else:
+            sqlalchemy_database_uri = f'{self.dialect}://{self.username}:{self.password}@localhost:3306/{self.schema}'
+        scraperLogger(msg="URI obtained")
         return sqlalchemy_database_uri
 
     def start_tunnel(self):
+        if not self.remoteTunnel:
+            return
         tunnel = sshtunnel.SSHTunnelForwarder(
             ('164.90.193.145'),
             ssh_username='aldo',
@@ -56,17 +62,17 @@ class SSHTunnelOperations:
             remote_bind_address=('127.0.0.1', 3306)
         )
         # Start SSH tunneling
-        print("Connecting to database using SSH tunneling")
-        print("Starting tunnel...")
+        scraperLogger(msg="Connecting to database using SSH tunneling")
+        scraperLogger(msg="Starting tunnel...")
         for i in range(MAXATTEMPT):
             try:
                 with timeout(TIMEOUT,exception=RuntimeError):
                     tunnel.start()
-                    print("Tunnel started")
+                    scraperLogger(msg="Tunnel started")
                 break
             except AttributeError:
                 # timeout doesn't work since here we're on Windows
-                print("no re-attempts if this attempt fails...")
+                scraperLogger(msg="no re-attempts if this attempt fails...")
                 tunnel.start()
                 break
             except (RuntimeError, 
@@ -80,7 +86,7 @@ class SSHTunnelOperations:
         self.tunnel = tunnel
 
     def close_tunnel(self):
-        print("Closing tunnel...")
+        scraperLogger(msg="Closing tunnel...")
         self.tunnel.close()
 
 class DBoperations(ABC):
@@ -109,12 +115,12 @@ class DBOperationsFlask(DBoperations):
         self.db = db
     
     def start_db_session(self):
-        print("Starting db session...")
+        scraperLogger(msg="Starting db session...")
         self.session=self.db.session()
             
     def read_from_db(self,store):
         store = "".join(store)
-        print("reading data from " + store + "...")
+        scraperLogger(msg="reading data from " + store + "...")
         try:
             # Create class of each db dynamically
             self.db.metadata.clear()
@@ -127,7 +133,7 @@ class DBOperationsFlask(DBoperations):
                 # Remove timestamp
                 data["date"] = data["date"].map(lambda i:str(datetime.datetime.strptime(i,'%d/%m/%Y %H:%M').date()))
                 # For each item, remove duplicate dates (i.e. we only one price per day for each item)
-            print("reading complete!")
+            scraperLogger(msg="reading complete!")
         except exc.SQLAlchemyError:
             scraperLogger(level = "ERROR", msg = f"Reading from DB failed! \n" \
                                                      + traceback.format_exc())
@@ -141,7 +147,7 @@ class DBOperationsFlask(DBoperations):
         self.session.rollback()
   
     def close_db_session(self):
-        print("closing db session")
+        scraperLogger(msg="closing db session")
         self.session.close()
 
 class interrogateStoreFlask(DBOperationsFlask):
@@ -165,7 +171,7 @@ class DBOperationsRaw(DBoperations):
         self.session = scoped_session(sessionmaker(self.engine))
 
     def start_db_session(self):
-        print("Starting db session")
+        scraperLogger(msg="Starting db session")
         self.session()
     
     def read_from_db(self,store,query):
@@ -182,10 +188,10 @@ class DBOperationsRaw(DBoperations):
                                      item=itemScraped,price=priceScraped,link=itemLink)
             self.session.add(current)
         try:
-            print("writing to db...")
+            scraperLogger(msg="writing to db...")
             self.session.commit()
             return True
-            print("write successful")
+            scraperLogger(msg="write successful")
         except exc.SQLAlchemyError:
             scraperLogger(level = "ERROR", msg = f"Writing to DB failed! \n" \
                                                      + traceback.format_exc())            
@@ -196,7 +202,7 @@ class DBOperationsRaw(DBoperations):
         self.session.rollback()
 
     def close_db_session(self):
-        print("Closing db session")
+        scraperLogger(msg="Closing db session")
         self.session.close()
 
 class interrogateStoreRaw(DBOperationsRaw):
@@ -273,7 +279,7 @@ class Scrape():
             except AttributeError:
                 # timeout module doesn't work since here we're on Windows
                 scraperLogger(msg = f"Attempt {attempt + 1} of activating geckodriver")
-                print("no re-attempts if this attempt fails...")
+                scraperLogger(msg="no re-attempts if this attempt fails...")
                 self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
                 scraperLogger(msg = "geckodriver successfully activated")
                 break
@@ -288,7 +294,7 @@ class Scrape():
     # Scrapes store and updates self.itemPriceLink
     def scrapeStore(self):
         try:
-            print("Scraping...")
+            scraperLogger(msg="Scraping...")
             for page in range(1,2):
                 self.driver.get(self._get_url(page))
                 self.soup = BeautifulSoup(self.driver.page_source)

@@ -4476,3 +4476,55 @@ KeyError: 'tweakersCloneUsername'
 2022-03-17 04:07:52,224 - INFO - geckodriver successfully activated
 2022-03-17 04:07:53,915 - INFO - Attempt 1 of activating geckodriver
 2022-03-17 04:07:58,835 - INFO - geckodriver successfully activated
+2022-03-26 11:39:35,090 - INFO - Attempt 1 of activating geckodriver
+2022-03-26 11:40:02,907 - ERROR - Geckodriver activation attempt 1 FAILED 
+Traceback (most recent call last):
+  File "/home/aldo/tweakersClone/src/webScraperCommon.py", line 276, in __init__
+    self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/firefox/webdriver.py", line 154, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 309, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 460, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py", line 484, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/usr/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aldo/tweakersClone/src/venv_server/lib/python3.9/site-packages/interruptingcow/__init__.py", line 74, in handler
+    raise exception
+RuntimeError
+
+2022-03-26 11:40:02,918 - INFO - Attempt 2 of activating geckodriver
+2022-03-26 11:40:43,153 - INFO - Attempt 1 of activating geckodriver
+2022-03-28 05:04:50,427 - INFO - Obtaining URI to be able to write and read from database...
+2022-03-28 05:04:50,427 - INFO - URI obtained
+2022-03-28 05:04:50,429 - INFO - Starting db session...
+2022-03-28 05:05:22,439 - INFO - Obtaining URI to be able to write and read from database...
+2022-03-28 05:05:22,439 - INFO - URI obtained
+2022-03-28 05:05:22,441 - INFO - Starting db session...
+2022-03-28 06:15:04,339 - INFO - Obtaining URI to be able to write and read from database...
+2022-03-28 06:15:04,343 - INFO - URI obtained
+2022-03-28 06:15:04,346 - INFO - Starting db session...
+2022-04-03 23:24:12,802 - INFO - Obtaining URI to be able to write and read from database...
+2022-04-03 23:24:12,802 - INFO - URI obtained
+2022-04-03 23:24:12,805 - INFO - Starting db session...
+2022-04-06 06:54:34,408 - INFO - Obtaining URI to be able to write and read from database...
+2022-04-06 06:54:34,415 - INFO - URI obtained
+2022-04-06 06:54:34,424 - INFO - Starting db session...
+2022-04-09 10:44:21,087 - INFO - reading data from coolblue...
+2022-04-09 10:44:21,192 - INFO - reading complete!
+2022-04-09 10:44:27,460 - INFO - reading data from amazon...
+2022-04-09 10:44:27,511 - INFO - reading complete!
+2022-04-09 13:10:33,995 - INFO - reading data from coolblue...
+2022-04-09 13:10:34,015 - INFO - reading complete!

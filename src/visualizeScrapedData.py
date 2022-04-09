@@ -58,7 +58,7 @@ try:
 except KeyError as e:
     raise UnavailableCredentialsException(msg = traceback.format_exc())
 
-sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice")
+sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice", remoteTunnel=False)
 
 try:
     sshFunctions.start_tunnel()

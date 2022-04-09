@@ -55,7 +55,7 @@ class SSHTunnelOperations:
         if not self.remoteTunnel:
             return
         tunnel = sshtunnel.SSHTunnelForwarder(
-            ('164.90.193.145'),
+            ('167.172.44.131'),
             ssh_username='aldo',
             ssh_password=self.password,
             local_bind_address=("127.0.0.1",),
@@ -280,7 +280,7 @@ class Scrape():
                 # timeout module doesn't work since here we're on Windows
                 scraperLogger(msg = f"Attempt {attempt + 1} of activating geckodriver")
                 scraperLogger(msg="no re-attempts if this attempt fails...")
-                self.driver = webdriver.Firefox(executable_path=self.pwd + self.geckodriverExe, options=self.firefox_options)
+                self.driver = webdriver.Firefox(options=self.firefox_options)
                 scraperLogger(msg = "geckodriver successfully activated")
                 break
             except (common.exceptions.WebDriverException, RuntimeError):

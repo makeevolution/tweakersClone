@@ -16,8 +16,7 @@ def main():
         password = os.environ["tweakersClonePassword"]
     except KeyError as e:
         raise UnavailableCredentialsException(msg = traceback.format_exc())
-    
-    sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice",remoteTunnel=False)
+    sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice",remoteTunnel=True)
     
     sshFunctions.start_tunnel()
     URIForDB = sshFunctions.getURI()
@@ -25,7 +24,7 @@ def main():
     dbFunctions = interrogateStoreRaw(URIForDB)
     dbFunctions.start_db_session()
     #make try excepts here too
-    for store in ['bol']:
+    for store in all_stores:
         storeModule = importlib.import_module(store+"Scraper", package="")
         extractor_function = storeModule.extract_record
 

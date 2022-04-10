@@ -2,7 +2,7 @@
 
 from webScraperCommon import Scrape, SSHTunnelOperations, interrogateStoreRaw
 from customExceptions import *
-import re, os, importlib, sshtunnel
+import re, os, importlib
 
 def main():
     try:

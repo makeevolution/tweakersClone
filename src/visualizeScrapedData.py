@@ -58,7 +58,12 @@ try:
 except KeyError as e:
     raise UnavailableCredentialsException(msg = traceback.format_exc())
 
-sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice", remoteTunnel=False)
+try:
+    onServer = os.environ["onServer"]
+    remoteTunnel = False
+except KeyError:
+    remoteTunnel = True
+sshFunctions = SSHTunnelOperations(username,password,"mysql","dateItemPrice", remoteTunnel)
 
 try:
     sshFunctions.start_tunnel()
@@ -70,7 +75,6 @@ except Exception:
 server = Flask(__name__)
 server.config['SQLALCHEMY_DATABASE_URI']=URIForDB
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 db = SQLAlchemy(server)
 
 dbFunctions = interrogateStoreFlask(db)
@@ -130,7 +134,9 @@ sidebar = html.Div(
 content = html.Div(
     [html.Div(id="main-content")], style = CONTENT_STYLE
     )
-app = dash.Dash(server=server,external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+dashServer = server if os.getenv("onServer") is not None else True
+app = dash.Dash(server=dashServer,external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.layout = html.Div([
                         sidebar, content, dcc.Store(id="current-store",data="coolblue"),
                                           dcc.Store(id="current-store-df"),

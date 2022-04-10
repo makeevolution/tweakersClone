@@ -1,6 +1,9 @@
-.vscode/
+/src/.vscode/
+/.vscode/
 venv*
 /src/venv*/
 /src/env*
 /__pycache__/
-geckodriver.log
+/src/scraperLoggers.log
+/src/geckodriver
+/src/geckodriver.log

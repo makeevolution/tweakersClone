@@ -1,4 +1,3 @@
-# to be called by Cron
 
 from webScraperCommon import Scrape, SSHTunnelOperations, interrogateStoreRaw
 from customExceptions import *

@@ -1,0 +1,22 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"onlineWebscraper.src.webScraperCommon.DBOperationsFlask" [color="black", fontcolor="black", label="{DBOperationsFlask|db\lsession\l|close_db_session()\lread_from_db(store)\lrollback_db_session()\lstart_db_session()\lwrite_to_db()\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.DBOperationsRaw" [color="black", fontcolor="black", label="{DBOperationsRaw|Base\lengine : MockConnection\lsession : scoped_session\l|close_db_session()\lread_from_db(store, query)\lrollback_db_session()\lstart_db_session()\lwrite_to_db(store, searchterm, itemPriceLink)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.DBoperations" [color="black", fontcolor="black", label="{DBoperations|\l|close_db_session()\lread_from_db(store)\lrollback_db_session()\lstart_db_session()\lwrite_to_db(store)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.SSHTunnelOperations" [color="black", fontcolor="black", label="{SSHTunnelOperations|dialect\lpassword\lremoteTunnel : bool\lschema\ltunnel : SSHTunnelForwarder, NoneType\lusername\l|close_tunnel()\lgetURI()\lstart_tunnel()\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.Scrape" [color="black", fontcolor="black", label="{Scrape|OnServer : bool\ldriver : WebDriver\lextract_record\lfirefox_options : Options\lgeckodriverExe : str\litemPriceLink : list\lpwd\lsearchTerm\lsoup : BeautifulSoup\lstoreName\l|scrapeStore()\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.amazonURL" [color="black", fontcolor="black", label="{amazonURL|\l|URL_by_page_and_item(searchTerm, page)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.bolURL" [color="black", fontcolor="black", label="{bolURL|\l|URL_by_page_and_item(searchTerm, page)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.coolblueURL" [color="black", fontcolor="black", label="{coolblueURL|\l|URL_by_page_and_item(searchTerm, page)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.interrogateStoreFlask" [color="black", fontcolor="black", label="{interrogateStoreFlask|\l|available_online_stores()\lsearched_terms_in_store(store)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.interrogateStoreRaw" [color="black", fontcolor="black", label="{interrogateStoreRaw|\l|available_online_stores()\lsearched_items_in_store(storeName)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.storeURL" [color="black", fontcolor="black", label="{storeURL|\l|URL_by_page_and_item(searchTerm, page)\l}", shape="record", style="solid"];
+"onlineWebscraper.src.webScraperCommon.DBOperationsFlask" -> "onlineWebscraper.src.webScraperCommon.DBoperations" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.DBOperationsRaw" -> "onlineWebscraper.src.webScraperCommon.DBoperations" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.amazonURL" -> "onlineWebscraper.src.webScraperCommon.storeURL" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.bolURL" -> "onlineWebscraper.src.webScraperCommon.storeURL" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.coolblueURL" -> "onlineWebscraper.src.webScraperCommon.storeURL" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.interrogateStoreFlask" -> "onlineWebscraper.src.webScraperCommon.DBOperationsFlask" [arrowhead="empty", arrowtail="none"];
+"onlineWebscraper.src.webScraperCommon.interrogateStoreRaw" -> "onlineWebscraper.src.webScraperCommon.DBOperationsRaw" [arrowhead="empty", arrowtail="none"];
+}
